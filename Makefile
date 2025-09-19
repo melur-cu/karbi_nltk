@@ -7,8 +7,8 @@
 # For license information, see LICENSE.TXT
 
 PYTHON = python
-VERSION = $(shell $(PYTHON) -c 'import nltk; print(nltk.__version__)' | sed '/^Warning: */d')
-NLTK_URL = $(shell $(PYTHON) -c 'import nltk; print(nltk.__url__)' | sed '/^Warning: */d')
+VERSION = $(shell $(PYTHON) -c 'import kanltk; print(kanltk.__version__)' | sed '/^Warning: */d')
+NLTK_URL = $(shell $(PYTHON) -c 'import kanltk; print(kanltk.__url__)' | sed '/^Warning: */d')
 
 .PHONY: all clean clean_code
 
@@ -18,7 +18,7 @@ all: dist
 # TESTING
 ########################################################################
 DOCTEST_FILES = nltk/test/*.doctest
-DOCTEST_CODE_FILES = nltk/*.py nltk/*/*.py
+DOCTEST_CODE_FILES = kanltk/*.py kanltk/*/*.py
 
 doctest:
 	pytest $(DOCTEST_FILES)

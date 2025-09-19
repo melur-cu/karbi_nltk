@@ -50,7 +50,7 @@ extras_require["all"] = {
 # Adds CLI commands
 console_scripts = """
 [console_scripts]
-nltk=nltk.cli:cli
+kanltk=kanltk.cli:cli
 """
 
 _project_homepage = "https://sites.google.com/cottonuniversity.ac.in/karbi-nltk?usp=sharing"
@@ -110,7 +110,7 @@ natural language processing including Karbi language.  NLTK requires Python 3.9,
         "Topic :: Text Processing :: Indexing",
         "Topic :: Text Processing :: Linguistic",
     ],
-    package_data={"nltk": ["test/*.doctest", "VERSION"]},
+    package_data={"kanltk": ["test/*.doctest", "VERSION"]},
     python_requires=">=3.9",
     install_requires=[
         "click",

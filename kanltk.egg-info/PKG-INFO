@@ -3,10 +3,10 @@ Name: kanltk
 Version: 3.9.2
 Summary: Karbi Natural Language Toolkit
 Home-page: https://sites.google.com/cottonuniversity.ac.in/karbi-nltk?usp=sharing
-Author: NLTK Team
-Author-email: nltk.team@gmail.com
-Maintainer: NLTK Team
-Maintainer-email: nltk.team@gmail.com
+Author: Melur Phangcho
+Author-email: meluridyllic@gmail.com
+Maintainer: KANLTK Team
+Maintainer-email: meluridyllic@gmail.com
 License: Apache License, Version 2.0
 Project-URL: Documentation, https://sites.google.com/cottonuniversity.ac.in/karbi-nltk?usp=sharing
 Project-URL: Source Code, https://github.com/melur-cu/karbi_nltk.git
@@ -55,14 +55,14 @@ Requires-Dist: twython; extra == "twitter"
 Provides-Extra: corenlp
 Requires-Dist: requests; extra == "corenlp"
 Provides-Extra: all
-Requires-Dist: scipy; extra == "all"
-Requires-Dist: twython; extra == "all"
 Requires-Dist: numpy; extra == "all"
-Requires-Dist: matplotlib; extra == "all"
 Requires-Dist: requests; extra == "all"
-Requires-Dist: python-crfsuite; extra == "all"
-Requires-Dist: pyparsing; extra == "all"
+Requires-Dist: matplotlib; extra == "all"
 Requires-Dist: scikit-learn; extra == "all"
+Requires-Dist: pyparsing; extra == "all"
+Requires-Dist: scipy; extra == "all"
+Requires-Dist: python-crfsuite; extra == "all"
+Requires-Dist: twython; extra == "all"
 
-The Natural Language Toolkit (NLTK) is a Python package for
-natural language processing.  NLTK requires Python 3.9, 3.10, 3.11, 3.12, or 3.13.
+The Karbi Natural Language Toolkit (NLTK) is a Python package for
+natural language processing including Karbi language.  NLTK requires Python 3.9, 3.10, 3.11, 3.12, or 3.13.

@@ -1,2 +1,2 @@
 [console_scripts]
-nltk = nltk.cli:cli
+kanltk = kanltk.cli:cli

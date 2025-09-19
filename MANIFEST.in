@@ -8,6 +8,7 @@ include MANIFEST.in
 
 
 graft nltk
+graft kanltk
 graft tools
 graft web
 
