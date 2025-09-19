@@ -9,7 +9,7 @@
 
 from abc import ABCMeta, abstractmethod
 
-from nltk import jsontags
+from kanltk import jsontags
 
 
 ######################################################################

@@ -16,7 +16,7 @@ import tempfile
 import warnings
 from subprocess import PIPE
 
-from nltk.internals import (
+from kanltk.internals import (
     _java_options,
     config_java,
     find_dir,
@@ -24,7 +24,7 @@ from nltk.internals import (
     find_jar,
     java,
 )
-from nltk.tokenize.api import TokenizerI
+from kanltk.tokenize.api import TokenizerI
 
 _stanford_url = "https://nlp.stanford.edu/software"
 
@@ -37,7 +37,7 @@ class StanfordSegmenter(TokenizerI):
 
         seg = StanfordSegmenter(path_to_slf4j='/YOUR_PATH/slf4j-api.jar')
 
-    >>> from nltk.tokenize.stanford_segmenter import StanfordSegmenter
+    >>> from kanltk.tokenize.stanford_segmenter import StanfordSegmenter
     >>> seg = StanfordSegmenter() # doctest: +SKIP
     >>> seg.default_config('zh') # doctest: +SKIP
     >>> sent = u'这是斯坦福中文分词器测试'

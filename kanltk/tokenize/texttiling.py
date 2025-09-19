@@ -14,7 +14,7 @@ try:
 except ImportError:
     pass
 
-from nltk.tokenize.api import TokenizerI
+from kanltk.tokenize.api import TokenizerI
 
 BLOCK_COMPARISON, VOCABULARY_INTRODUCTION = 0, 1
 LC, HC = 0, 1
@@ -53,7 +53,7 @@ class TextTilingTokenizer(TokenizerI):
       `HC` (default) or `LC`
     :type cutoff_policy: constant
 
-    >>> from nltk.corpus import brown
+    >>> from kanltk.corpus import brown
     >>> tt = TextTilingTokenizer(demo_mode=True)
     >>> text = brown.raw()[:4000]
     >>> s, ss, d, b = tt.tokenize(text)
@@ -74,7 +74,7 @@ class TextTilingTokenizer(TokenizerI):
         demo_mode=False,
     ):
         if stopwords is None:
-            from nltk.corpus import stopwords
+            from kanltk.corpus import stopwords
 
             stopwords = stopwords.words("english")
         self.__dict__.update(locals())
@@ -458,7 +458,7 @@ def smooth(x, window_len=11, window="flat"):
 def demo(text=None):
     from matplotlib import pylab
 
-    from nltk.corpus import brown
+    from kanltk.corpus import brown
 
     tt = TextTilingTokenizer(demo_mode=True)
     if text is None:

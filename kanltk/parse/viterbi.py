@@ -8,8 +8,8 @@
 
 from functools import reduce
 
-from nltk.parse.api import ParserI
-from nltk.tree import ProbabilisticTree, Tree
+from kanltk.parse.api import ParserI
+from kanltk.tree import ProbabilisticTree, Tree
 
 ##//////////////////////////////////////////////////////
 ##  Viterbi PCFG Parser
@@ -337,8 +337,8 @@ def demo():
     import time
 
     from nltk import tokenize
-    from nltk.grammar import PCFG
-    from nltk.parse import ViterbiParser
+    from kanltk.grammar import PCFG
+    from kanltk.parse import ViterbiParser
 
     toy_pcfg1 = PCFG.fromstring(
         """
@@ -436,7 +436,7 @@ def demo():
     print()
     print("Draw parses (y/n)? ", end=" ")
     if sys.stdin.readline().strip().lower().startswith("y"):
-        from nltk.draw.tree import draw_trees
+        from kanltk.draw.tree import draw_trees
 
         print("  please wait...")
         draw_trees(*parses)

@@ -20,8 +20,8 @@ import sys
 import textwrap
 from pprint import pformat
 
-from nltk.decorators import decorator  # this used in code that is commented out
-from nltk.sem.logic import (
+from kanltk.decorators import decorator  # this used in code that is commented out
+from kanltk.sem.logic import (
     AbstractVariableExpression,
     AllExpression,
     AndExpression,
@@ -270,7 +270,7 @@ class Assignment(dict):
     created using the ``Assignment`` constructor, which also takes the
     domain as a parameter.
 
-        >>> from nltk.sem.evaluate import Assignment
+        >>> from kanltk.sem.evaluate import Assignment
         >>> dom = set(['u1', 'u2', 'u3', 'u4'])
         >>> g3 = Assignment(dom, [('x', 'u1'), ('y', 'u2')])
         >>> g3 == {'x': 'u1', 'y': 'u2'}

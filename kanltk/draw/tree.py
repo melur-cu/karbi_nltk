@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -11,7 +11,7 @@ Graphically display a Tree.
 
 from tkinter import IntVar, Menu, Tk
 
-from nltk.draw.util import (
+from kanltk.draw.util import (
     BoxWidget,
     CanvasFrame,
     CanvasWidget,
@@ -19,8 +19,8 @@ from nltk.draw.util import (
     ParenWidget,
     TextWidget,
 )
-from nltk.tree import Tree
-from nltk.util import in_idle
+from kanltk.tree import Tree
+from kanltk.util import in_idle
 
 ##//////////////////////////////////////////////////////
 ##  Tree Segment

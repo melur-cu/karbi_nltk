@@ -16,9 +16,9 @@ from functools import lru_cache
 from itertools import chain
 from typing import Dict
 
-from nltk.internals import deprecated, overridden
-from nltk.metrics import ConfusionMatrix, accuracy
-from nltk.tag.util import untag
+from kanltk.internals import deprecated, overridden
+from kanltk.metrics import ConfusionMatrix, accuracy
+from kanltk.tag.util import untag
 
 
 class TaggerI(metaclass=ABCMeta):
@@ -99,8 +99,8 @@ class TaggerI(metaclass=ABCMeta):
         Return a ConfusionMatrix with the tags from ``gold`` as the reference
         values, with the predictions from ``tag_sents`` as the predicted values.
 
-        >>> from nltk.tag import PerceptronTagger
-        >>> from nltk.corpus import treebank
+        >>> from kanltk.tag import PerceptronTagger
+        >>> from kanltk.corpus import treebank
         >>> tagger = PerceptronTagger()
         >>> gold_data = treebank.tagged_sents()[:10]
         >>> print(tagger.confusion(gold_data))
@@ -223,8 +223,8 @@ class TaggerI(metaclass=ABCMeta):
         for each tag from ``gold`` or from running ``tag`` on the tokenized
         sentences from ``gold``.
 
-        >>> from nltk.tag import PerceptronTagger
-        >>> from nltk.corpus import treebank
+        >>> from kanltk.tag import PerceptronTagger
+        >>> from kanltk.corpus import treebank
         >>> tagger = PerceptronTagger()
         >>> gold_data = treebank.tagged_sents()[:10]
         >>> print(tagger.evaluate_per_tag(gold_data))

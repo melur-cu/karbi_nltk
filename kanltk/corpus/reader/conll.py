@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -12,11 +12,11 @@ Read CoNLL-style chunk fileids.
 
 import textwrap
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.tag import map_tag
-from nltk.tree import Tree
-from nltk.util import LazyConcatenation, LazyMap
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.tag import map_tag
+from kanltk.tree import Tree
+from kanltk.util import LazyConcatenation, LazyMap
 
 
 class ConllCorpusReader(CorpusReader):

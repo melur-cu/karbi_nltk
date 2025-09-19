@@ -27,7 +27,7 @@ online and do not use any dictionary.
 """
 import re
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class ARLSTem2(StemmerI):
@@ -36,7 +36,7 @@ class ARLSTem2(StemmerI):
     version of the previous algorithm, which reduces under-stemming errors.
     Typically used in Arabic search engine, information retrieval and NLP.
 
-        >>> from nltk.stem import arlstem2
+        >>> from kanltk.stem import arlstem2
         >>> stemmer = ARLSTem2()
         >>> word = stemmer.stem('يعمل')
         >>> print(word)

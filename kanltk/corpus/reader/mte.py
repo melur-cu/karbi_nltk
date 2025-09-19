@@ -6,8 +6,8 @@ import os
 import re
 from functools import reduce
 
-from nltk.corpus.reader import TaggedCorpusReader, concat
-from nltk.corpus.reader.xmldocs import XMLCorpusView
+from kanltk.corpus.reader import TaggedCorpusReader, concat
+from kanltk.corpus.reader.xmldocs import XMLCorpusView
 
 
 def xpath(root, path, ns):

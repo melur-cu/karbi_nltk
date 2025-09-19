@@ -3,7 +3,7 @@
 # Author: Daniel H. Garrette <dhgarrette@gmail.com>
 #
 # Copyright (C) 2001-2025 NLTK Project
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -15,9 +15,9 @@ Michael R. Genesereth and Nils J. Nilsson.
 from collections import defaultdict
 from functools import reduce
 
-from nltk.inference.api import Prover, ProverCommandDecorator
-from nltk.inference.prover9 import Prover9, Prover9Command
-from nltk.sem.logic import (
+from kanltk.inference.api import Prover, ProverCommandDecorator
+from kanltk.inference.prover9 import Prover9, Prover9Command
+from kanltk.sem.logic import (
     AbstractVariableExpression,
     AllExpression,
     AndExpression,

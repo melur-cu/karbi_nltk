@@ -3,17 +3,17 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 
 import re
 from collections import defaultdict, namedtuple
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.corpus.reader.wordlist import WordListCorpusReader
-from nltk.tokenize import line_tokenize
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.corpus.reader.wordlist import WordListCorpusReader
+from kanltk.tokenize import line_tokenize
 
 PanlexLanguage = namedtuple(
     "PanlexLanguage",

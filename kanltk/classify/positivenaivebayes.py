@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2012 NLTK Project
 # Author: Alessandro Presta <alessandro.presta@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -31,7 +31,7 @@ and then express the conditional probability as:
 
 Example:
 
-    >>> from nltk.classify import PositiveNaiveBayesClassifier
+    >>> from kanltk.classify import PositiveNaiveBayesClassifier
 
 Some sentences about sports:
 
@@ -77,8 +77,8 @@ What about this one?
 
 from collections import defaultdict
 
-from nltk.classify.naivebayes import NaiveBayesClassifier
-from nltk.probability import DictionaryProbDist, ELEProbDist, FreqDist
+from kanltk.classify.naivebayes import NaiveBayesClassifier
+from kanltk.probability import DictionaryProbDist, ELEProbDist, FreqDist
 
 ##//////////////////////////////////////////////////////
 ##  Positive Naive Bayes Classifier
@@ -174,7 +174,7 @@ class PositiveNaiveBayesClassifier(NaiveBayesClassifier):
 
 
 def demo():
-    from nltk.classify.util import partial_names_demo
+    from kanltk.classify.util import partial_names_demo
 
     classifier = partial_names_demo(PositiveNaiveBayesClassifier.train)
     classifier.show_most_informative_features()

@@ -2,12 +2,12 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
 A graphical tool for exploring the regular expression based chunk
-parser ``nltk.chunk.RegexpChunkParser``.
+parser ``kanltk.chunk.RegexpChunkParser``.
 """
 
 # Todo: Add a way to select the development set from the menubar.  This
@@ -34,18 +34,18 @@ from tkinter import (
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 from tkinter.font import Font
 
-from nltk.chunk import ChunkScore, RegexpChunkParser
-from nltk.chunk.regexp import RegexpChunkRule
-from nltk.corpus import conll2000, treebank_chunk
-from nltk.draw.util import ShowText
-from nltk.tree import Tree
-from nltk.util import in_idle
+from kanltk.chunk import ChunkScore, RegexpChunkParser
+from kanltk.chunk.regexp import RegexpChunkRule
+from kanltk.corpus import conll2000, treebank_chunk
+from kanltk.draw.util import ShowText
+from kanltk.tree import Tree
+from kanltk.util import in_idle
 
 
 class RegexpChunkApp:
     """
     A graphical tool for exploring the regular expression based chunk
-    parser ``nltk.chunk.RegexpChunkParser``.
+    parser ``kanltk.chunk.RegexpChunkParser``.
 
     See ``HELP`` for instructional text.
     """

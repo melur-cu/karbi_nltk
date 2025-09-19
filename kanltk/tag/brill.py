@@ -10,8 +10,8 @@
 from collections import Counter, defaultdict
 
 from nltk import jsontags
-from nltk.tag import TaggerI
-from nltk.tbl import Feature, Template
+from kanltk.tag import TaggerI
+from kanltk.tbl import Feature, Template
 
 ######################################################################
 # Brill Templates

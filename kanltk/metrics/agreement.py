@@ -45,7 +45,7 @@ TODO: Describe handling of multiple coders and missing data
 
 Expected results from the Artstein and Poesio survey paper:
 
-    >>> from nltk.metrics.agreement import AnnotationTask
+    >>> from kanltk.metrics.agreement import AnnotationTask
     >>> import os.path
     >>> t = AnnotationTask(data=[x.split() for x in open(os.path.join(os.path.dirname(__file__), "artstein_poesio_example.txt"))])
     >>> t.avg_Ao()
@@ -73,9 +73,9 @@ import logging
 from itertools import groupby
 from operator import itemgetter
 
-from nltk.internals import deprecated
-from nltk.metrics.distance import binary_distance
-from nltk.probability import ConditionalFreqDist, FreqDist
+from kanltk.internals import deprecated
+from kanltk.metrics.distance import binary_distance
+from kanltk.probability import ConditionalFreqDist, FreqDist
 
 log = logging.getLogger(__name__)
 
@@ -351,7 +351,7 @@ if __name__ == "__main__":
     import optparse
     import re
 
-    from nltk.metrics import distance
+    from kanltk.metrics import distance
 
     # process command-line arguments
     parser = optparse.OptionParser()

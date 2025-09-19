@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author:  Nitin Madnani <nmadnani@umiacs.umd.edu>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import re
 
-from nltk.corpus.reader import *
-from nltk.corpus.util import LazyCorpusLoader
+from kanltk.corpus.reader import *
+from kanltk.corpus.util import LazyCorpusLoader
 
 # Create a new corpus reader instance for each European language
 danish: EuroparlCorpusReader = LazyCorpusLoader(

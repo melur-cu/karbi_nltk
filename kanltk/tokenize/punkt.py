@@ -23,7 +23,7 @@ before it can be used.
 The NLTK data package includes a pre-trained Punkt tokenizer for
 English.
 
-    >>> from nltk.tokenize import PunktTokenizer
+    >>> from kanltk.tokenize import PunktTokenizer
     >>> text = '''
     ... Punkt knows that the periods in Mr. Smith and Johann S. Bach
     ... do not mark sentence boundaries.  And sometimes sentences
@@ -111,8 +111,8 @@ import string
 from collections import defaultdict
 from typing import Any, Dict, Iterator, List, Match, Optional, Tuple, Union
 
-from nltk.probability import FreqDist
-from nltk.tokenize.api import TokenizerI
+from kanltk.probability import FreqDist
+from kanltk.tokenize.api import TokenizerI
 
 ######################################################################
 # { Orthographic Context Constants
@@ -1744,7 +1744,7 @@ class PunktTokenizer(PunktSentenceTokenizer):
         self.load_lang(lang)
 
     def load_lang(self, lang="english"):
-        from nltk.data import find
+        from kanltk.data import find
 
         lang_dir = find(f"tokenizers/punkt_tab/{lang}/")
         self._params = load_punkt_params(lang_dir)
@@ -1755,7 +1755,7 @@ class PunktTokenizer(PunktSentenceTokenizer):
 
 
 def load_punkt_params(lang_dir):
-    from nltk.tabdata import PunktDecoder
+    from kanltk.tabdata import PunktDecoder
 
     pdec = PunktDecoder()
     # Make a new Parameters object:
@@ -1775,7 +1775,7 @@ def save_punkt_params(params, dir="/tmp/punkt_tab"):
     from os import mkdir
     from os.path import isdir
 
-    from nltk.tabdata import TabEncoder
+    from kanltk.tabdata import TabEncoder
 
     if not isdir(dir):
         mkdir(dir)

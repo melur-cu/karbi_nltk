@@ -11,7 +11,7 @@
 #         Francis Bond <bond@ieee.org>
 #         Eric Kafe <kafe.eric@gmail.com>
 
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -39,11 +39,11 @@ from functools import total_ordering
 from itertools import chain, islice
 from operator import itemgetter
 
-from nltk.corpus.reader import CorpusReader
-from nltk.internals import deprecated
-from nltk.probability import FreqDist
-from nltk.tag import map_tag
-from nltk.util import binary_search_file as _binary_search_file
+from kanltk.corpus.reader import CorpusReader
+from kanltk.internals import deprecated
+from kanltk.probability import FreqDist
+from kanltk.tag import map_tag
+from kanltk.util import binary_search_file as _binary_search_file
 
 ######################################################################
 # Table of Contents
@@ -579,7 +579,7 @@ class Synset(_WordNetObject):
         Return the transitive closure of source under the rel
         relationship, breadth-first, discarding cycles:
 
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> computer = wn.synset('computer.n.01')
         >>> topic = lambda s:s.topic_domains()
         >>> print(list(computer.closure(topic)))
@@ -603,24 +603,24 @@ class Synset(_WordNetObject):
         UserWarning: Discarded redundant search for Synset('animal.n.01') at depth 7
         """
 
-        from nltk.util import acyclic_breadth_first
+        from kanltk.util import acyclic_breadth_first
 
         for synset in acyclic_breadth_first(self, rel, depth):
             if synset != self:
                 yield synset
 
-    from nltk.util import acyclic_depth_first as acyclic_tree
-    from nltk.util import unweighted_minimum_spanning_tree as mst
+    from kanltk.util import acyclic_depth_first as acyclic_tree
+    from kanltk.util import unweighted_minimum_spanning_tree as mst
 
     # Also add this shortcut?
-    #    from nltk.util import unweighted_minimum_spanning_digraph as umsd
+    #    from kanltk.util import unweighted_minimum_spanning_digraph as umsd
 
     def tree(self, rel, depth=-1, cut_mark=None):
         """
         Return the full relation tree, including self,
         discarding cycles:
 
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> from pprint import pprint
         >>> computer = wn.synset('computer.n.01')
         >>> topic = lambda s:sorted(s.topic_domains())
@@ -658,7 +658,7 @@ class Synset(_WordNetObject):
                [Synset('physical_entity.n.01'), [Synset('entity.n.01')]]]]]]]]]
         """
 
-        from nltk.util import acyclic_branches_depth_first
+        from kanltk.util import acyclic_branches_depth_first
 
         return acyclic_branches_depth_first(self, rel, depth, cut_mark)
 
@@ -1014,7 +1014,7 @@ class Synset(_WordNetObject):
         :param other: The ``Synset`` that this ``Synset`` is being compared to.
         :type ic: dict
         :param ic: an information content object (as returned by
-            ``nltk.corpus.wordnet_ic.ic()``).
+            ``kanltk.corpus.wordnet_ic.ic()``).
         :return: A float score denoting the similarity of the two ``Synset``
             objects. Synsets whose LCS is the root node of the taxonomy will
             have a score of 0 (e.g. N['dog'][0] and N['table'][0]).
@@ -1035,7 +1035,7 @@ class Synset(_WordNetObject):
         :param other: The ``Synset`` that this ``Synset`` is being compared to.
         :type  ic: dict
         :param ic: an information content object (as returned by
-            ``nltk.corpus.wordnet_ic.ic()``).
+            ``kanltk.corpus.wordnet_ic.ic()``).
         :return: A float score denoting the similarity of the two ``Synset``
             objects.
         """
@@ -1069,7 +1069,7 @@ class Synset(_WordNetObject):
         :param other: The ``Synset`` that this ``Synset`` is being compared to.
         :type ic: dict
         :param ic: an information content object (as returned by
-            ``nltk.corpus.wordnet_ic.ic()``).
+            ``kanltk.corpus.wordnet_ic.ic()``).
         :return: A float score denoting the similarity of the two ``Synset``
             objects, in the range 0 to 1.
         """
@@ -1227,7 +1227,7 @@ class WordNetCorpusReader(CorpusReader):
         """Read sense key to synset id mapping from index.sense file in corpus directory"""
         fn = "index.sense"
         if version:
-            from nltk.corpus import CorpusReader, LazyCorpusLoader
+            from kanltk.corpus import CorpusReader, LazyCorpusLoader
 
             ixreader = LazyCorpusLoader(version, CorpusReader, r".*/" + fn)
         else:
@@ -1367,12 +1367,12 @@ class WordNetCorpusReader(CorpusReader):
         Add languages from Extended OMW
 
         >>> import nltk
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> wn.add_exomw()
         >>> print(wn.synset('intrinsically.r.01').lemmas(lang="eng_wikt"))
         [Lemma('intrinsically.r.01.per_se'), Lemma('intrinsically.r.01.as_such')]
         """
-        from nltk.corpus import extended_omw
+        from kanltk.corpus import extended_omw
 
         self.add_omw()
         self._exomw_reader = extended_omw
@@ -1593,7 +1593,7 @@ class WordNetCorpusReader(CorpusReader):
         - offset: The byte offset of this synset in the WordNet dict file
           for this pos.
 
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> print(wn.synset_from_pos_and_offset('n', 1740))
         Synset('entity.n.01')
         """
@@ -1780,7 +1780,7 @@ class WordNetCorpusReader(CorpusReader):
                       Only used if head_word is present (2 digit int)
 
         >>> import nltk
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> print(wn.synset_from_sense_key("drive%1:04:03::"))
         Synset('drive.n.06')
 
@@ -2059,7 +2059,7 @@ class WordNetCorpusReader(CorpusReader):
         If pos=None, try every part of speech until finding lemmas.
         Return the first form found in WordNet, or eventually None.
 
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> print(wn.morphy('dogs'))
         dog
         >>> print(wn.morphy('churches'))
@@ -2156,7 +2156,7 @@ class WordNetCorpusReader(CorpusReader):
         :type tag: str
         :param tagset: The tagset of the input tag. Defaults to "en-ptb".
             Supported tagsets are those recognized by the `map_tag` function
-            from `nltk.tag`. Common examples include:
+            from `kanltk.tag`. Common examples include:
                 - "en-ptb" (Penn Treebank tagset for English)
                 - "en-brown" (Brown tagset)
             For a complete list of supported tagsets, refer to the `map_tag`
@@ -2169,8 +2169,8 @@ class WordNetCorpusReader(CorpusReader):
 
         Example:
             >>> import nltk
-            >>> tagged = nltk.tag.pos_tag(nltk.tokenize.word_tokenize("Banks check books."))
-            >>> print([(word, tag, nltk.corpus.wordnet.tag2pos(tag)) for word, tag in tagged])
+            >>> tagged = kanltk.tag.pos_tag(kanltk.tokenize.word_tokenize("Banks check books."))
+            >>> print([(word, tag, kanltk.corpus.wordnet.tag2pos(tag)) for word, tag in tagged])
             [('Banks', 'NNS', 'n'), ('check', 'VBP', 'v'), ('books', 'NNS', 'n'), ('.', '.', None)]
         """
         if tagset != "universal":
@@ -2331,7 +2331,7 @@ class WordNetCorpusReader(CorpusReader):
         program from the Graphviz package.
 
         Return a string in the DOT graph file language, which can then be
-        converted to an image by nltk.parse.dependencygraph.dot2img(dot_string).
+        converted to an image by kanltk.parse.dependencygraph.dot2img(dot_string).
 
         Optional Parameters:
         :rel: Wordnet synset relation
@@ -2341,7 +2341,7 @@ class WordNetCorpusReader(CorpusReader):
         :attr: dictionary with global graph attributes
         :verbose: warn about cycles
 
-        >>> from nltk.corpus import wordnet as wn
+        >>> from kanltk.corpus import wordnet as wn
         >>> print(wn.digraph([wn.synset('dog.n.01')]))
         digraph G {
         "Synset('animal.n.01')" -> "Synset('organism.n.01')";
@@ -2362,7 +2362,7 @@ class WordNetCorpusReader(CorpusReader):
         }
         <BLANKLINE>
         """
-        from nltk.util import edge_closure, edges2dot
+        from kanltk.util import edge_closure, edges2dot
 
         synsets = set()
         edges = set()

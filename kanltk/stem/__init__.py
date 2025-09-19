@@ -21,14 +21,14 @@ morphological rules, and part-of-speech and sense ambiguities
 StemmerI defines a standard interface for stemmers.
 """
 
-from nltk.stem.api import StemmerI
-from nltk.stem.arlstem import ARLSTem
-from nltk.stem.arlstem2 import ARLSTem2
-from nltk.stem.cistem import Cistem
-from nltk.stem.isri import ISRIStemmer
-from nltk.stem.lancaster import LancasterStemmer
-from nltk.stem.porter import PorterStemmer
-from nltk.stem.regexp import RegexpStemmer
-from nltk.stem.rslp import RSLPStemmer
-from nltk.stem.snowball import SnowballStemmer
-from nltk.stem.wordnet import WordNetLemmatizer
+from kanltk.stem.api import StemmerI
+from kanltk.stem.arlstem import ARLSTem
+from kanltk.stem.arlstem2 import ARLSTem2
+from kanltk.stem.cistem import Cistem
+from kanltk.stem.isri import ISRIStemmer
+from kanltk.stem.lancaster import LancasterStemmer
+from kanltk.stem.porter import PorterStemmer
+from kanltk.stem.regexp import RegexpStemmer
+from kanltk.stem.rslp import RSLPStemmer
+from kanltk.stem.snowball import SnowballStemmer
+from kanltk.stem.wordnet import WordNetLemmatizer

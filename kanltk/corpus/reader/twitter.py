@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Ewan Klein <ewan@inf.ed.ac.uk>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -13,9 +13,9 @@ have been serialised into line-delimited JSON.
 import json
 import os
 
-from nltk.corpus.reader.api import CorpusReader
-from nltk.corpus.reader.util import StreamBackedCorpusView, ZipFilePathPointer, concat
-from nltk.tokenize import TweetTokenizer
+from kanltk.corpus.reader.api import CorpusReader
+from kanltk.corpus.reader.util import StreamBackedCorpusView, ZipFilePathPointer, concat
+from kanltk.tokenize import TweetTokenizer
 
 
 class TwitterCorpusReader(CorpusReader):
@@ -31,7 +31,7 @@ class TwitterCorpusReader(CorpusReader):
     If you made your own tweet collection in a directory called
     `twitter-files`, then you can initialise the reader as::
 
-        from nltk.corpus import TwitterCorpusReader
+        from kanltk.corpus import TwitterCorpusReader
         reader = TwitterCorpusReader(root='/path/to/twitter-files', '.*\.json')
 
     However, the recommended approach is to set the relevant directory as the

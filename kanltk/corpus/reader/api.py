@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -15,8 +15,8 @@ import re
 from collections import defaultdict
 from itertools import chain
 
-from nltk.corpus.reader.util import *
-from nltk.data import FileSystemPathPointer, PathPointer, ZipFilePathPointer
+from kanltk.corpus.reader.util import *
+from kanltk.data import FileSystemPathPointer, PathPointer, ZipFilePathPointer
 
 
 class CorpusReader:

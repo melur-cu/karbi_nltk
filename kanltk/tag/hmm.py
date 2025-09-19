@@ -77,8 +77,8 @@ try:
 except ImportError:
     pass
 
-from nltk.metrics import accuracy
-from nltk.probability import (
+from kanltk.metrics import accuracy
+from kanltk.probability import (
     ConditionalFreqDist,
     ConditionalProbDist,
     DictionaryConditionalProbDist,
@@ -89,8 +89,8 @@ from nltk.probability import (
     MutableProbDist,
     RandomProbDist,
 )
-from nltk.tag.api import TaggerI
-from nltk.util import LazyMap, unique_list
+from kanltk.tag.api import TaggerI
+from kanltk.util import LazyMap, unique_list
 
 _TEXT = 0  # index of text in a tuple
 _TAG = 1  # index of tag in a tuple
@@ -1217,7 +1217,7 @@ def demo():
 
 
 def load_pos(num_sents):
-    from nltk.corpus import brown
+    from kanltk.corpus import brown
 
     sentences = brown.tagged_sents(categories="news")[:num_sents]
 

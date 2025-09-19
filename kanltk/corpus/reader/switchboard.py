@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 import re
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.tag import map_tag, str2tuple
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.tag import map_tag, str2tuple
 
 
 class SwitchboardTurn(list):

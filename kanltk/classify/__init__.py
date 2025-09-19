@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -54,7 +54,7 @@ Feature detectors are typically applied to each token before it is fed
 to the classifier:
 
     >>> # Classify each Gutenberg document.
-    >>> from nltk.corpus import gutenberg
+    >>> from kanltk.corpus import gutenberg
     >>> for fileid in gutenberg.fileids(): # doctest: +SKIP
     ...     doc = gutenberg.words(fileid) # doctest: +SKIP
     ...     print(fileid, classifier.classify(document_features(doc))) # doctest: +SKIP
@@ -82,20 +82,20 @@ examples, known as the "training set".  Training sets are represented
 as lists of ``(featuredict, label)`` tuples.
 """
 
-from nltk.classify.api import ClassifierI, MultiClassifierI
-from nltk.classify.decisiontree import DecisionTreeClassifier
-from nltk.classify.maxent import (
+from kanltk.classify.api import ClassifierI, MultiClassifierI
+from kanltk.classify.decisiontree import DecisionTreeClassifier
+from kanltk.classify.maxent import (
     BinaryMaxentFeatureEncoding,
     ConditionalExponentialClassifier,
     MaxentClassifier,
     TypedMaxentFeatureEncoding,
 )
-from nltk.classify.megam import call_megam, config_megam
-from nltk.classify.naivebayes import NaiveBayesClassifier
-from nltk.classify.positivenaivebayes import PositiveNaiveBayesClassifier
-from nltk.classify.rte_classify import RTEFeatureExtractor, rte_classifier, rte_features
-from nltk.classify.scikitlearn import SklearnClassifier
-from nltk.classify.senna import Senna
-from nltk.classify.textcat import TextCat
-from nltk.classify.util import accuracy, apply_features, log_likelihood
-from nltk.classify.weka import WekaClassifier, config_weka
+from kanltk.classify.megam import call_megam, config_megam
+from kanltk.classify.naivebayes import NaiveBayesClassifier
+from kanltk.classify.positivenaivebayes import PositiveNaiveBayesClassifier
+from kanltk.classify.rte_classify import RTEFeatureExtractor, rte_classifier, rte_features
+from kanltk.classify.scikitlearn import SklearnClassifier
+from kanltk.classify.senna import Senna
+from kanltk.classify.textcat import TextCat
+from kanltk.classify.util import accuracy, apply_features, log_likelihood
+from kanltk.classify.weka import WekaClassifier, config_weka

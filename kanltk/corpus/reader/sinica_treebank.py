@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -38,10 +38,10 @@ Chen Keh-Jiann and Yu-Ming Hsieh (2004) Chinese Treebanks and Grammar
 Extraction, Proceedings of IJCNLP-04, pp560-565.
 """
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.tag import map_tag
-from nltk.tree import sinica_parse
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.tag import map_tag
+from kanltk.tree import sinica_parse
 
 IDENTIFIER = re.compile(r"^#\S+\s")
 APPENDIX = re.compile(r"(?<=\))#.*$")

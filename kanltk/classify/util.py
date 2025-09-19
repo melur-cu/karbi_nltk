@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Steven Bird <stevenbird1@gmail.com> (minor additions)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -12,9 +12,9 @@ Utility functions and classes for classifiers.
 
 import math
 
-# from nltk.util import Deprecated
-import nltk.classify.util  # for accuracy & log_likelihood
-from nltk.util import LazyMap
+# from kanltk.util import Deprecated
+import kanltk.classify.util  # for accuracy & log_likelihood
+from kanltk.util import LazyMap
 
 ######################################################################
 # { Helper Functions
@@ -122,7 +122,7 @@ class CutoffChecker:
         if "max_iter" in cutoffs and self.iter >= cutoffs["max_iter"]:
             return True  # iteration cutoff.
 
-        new_ll = nltk.classify.util.log_likelihood(classifier, train_toks)
+        new_ll = kanltk.classify.util.log_likelihood(classifier, train_toks)
         if math.isnan(new_ll):
             return True
 
@@ -138,7 +138,7 @@ class CutoffChecker:
             self.ll = new_ll
 
         if "max_acc" in cutoffs or "min_accdelta" in cutoffs:
-            new_acc = nltk.classify.util.log_likelihood(classifier, train_toks)
+            new_acc = kanltk.classify.util.log_likelihood(classifier, train_toks)
             if "max_acc" in cutoffs and new_acc >= cutoffs["max_acc"]:
                 return True  # log likelihood cutoff
             if (
@@ -184,7 +184,7 @@ def binary_names_demo_features(name):
 def names_demo(trainer, features=names_demo_features):
     import random
 
-    from nltk.corpus import names
+    from kanltk.corpus import names
 
     # Construct a list of classified names, using the names corpus.
     namelist = [(name, "male") for name in names.words("male.txt")] + [
@@ -231,7 +231,7 @@ def names_demo(trainer, features=names_demo_features):
 def partial_names_demo(trainer, features=names_demo_features):
     import random
 
-    from nltk.corpus import names
+    from kanltk.corpus import names
 
     male_names = names.words("male.txt")
     female_names = names.words("female.txt")
@@ -290,7 +290,7 @@ _inst_cache = {}
 def wsd_demo(trainer, word, features, n=1000):
     import random
 
-    from nltk.corpus import senseval
+    from kanltk.corpus import senseval
 
     # Get the instances.
     print("Reading data...")
@@ -342,6 +342,6 @@ def check_megam_config():
     except NameError as e:
         err_msg = str(
             "Please configure your megam binary first, e.g.\n"
-            ">>> nltk.config_megam('/usr/bin/local/megam')"
+            ">>> kanltk.config_megam('/usr/bin/local/megam')"
         )
         raise NameError(err_msg) from e

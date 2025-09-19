@@ -27,7 +27,7 @@ algorithm, originally formulated by Jay Earley (1970).
 
 from time import perf_counter
 
-from nltk.parse.chart import (
+from kanltk.parse.chart import (
     BottomUpPredictCombineRule,
     BottomUpPredictRule,
     CachedTopDownPredictRule,
@@ -42,7 +42,7 @@ from nltk.parse.chart import (
     SingleEdgeFundamentalRule,
     TopDownInitRule,
 )
-from nltk.parse.featurechart import (
+from kanltk.parse.featurechart import (
     FeatureBottomUpPredictCombineRule,
     FeatureBottomUpPredictRule,
     FeatureChart,
@@ -514,7 +514,7 @@ def demo(
     import sys
     import time
 
-    from nltk.parse.chart import demo_grammar
+    from kanltk.parse.chart import demo_grammar
 
     # The grammar for ChartParser and SteppingChartParser:
     grammar = demo_grammar()

@@ -14,7 +14,7 @@ def string_span_tokenize(s, sep):
     Return the offsets of the tokens in *s*, as a sequence of ``(start, end)``
     tuples, by splitting the string at each occurrence of *sep*.
 
-        >>> from nltk.tokenize.util import string_span_tokenize
+        >>> from kanltk.tokenize.util import string_span_tokenize
         >>> s = '''Good muffins cost $3.88\nin New York.  Please buy me
         ... two of them.\n\nThanks.'''
         >>> list(string_span_tokenize(s, " ")) # doctest: +NORMALIZE_WHITESPACE
@@ -48,7 +48,7 @@ def regexp_span_tokenize(s, regexp):
     Return the offsets of the tokens in *s*, as a sequence of ``(start, end)``
     tuples, by splitting the string at each successive match of *regexp*.
 
-        >>> from nltk.tokenize.util import regexp_span_tokenize
+        >>> from kanltk.tokenize.util import regexp_span_tokenize
         >>> s = '''Good muffins cost $3.88\nin New York.  Please buy me
         ... two of them.\n\nThanks.'''
         >>> list(regexp_span_tokenize(s, r'\s')) # doctest: +NORMALIZE_WHITESPACE
@@ -74,8 +74,8 @@ def spans_to_relative(spans):
     r"""
     Return a sequence of relative spans, given a sequence of spans.
 
-        >>> from nltk.tokenize import WhitespaceTokenizer
-        >>> from nltk.tokenize.util import spans_to_relative
+        >>> from kanltk.tokenize import WhitespaceTokenizer
+        >>> from kanltk.tokenize.util import spans_to_relative
         >>> s = '''Good muffins cost $3.88\nin New York.  Please buy me
         ... two of them.\n\nThanks.'''
         >>> list(spans_to_relative(WhitespaceTokenizer().span_tokenize(s))) # doctest: +NORMALIZE_WHITESPACE
@@ -258,8 +258,8 @@ def align_tokens(tokens, sentence):
     This module attempt to find the offsets of the tokens in *s*, as a sequence
     of ``(start, end)`` tuples, given the tokens and also the source string.
 
-        >>> from nltk.tokenize import TreebankWordTokenizer
-        >>> from nltk.tokenize.util import align_tokens
+        >>> from kanltk.tokenize import TreebankWordTokenizer
+        >>> from kanltk.tokenize.util import align_tokens
         >>> s = str("The plane, bound for St Petersburg, crashed in Egypt's "
         ... "Sinai desert just 23 minutes after take-off from Sharm el-Sheikh "
         ... "on Saturday.")

@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 try:
@@ -10,7 +10,7 @@ try:
 except ImportError:
     pass
 
-from nltk.cluster.util import VectorSpaceClusterer
+from kanltk.cluster.util import VectorSpaceClusterer
 
 
 class EMClusterer(VectorSpaceClusterer):

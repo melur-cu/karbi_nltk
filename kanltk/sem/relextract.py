@@ -96,7 +96,7 @@ def _join(lst, sep=" ", untag=False):
     except TypeError:
         if untag:
             return sep.join(tup[0] for tup in lst)
-        from nltk.tag import tuple2str
+        from kanltk.tag import tuple2str
 
         return sep.join(tuple2str(tup) for tup in lst)
 
@@ -143,7 +143,7 @@ def tree2semi_rel(tree):
     :rtype: list of tuple
     """
 
-    from nltk.tree import Tree
+    from kanltk.tree import Tree
 
     semi_rels = []
     semi_rel = [[], None]
@@ -313,7 +313,7 @@ def in_demo(trace=0, sql=True):
     an in-memory database, and subsequently pulled out using an SQL "SELECT"
     query.
     """
-    from nltk.corpus import ieer
+    from kanltk.corpus import ieer
 
     if sql:
         try:
@@ -376,7 +376,7 @@ def in_demo(trace=0, sql=True):
 
 
 def roles_demo(trace=0):
-    from nltk.corpus import ieer
+    from kanltk.corpus import ieer
 
     roles = r"""
     (.*(                   # assorted roles
@@ -427,8 +427,8 @@ def roles_demo(trace=0):
 
 
 def ieer_headlines():
-    from nltk.corpus import ieer
-    from nltk.tree import Tree
+    from kanltk.corpus import ieer
+    from kanltk.tree import Tree
 
     print("IEER: First 20 Headlines")
     print("=" * 45)
@@ -454,7 +454,7 @@ def conllned(trace=1):
     from CoNLL 2002.
     """
 
-    from nltk.corpus import conll2002
+    from kanltk.corpus import conll2002
 
     vnv = """
     (
@@ -488,7 +488,7 @@ def conllned(trace=1):
 
 
 def conllesp():
-    from nltk.corpus import conll2002
+    from kanltk.corpus import conll2002
 
     de = """
     .*
@@ -521,7 +521,7 @@ def ne_chunked():
     )
     rels = []
     for i, sent in enumerate(nltk.corpus.treebank.tagged_sents()[:1500]):
-        sent = nltk.ne_chunk(sent)
+        sent = kanltk.ne_chunk(sent)
         rels = extract_rels("PER", "ORG", sent, corpus="ace", pattern=ROLE, window=7)
         for rel in rels:
             print(f"{i:<5}{rtuple(rel)}")
@@ -529,7 +529,7 @@ def ne_chunked():
 
 if __name__ == "__main__":
     import nltk
-    from nltk.sem import relextract
+    from kanltk.sem import relextract
 
     in_demo(trace=0)
     roles_demo(trace=0)

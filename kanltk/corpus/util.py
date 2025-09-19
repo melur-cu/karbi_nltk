@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 ######################################################################
@@ -35,13 +35,13 @@ class LazyCorpusLoader:
     If the corpus can not be found, then accessing this object will
     raise an exception, displaying installation instructions for the
     NLTK data package.  Once they've properly installed the data
-    package (or modified ``nltk.data.path`` to point to its location),
+    package (or modified ``kanltk.data.path`` to point to its location),
     they can then use the corpus object without restarting python.
 
     :param name: The name of the corpus
     :type name: str
     :param reader_cls: The specific CorpusReader class, e.g. PlaintextCorpusReader, WordListCorpusReader
-    :type reader: nltk.corpus.reader.api.CorpusReader
+    :type reader: kanltk.corpus.reader.api.CorpusReader
     :param nltk_data_subdir: The subdirectory where the corpus is stored.
     :type nltk_data_subdir: str
     :param `*args`: Any other non-keywords arguments that `reader_cls` might need.
@@ -49,7 +49,7 @@ class LazyCorpusLoader:
     """
 
     def __init__(self, name, reader_cls, *args, **kwargs):
-        from nltk.corpus.reader.api import CorpusReader
+        from kanltk.corpus.reader.api import CorpusReader
 
         assert issubclass(reader_cls, CorpusReader)
         self.__name = self.__name__ = name
@@ -70,18 +70,18 @@ class LazyCorpusLoader:
         zip_name = re.sub(r"(([^/]+)(/.*)?)", r"\2.zip/\1/", self.__name)
         if TRY_ZIPFILE_FIRST:
             try:
-                root = nltk.data.find(f"{self.subdir}/{zip_name}")
+                root = kanltk.data.find(f"{self.subdir}/{zip_name}")
             except LookupError as e:
                 try:
-                    root = nltk.data.find(f"{self.subdir}/{self.__name}")
+                    root = kanltk.data.find(f"{self.subdir}/{self.__name}")
                 except LookupError:
                     raise e
         else:
             try:
-                root = nltk.data.find(f"{self.subdir}/{self.__name}")
+                root = kanltk.data.find(f"{self.subdir}/{self.__name}")
             except LookupError as e:
                 try:
-                    root = nltk.data.find(f"{self.subdir}/{zip_name}")
+                    root = kanltk.data.find(f"{self.subdir}/{zip_name}")
                 except LookupError:
                     raise e
 

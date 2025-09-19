@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Graeme Gange <ggange@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 from abc import ABCMeta, abstractmethod
 from functools import total_ordering
 
-from nltk.internals import raise_unorderable_types
+from kanltk.internals import raise_unorderable_types
 
 
 @total_ordering

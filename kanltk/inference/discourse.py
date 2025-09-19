@@ -3,7 +3,7 @@
 # Author: Ewan Klein <ewan@inf.ed.ac.uk>
 #         Dan Garrette <dhgarrette@gmail.com>
 #
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 r"""
@@ -48,15 +48,15 @@ from abc import ABCMeta, abstractmethod
 from functools import reduce
 from operator import add, and_
 
-from nltk.data import show_cfg
-from nltk.inference.mace import MaceCommand
-from nltk.inference.prover9 import Prover9Command
-from nltk.parse import load_parser
-from nltk.parse.malt import MaltParser
-from nltk.sem.drt import AnaphoraResolutionException, resolve_anaphora
-from nltk.sem.glue import DrtGlue
-from nltk.sem.logic import Expression
-from nltk.tag import RegexpTagger
+from kanltk.data import show_cfg
+from kanltk.inference.mace import MaceCommand
+from kanltk.inference.prover9 import Prover9Command
+from kanltk.parse import load_parser
+from kanltk.parse.malt import MaltParser
+from kanltk.sem.drt import AnaphoraResolutionException, resolve_anaphora
+from kanltk.sem.glue import DrtGlue
+from kanltk.sem.logic import Expression
+from kanltk.tag import RegexpTagger
 
 
 class ReadingCommand(metaclass=ABCMeta):
@@ -113,7 +113,7 @@ class CfgReadingCommand(ReadingCommand):
 
     def parse_to_readings(self, sentence):
         """:see: ReadingCommand.parse_to_readings()"""
-        from nltk.sem import root_semrep
+        from kanltk.sem import root_semrep
 
         tokens = sentence.split()
         trees = self._parser.parse(tokens)
@@ -190,7 +190,7 @@ class DiscourseTester:
         self._threads = {}
         self._filtered_threads = {}
         if background is not None:
-            from nltk.sem.logic import Expression
+            from kanltk.sem.logic import Expression
 
             for e in background:
                 assert isinstance(e, Expression)
@@ -479,7 +479,7 @@ class DiscourseTester:
         :param background: Formulas which contain background information
         :type background: list(Expression)
         """
-        from nltk.sem.logic import Expression
+        from kanltk.sem.logic import Expression
 
         for count, e in enumerate(background):
             assert isinstance(e, Expression)
@@ -528,7 +528,7 @@ class DiscourseTester:
 
 def load_fol(s):
     """
-    Temporarily duplicated from ``nltk.sem.util``.
+    Temporarily duplicated from ``kanltk.sem.util``.
     Convert a  file of first order formulas into a list of ``Expression`` objects.
 
     :param s: the contents of the file
@@ -595,10 +595,10 @@ def discourse_demo(reading_command=None):
         reading_command,
     )
     dt.readings(filter=True)
-    import nltk.data
+    import kanltk.data
 
     background_file = os.path.join("grammars", "book_grammars", "background.fol")
-    background = nltk.data.load(background_file)
+    background = kanltk.data.load(background_file)
 
     print()
     dt.add_background(background, verbose=False)

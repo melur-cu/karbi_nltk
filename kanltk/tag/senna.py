@@ -16,20 +16,20 @@ The input is:
 
 Note: Unit tests for this module can be found in test/unit/test_senna.py
 
->>> from nltk.tag import SennaTagger
+>>> from kanltk.tag import SennaTagger
 >>> tagger = SennaTagger('/usr/share/senna-v3.0')  # doctest: +SKIP
 >>> tagger.tag('What is the airspeed of an unladen swallow ?'.split()) # doctest: +SKIP
 [('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'),
 ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'NN'), ('?', '.')]
 
->>> from nltk.tag import SennaChunkTagger
+>>> from kanltk.tag import SennaChunkTagger
 >>> chktagger = SennaChunkTagger('/usr/share/senna-v3.0')  # doctest: +SKIP
 >>> chktagger.tag('What is the airspeed of an unladen swallow ?'.split()) # doctest: +SKIP
 [('What', 'B-NP'), ('is', 'B-VP'), ('the', 'B-NP'), ('airspeed', 'I-NP'),
 ('of', 'B-PP'), ('an', 'B-NP'), ('unladen', 'I-NP'), ('swallow', 'I-NP'),
 ('?', 'O')]
 
->>> from nltk.tag import SennaNERTagger
+>>> from kanltk.tag import SennaNERTagger
 >>> nertagger = SennaNERTagger('/usr/share/senna-v3.0')  # doctest: +SKIP
 >>> nertagger.tag('Shakespeare theatre was in London .'.split()) # doctest: +SKIP
 [('Shakespeare', 'B-PER'), ('theatre', 'O'), ('was', 'O'), ('in', 'O'),
@@ -39,7 +39,7 @@ Note: Unit tests for this module can be found in test/unit/test_senna.py
 ('NY', 'B-LOC'), (',', 'O'), ('USA', 'B-LOC'), ('.', 'O')]
 """
 
-from nltk.classify import Senna
+from kanltk.classify import Senna
 
 
 class SennaTagger(Senna):
@@ -79,7 +79,7 @@ class SennaChunkTagger(Senna):
         """
         Extracts the chunks in a BIO chunk-tagged sentence.
 
-        >>> from nltk.tag import SennaChunkTagger
+        >>> from kanltk.tag import SennaChunkTagger
         >>> chktagger = SennaChunkTagger('/usr/share/senna-v3.0')  # doctest: +SKIP
         >>> sent = 'What is the airspeed of an unladen swallow ?'.split()
         >>> tagged_sent = chktagger.tag(sent)  # doctest: +SKIP

@@ -20,8 +20,8 @@ from collections import defaultdict
 from itertools import chain
 from pprint import pformat
 
-from nltk.internals import find_binary
-from nltk.tree import Tree
+from kanltk.internals import find_binary
+from kanltk.tree import Tree
 
 #################################################################
 # DependencyGraph Class
@@ -186,7 +186,7 @@ class DependencyGraph:
 
     def _repr_svg_(self):
         """Show SVG representation of the transducer (IPython magic).
-        >>> from nltk.test.setup_fixt import check_binary
+        >>> from kanltk.test.setup_fixt import check_binary
         >>> check_binary('dot')
         >>> dg = DependencyGraph(
         ...     'John N 2\\n'

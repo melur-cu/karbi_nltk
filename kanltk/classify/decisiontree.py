@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -13,8 +13,8 @@ on feature values, and leaves correspond to label assignments.
 
 from collections import defaultdict
 
-from nltk.classify.api import ClassifierI
-from nltk.probability import FreqDist, MLEProbDist, entropy
+from kanltk.classify.api import ClassifierI
+from kanltk.probability import FreqDist, MLEProbDist, entropy
 
 
 class DecisionTreeClassifier(ClassifierI):
@@ -336,7 +336,7 @@ def f(x):
 
 
 def demo():
-    from nltk.classify.util import binary_names_demo_features, names_demo
+    from kanltk.classify.util import binary_names_demo_features, names_demo
 
     classifier = names_demo(
         f, binary_names_demo_features  # DecisionTreeClassifier.train,

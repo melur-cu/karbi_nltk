@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -17,9 +17,9 @@ import time
 import zipfile
 from sys import stdin
 
-from nltk.classify.api import ClassifierI
-from nltk.internals import config_java, java
-from nltk.probability import DictionaryProbDist
+from kanltk.classify.api import ClassifierI
+from kanltk.internals import config_java, java
+from kanltk.probability import DictionaryProbDist
 
 _weka_classpath = None
 _weka_search = [
@@ -369,7 +369,7 @@ class ARFF_Formatter:
 
 
 if __name__ == "__main__":
-    from nltk.classify.util import binary_names_demo_features, names_demo
+    from kanltk.classify.util import binary_names_demo_features, names_demo
 
     def make_classifier(featuresets):
         return WekaClassifier.train("/tmp/name.model", featuresets, "C4.5")

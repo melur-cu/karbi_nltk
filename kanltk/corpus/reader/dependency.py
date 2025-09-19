@@ -4,13 +4,13 @@
 # Author: Kepa Sarasola <kepa.sarasola@ehu.es>
 #         Iker Manterola <returntothehangar@hotmail.com>
 #
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.parse import DependencyGraph
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.parse import DependencyGraph
+from kanltk.tokenize import *
 
 
 class DependencyCorpusReader(SyntaxCorpusReader):

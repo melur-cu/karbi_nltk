@@ -11,7 +11,7 @@
 import itertools
 import sys
 
-from nltk.grammar import Nonterminal
+from kanltk.grammar import Nonterminal
 
 
 def generate(grammar, start=None, depth=None, n=None):
@@ -75,7 +75,7 @@ demo_grammar = """
 
 
 def demo(N=23):
-    from nltk.grammar import CFG
+    from kanltk.grammar import CFG
 
     print("Generating the first %d sentences for demo grammar:" % (N,))
     print(demo_grammar)

@@ -45,16 +45,16 @@ References:
 
 from collections import Counter
 
-from nltk.tokenize.api import TokenizerI
+from kanltk.tokenize.api import TokenizerI
 
 
 class LegalitySyllableTokenizer(TokenizerI):
     """
     Syllabifies words based on the Legality Principle and Onset Maximization.
 
-        >>> from nltk.tokenize import LegalitySyllableTokenizer
+        >>> from kanltk.tokenize import LegalitySyllableTokenizer
         >>> from nltk import word_tokenize
-        >>> from nltk.corpus import words
+        >>> from kanltk.corpus import words
         >>> text = "This is a wonderful sentence."
         >>> text_words = word_tokenize(text)
         >>> LP = LegalitySyllableTokenizer(words.words())

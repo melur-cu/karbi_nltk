@@ -6,8 +6,8 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.internals import Counter
-from nltk.sem.logic import APP, LogicParser
+from kanltk.internals import Counter
+from kanltk.sem.logic import APP, LogicParser
 
 _counter = Counter()
 

@@ -11,8 +11,8 @@ import re
 import warnings
 from typing import Iterator, List, Tuple
 
-from nltk.tokenize.api import TokenizerI
-from nltk.tokenize.util import align_tokens
+from kanltk.tokenize.api import TokenizerI
+from kanltk.tokenize.util import align_tokens
 
 
 class MacIntyreContractions:
@@ -69,7 +69,7 @@ class NLTKWordTokenizer(TokenizerI):
 
     # For improvements for starting/closing quotes from TreebankWordTokenizer,
     # see discussion on https://github.com/nltk/nltk/pull/1437
-    # Adding to TreebankWordTokenizer, nltk.word_tokenize now splits on
+    # Adding to TreebankWordTokenizer, kanltk.word_tokenize now splits on
     # - chevron quotes u'\xab' and u'\xbb'
     # - unicode quotes u'\u2018', u'\u2019', u'\u201c' and u'\u201d'
     # See https://github.com/nltk/nltk/issues/1995#issuecomment-376741608
@@ -123,7 +123,7 @@ class NLTKWordTokenizer(TokenizerI):
     ) -> List[str]:
         r"""Return a tokenized copy of `text`.
 
-        >>> from nltk.tokenize import NLTKWordTokenizer
+        >>> from kanltk.tokenize import NLTKWordTokenizer
         >>> s = '''Good muffins cost $3.88 (roughly 3,36 euros)\nin New York.  Please buy me\ntwo of them.\nThanks.'''
         >>> NLTKWordTokenizer().tokenize(s) # doctest: +NORMALIZE_WHITESPACE
         ['Good', 'muffins', 'cost', '$', '3.88', '(', 'roughly', '3,36',
@@ -193,9 +193,9 @@ class NLTKWordTokenizer(TokenizerI):
     def span_tokenize(self, text: str) -> Iterator[Tuple[int, int]]:
         r"""
         Returns the spans of the tokens in ``text``.
-        Uses the post-hoc nltk.tokens.align_tokens to return the offset spans.
+        Uses the post-hoc kanltk.tokens.align_tokens to return the offset spans.
 
-            >>> from nltk.tokenize import NLTKWordTokenizer
+            >>> from kanltk.tokenize import NLTKWordTokenizer
             >>> s = '''Good muffins cost $3.88\nin New (York).  Please (buy) me\ntwo of them.\n(Thanks).'''
             >>> expected = [(0, 4), (5, 12), (13, 17), (18, 19), (19, 23),
             ... (24, 26), (27, 30), (31, 32), (32, 36), (36, 37), (37, 38),

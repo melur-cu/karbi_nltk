@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -60,7 +60,7 @@ def dispersion_plot(text, words, ignore_case=False, title="Lexical Dispersion Pl
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
-    from nltk.corpus import gutenberg
+    from kanltk.corpus import gutenberg
 
     words = ["Elinor", "Marianne", "Edward", "Willoughby"]
     dispersion_plot(gutenberg.words("austen-sense.txt"), words)

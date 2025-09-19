@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -45,9 +45,9 @@ Y       yield   Y IY L D       Z       zee     Z IY
 ZH      seizure S IY ZH ER
 """
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.util import Index
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.util import Index
 
 
 class CMUDictCorpusReader(CorpusReader):

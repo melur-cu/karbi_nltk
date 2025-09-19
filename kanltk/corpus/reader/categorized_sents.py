@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Pierpaolo Pantone <24alsecondo@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -35,8 +35,8 @@ Related papers:
     ACL, 2005.
 """
 
-from nltk.corpus.reader.api import *
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.tokenize import *
 
 
 class CategorizedSentencesCorpusReader(CategorizedCorpusReader, CorpusReader):
@@ -50,7 +50,7 @@ class CategorizedSentencesCorpusReader(CategorizedCorpusReader, CorpusReader):
 
     Examples using the Subjectivity Dataset:
 
-    >>> from nltk.corpus import subjectivity
+    >>> from kanltk.corpus import subjectivity
     >>> subjectivity.sents()[23] # doctest: +NORMALIZE_WHITESPACE
     ['television', 'made', 'him', 'famous', ',', 'but', 'his', 'biggest', 'hits',
     'happened', 'off', 'screen', '.']
@@ -61,7 +61,7 @@ class CategorizedSentencesCorpusReader(CategorizedCorpusReader, CorpusReader):
 
     Examples using the Sentence Polarity Dataset:
 
-    >>> from nltk.corpus import sentence_polarity
+    >>> from kanltk.corpus import sentence_polarity
     >>> sentence_polarity.sents() # doctest: +NORMALIZE_WHITESPACE
     [['simplistic', ',', 'silly', 'and', 'tedious', '.'], ["it's", 'so', 'laddish',
     'and', 'juvenile', ',', 'only', 'teenage', 'boys', 'could', 'possibly', 'find',

@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import bisect
@@ -14,15 +14,15 @@ import tempfile
 from functools import reduce
 from xml.etree import ElementTree
 
-from nltk.data import (
+from kanltk.data import (
     FileSystemPathPointer,
     PathPointer,
     SeekableUnicodeStreamReader,
     ZipFilePathPointer,
 )
-from nltk.internals import slice_bounds
-from nltk.tokenize import wordpunct_tokenize
-from nltk.util import AbstractLazySequence, LazyConcatenation, LazySubsequence
+from kanltk.internals import slice_bounds
+from kanltk.tokenize import wordpunct_tokenize
+from kanltk.util import AbstractLazySequence, LazyConcatenation, LazySubsequence
 
 ######################################################################
 # { Corpus View

@@ -13,7 +13,7 @@ import json
 import re
 from textwrap import wrap
 
-from nltk.data import find
+from kanltk.data import find
 
 
 def brown_tagset(tagpattern=None):

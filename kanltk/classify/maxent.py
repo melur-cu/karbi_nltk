@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Dmitry Chichkov <dchichkov@gmail.com> (TypedMaxentFeatureEncoding)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -29,7 +29,7 @@ concepts:
   - An "input-feature" is a property of an unlabeled token.
   - A "joint-feature" is a property of a labeled token.
 
-In the rest of the ``nltk.classify`` module, the term "features" is
+In the rest of the ``kanltk.classify`` module, the term "features" is
 used to refer to what we will call "input-features" in this module.
 
 In literature that describes and discusses maximum entropy models,
@@ -60,13 +60,13 @@ import os
 import tempfile
 from collections import defaultdict
 
-from nltk.classify.api import ClassifierI
-from nltk.classify.megam import call_megam, parse_megam_weights, write_megam_file
-from nltk.classify.tadm import call_tadm, parse_tadm_weights, write_tadm_file
-from nltk.classify.util import CutoffChecker, accuracy, log_likelihood
-from nltk.data import gzip_open_unicode
-from nltk.probability import DictionaryProbDist
-from nltk.util import OrderedDict
+from kanltk.classify.api import ClassifierI
+from kanltk.classify.megam import call_megam, parse_megam_weights, write_megam_file
+from kanltk.classify.tadm import call_tadm, parse_tadm_weights, write_tadm_file
+from kanltk.classify.util import CutoffChecker, accuracy, log_likelihood
+from kanltk.data import gzip_open_unicode
+from kanltk.probability import DictionaryProbDist
+from kanltk.util import OrderedDict
 
 __docformat__ = "epytext en"
 
@@ -1417,7 +1417,7 @@ def train_maxent_classifier_with_megam(
     consistent with ``train_toks``.
 
     :see: ``train_maxent_classifier()`` for parameter descriptions.
-    :see: ``nltk.classify.megam``
+    :see: ``kanltk.classify.megam``
     """
 
     explicit = True
@@ -1564,7 +1564,7 @@ class TadmMaxentClassifier(MaxentClassifier):
 def load_maxent_params(tab_dir):
     import numpy
 
-    from nltk.tabdata import MaxentDecoder
+    from kanltk.tabdata import MaxentDecoder
 
     mdec = MaxentDecoder()
 
@@ -1588,7 +1588,7 @@ def save_maxent_params(wgt, mpg, lab, aon, tab_dir="/tmp"):
     from os import mkdir
     from os.path import isdir
 
-    from nltk.tabdata import MaxentEncoder
+    from kanltk.tabdata import MaxentEncoder
 
     menc = MaxentEncoder()
     if not isdir(tab_dir):
@@ -1607,8 +1607,8 @@ def save_maxent_params(wgt, mpg, lab, aon, tab_dir="/tmp"):
 
 
 def maxent_pos_tagger():
-    from nltk.data import find
-    from nltk.tag.sequential import ClassifierBasedPOSTagger
+    from kanltk.data import find
+    from kanltk.tag.sequential import ClassifierBasedPOSTagger
 
     tab_dir = find("taggers/maxent_treebank_pos_tagger_tab/english")
     wgt, mpg, lab, aon = load_maxent_params(tab_dir)
@@ -1622,7 +1622,7 @@ def maxent_pos_tagger():
 # { Demo
 ######################################################################
 def demo():
-    from nltk.classify.util import names_demo
+    from kanltk.classify.util import names_demo
 
     classifier = names_demo(MaxentClassifier.train)
 

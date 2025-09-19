@@ -14,7 +14,7 @@ A ``RegexpTokenizer`` splits a string into substrings using a regular expression
 For example, the following tokenizer forms tokens out of alphabetic sequences,
 money expressions, and any other non-whitespace sequences:
 
-    >>> from nltk.tokenize import RegexpTokenizer
+    >>> from kanltk.tokenize import RegexpTokenizer
     >>> s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
     >>> tokenizer = RegexpTokenizer(r'\w+|\$[\d\.]+|\S+')
     >>> tokenizer.tokenize(s) # doctest: +NORMALIZE_WHITESPACE
@@ -41,7 +41,7 @@ the following tokenizer selects just the capitalized words:
 This module contains several subclasses of ``RegexpTokenizer``
 that use pre-defined regular expressions.
 
-    >>> from nltk.tokenize import BlanklineTokenizer
+    >>> from kanltk.tokenize import BlanklineTokenizer
     >>> # Uses '\s*\n\s*\n\s*':
     >>> BlanklineTokenizer().tokenize(s) # doctest: +NORMALIZE_WHITESPACE
     ['Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.',
@@ -49,7 +49,7 @@ that use pre-defined regular expressions.
 
 All of the regular expression tokenizers are also available as functions:
 
-    >>> from nltk.tokenize import regexp_tokenize, wordpunct_tokenize, blankline_tokenize
+    >>> from kanltk.tokenize import regexp_tokenize, wordpunct_tokenize, blankline_tokenize
     >>> regexp_tokenize(s, pattern=r'\w+|\$[\d\.]+|\S+') # doctest: +NORMALIZE_WHITESPACE
     ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York', '.',
     'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
@@ -68,8 +68,8 @@ argument.  This differs from the conventions used by Python's
 
 import re
 
-from nltk.tokenize.api import TokenizerI
-from nltk.tokenize.util import regexp_span_tokenize
+from kanltk.tokenize.api import TokenizerI
+from kanltk.tokenize.util import regexp_span_tokenize
 
 
 class RegexpTokenizer(TokenizerI):
@@ -158,7 +158,7 @@ class WhitespaceTokenizer(RegexpTokenizer):
     Tokenize a string on whitespace (space, tab, newline).
     In general, users should use the string ``split()`` method instead.
 
-        >>> from nltk.tokenize import WhitespaceTokenizer
+        >>> from kanltk.tokenize import WhitespaceTokenizer
         >>> s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
         >>> WhitespaceTokenizer().tokenize(s) # doctest: +NORMALIZE_WHITESPACE
         ['Good', 'muffins', 'cost', '$3.88', 'in', 'New', 'York.',
@@ -185,7 +185,7 @@ class WordPunctTokenizer(RegexpTokenizer):
     Tokenize a text into a sequence of alphabetic and
     non-alphabetic characters, using the regexp ``\w+|[^\w\s]+``.
 
-        >>> from nltk.tokenize import WordPunctTokenizer
+        >>> from kanltk.tokenize import WordPunctTokenizer
         >>> s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\n\nThanks."
         >>> WordPunctTokenizer().tokenize(s) # doctest: +NORMALIZE_WHITESPACE
         ['Good', 'muffins', 'cost', '$', '3', '.', '88', 'in', 'New', 'York',

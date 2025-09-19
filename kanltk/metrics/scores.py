@@ -16,7 +16,7 @@ try:
 except ImportError:
     betai = None
 
-from nltk.util import LazyConcatenation, LazyMap
+from kanltk.util import LazyConcatenation, LazyMap
 
 
 def accuracy(reference, test):

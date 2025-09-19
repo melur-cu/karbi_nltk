@@ -11,16 +11,16 @@ import tempfile
 import warnings
 from subprocess import PIPE
 
-from nltk.internals import (
+from kanltk.internals import (
     _java_options,
     config_java,
     find_jar_iter,
     find_jars_within_path,
     java,
 )
-from nltk.parse.api import ParserI
-from nltk.parse.dependencygraph import DependencyGraph
-from nltk.tree import Tree
+from kanltk.parse.api import ParserI
+from kanltk.parse.dependencygraph import DependencyGraph
+from kanltk.tree import Tree
 
 _stanford_url = "https://nlp.stanford.edu/software/lex-parser.shtml"
 
@@ -404,7 +404,7 @@ class StanfordDependencyParser(GenericStanfordParser):
 
 class StanfordNeuralDependencyParser(GenericStanfordParser):
     """
-    >>> from nltk.parse.stanford import StanfordNeuralDependencyParser # doctest: +SKIP
+    >>> from kanltk.parse.stanford import StanfordNeuralDependencyParser # doctest: +SKIP
     >>> dep_parser=StanfordNeuralDependencyParser(java_options='-mx4g')# doctest: +SKIP
 
     >>> [parse.tree() for parse in dep_parser.raw_parse("The quick brown fox jumps over the lazy dog.")] # doctest: +NORMALIZE_WHITESPACE +SKIP

@@ -12,8 +12,8 @@ Interpolation.
 """
 from operator import methodcaller
 
-from nltk.lm.api import Smoothing
-from nltk.probability import ConditionalFreqDist
+from kanltk.lm.api import Smoothing
+from kanltk.probability import ConditionalFreqDist
 
 
 def _count_values_gt_zero(distribution):

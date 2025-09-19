@@ -15,7 +15,7 @@ a first-order model.
 
 import codecs
 
-from nltk.sem import evaluate
+from kanltk.sem import evaluate
 
 ##############################################################
 ## Utility functions for connecting parse output to semantics
@@ -29,13 +29,13 @@ def parse_sents(inputs, grammar, trace=0):
     :param inputs: sentences to be parsed
     :type inputs: list(str)
     :param grammar: ``FeatureGrammar`` or name of feature-based grammar
-    :type grammar: nltk.grammar.FeatureGrammar
+    :type grammar: kanltk.grammar.FeatureGrammar
     :rtype: list(nltk.tree.Tree) or dict(list(str)): list(Tree)
     :return: a mapping from input sentences to a list of ``Tree`` instances.
     """
     # put imports here to avoid circult dependencies
-    from nltk.grammar import FeatureGrammar
-    from nltk.parse import FeatureChartParser, load_parser
+    from kanltk.grammar import FeatureGrammar
+    from kanltk.parse import FeatureChartParser, load_parser
 
     if isinstance(grammar, FeatureGrammar):
         cp = FeatureChartParser(grammar)
@@ -58,7 +58,7 @@ def root_semrep(syntree, semkey="SEM"):
     :return: the semantic representation at the root of a ``Tree``
     :rtype: sem.Expression
     """
-    from nltk.grammar import FeatStructNonterminal
+    from kanltk.grammar import FeatStructNonterminal
 
     node = syntree.label()
     assert isinstance(node, FeatStructNonterminal)
@@ -78,9 +78,9 @@ def interpret_sents(inputs, grammar, semkey="SEM", trace=0):
     :param inputs: a list of sentences
     :type inputs: list(str)
     :param grammar: ``FeatureGrammar`` or name of feature-based grammar
-    :type grammar: nltk.grammar.FeatureGrammar
+    :type grammar: kanltk.grammar.FeatureGrammar
     :return: a mapping from sentences to lists of pairs (parse-tree, semantic-representations)
-    :rtype: list(list(tuple(nltk.tree.Tree, nltk.sem.logic.ConstantExpression)))
+    :rtype: list(list(tuple(nltk.tree.Tree, kanltk.sem.logic.ConstantExpression)))
     """
     return [
         [(syn, root_semrep(syn, semkey)) for syn in syntrees]
@@ -96,9 +96,9 @@ def evaluate_sents(inputs, grammar, model, assignment, trace=0):
     :param inputs: a list of sentences
     :type inputs: list(str)
     :param grammar: ``FeatureGrammar`` or name of feature-based grammar
-    :type grammar: nltk.grammar.FeatureGrammar
+    :type grammar: kanltk.grammar.FeatureGrammar
     :return: a mapping from sentences to lists of triples (parse-tree, semantic-representations, evaluation-in-model)
-    :rtype: list(list(tuple(nltk.tree.Tree, nltk.sem.logic.ConstantExpression, bool or dict(str): bool)))
+    :rtype: list(list(tuple(nltk.tree.Tree, kanltk.sem.logic.ConstantExpression, bool or dict(str): bool)))
     """
     return [
         [
@@ -160,7 +160,7 @@ def demo_legacy_grammar():
     Define 'test.fcfg' to be the following
 
     """
-    from nltk.grammar import FeatureGrammar
+    from kanltk.grammar import FeatureGrammar
 
     g = FeatureGrammar.fromstring(
         """

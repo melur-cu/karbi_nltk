@@ -43,9 +43,9 @@ three sub-modules for specialized kinds of parsing:
     associates a probability with each parse.
 """
 
-from nltk.parse.api import ParserI
-from nltk.parse.bllip import BllipParser
-from nltk.parse.chart import (
+from kanltk.parse.api import ParserI
+from kanltk.parse.bllip import BllipParser
+from kanltk.parse.chart import (
     BottomUpChartParser,
     BottomUpLeftCornerChartParser,
     ChartParser,
@@ -53,9 +53,9 @@ from nltk.parse.chart import (
     SteppingChartParser,
     TopDownChartParser,
 )
-from nltk.parse.corenlp import CoreNLPDependencyParser, CoreNLPParser
-from nltk.parse.dependencygraph import DependencyGraph
-from nltk.parse.earleychart import (
+from kanltk.parse.corenlp import CoreNLPDependencyParser, CoreNLPParser
+from kanltk.parse.dependencygraph import DependencyGraph
+from kanltk.parse.earleychart import (
     EarleyChartParser,
     FeatureEarleyChartParser,
     FeatureIncrementalBottomUpChartParser,
@@ -68,35 +68,35 @@ from nltk.parse.earleychart import (
     IncrementalLeftCornerChartParser,
     IncrementalTopDownChartParser,
 )
-from nltk.parse.evaluate import DependencyEvaluator
-from nltk.parse.featurechart import (
+from kanltk.parse.evaluate import DependencyEvaluator
+from kanltk.parse.featurechart import (
     FeatureBottomUpChartParser,
     FeatureBottomUpLeftCornerChartParser,
     FeatureChartParser,
     FeatureTopDownChartParser,
 )
-from nltk.parse.malt import MaltParser
-from nltk.parse.nonprojectivedependencyparser import (
+from kanltk.parse.malt import MaltParser
+from kanltk.parse.nonprojectivedependencyparser import (
     NaiveBayesDependencyScorer,
     NonprojectiveDependencyParser,
     ProbabilisticNonprojectiveParser,
 )
-from nltk.parse.pchart import (
+from kanltk.parse.pchart import (
     BottomUpProbabilisticChartParser,
     InsideChartParser,
     LongestChartParser,
     RandomChartParser,
     UnsortedChartParser,
 )
-from nltk.parse.projectivedependencyparser import (
+from kanltk.parse.projectivedependencyparser import (
     ProbabilisticProjectiveDependencyParser,
     ProjectiveDependencyParser,
 )
-from nltk.parse.recursivedescent import (
+from kanltk.parse.recursivedescent import (
     RecursiveDescentParser,
     SteppingRecursiveDescentParser,
 )
-from nltk.parse.shiftreduce import ShiftReduceParser, SteppingShiftReduceParser
-from nltk.parse.transitionparser import TransitionParser
-from nltk.parse.util import TestGrammar, extract_test_sentences, load_parser
-from nltk.parse.viterbi import ViterbiParser
+from kanltk.parse.shiftreduce import ShiftReduceParser, SteppingShiftReduceParser
+from kanltk.parse.transitionparser import TransitionParser
+from kanltk.parse.util import TestGrammar, extract_test_sentences, load_parser
+from kanltk.parse.viterbi import ViterbiParser

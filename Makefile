@@ -44,11 +44,11 @@ dist: clean_code
 ########################################################################
 
 clean: clean_code
-	rm -rf build web/_build iso dist api MANIFEST nltk-$(VERSION) nltk.egg-info
+	rm -rf build web/_build iso dist api MANIFEST kanltk-$(VERSION) kanltk.egg-info
 
 clean_code:
-	rm -f `find nltk -name '*.pyc'`
-	rm -f `find nltk -name '*.pyo'`
+	rm -f `find kanltk -name '*.pyc'`
+	rm -f `find kanltk -name '*.pyo'`
 	rm -f `find . -name '*~'`
 	rm -rf `find . -name '__pycache__'`
 	rm -f MANIFEST # regenerate manifest from MANIFEST.in

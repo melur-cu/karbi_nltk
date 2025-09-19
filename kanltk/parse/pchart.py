@@ -40,10 +40,10 @@ argument beam_size.  If non-zero, this controls the size of the beam
 import random
 from functools import reduce
 
-from nltk.grammar import PCFG, Nonterminal
-from nltk.parse.api import ParserI
-from nltk.parse.chart import AbstractChartRule, Chart, LeafEdge, TreeEdge
-from nltk.tree import ProbabilisticTree, Tree
+from kanltk.grammar import PCFG, Nonterminal
+from kanltk.parse.api import ParserI
+from kanltk.parse.chart import AbstractChartRule, Chart, LeafEdge, TreeEdge
+from kanltk.tree import ProbabilisticTree, Tree
 
 
 # Probabilistic edges
@@ -438,7 +438,7 @@ def demo(choice=None, draw_parses=None, print_parses=None):
     import time
 
     from nltk import tokenize
-    from nltk.parse import pchart
+    from kanltk.parse import pchart
 
     # Define two demos.  Each demo has a sentence and a grammar.
     toy_pcfg1 = PCFG.fromstring(
@@ -560,7 +560,7 @@ def demo(choice=None, draw_parses=None, print_parses=None):
         print("Draw parses (y/n)? ", end=" ")
         draw_parses = sys.stdin.readline().strip().lower().startswith("y")
     if draw_parses:
-        from nltk.draw.tree import draw_trees
+        from kanltk.draw.tree import draw_trees
 
         print("  please wait...")
         draw_trees(*parses)

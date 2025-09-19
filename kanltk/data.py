@@ -51,8 +51,8 @@ try:
 except ImportError:
     from zlib import Z_FINISH as FLUSH
 
-from nltk import grammar, sem
-from nltk.internals import deprecated
+from kanltk import grammar, sem
+from kanltk.internals import deprecated
 
 textwrap_indent = functools.partial(textwrap.indent, prefix="  ")
 
@@ -504,7 +504,7 @@ def find(resource_name, paths=None):
     resource_name = normalize_resource_name(resource_name, True)
 
     # Resolve default paths at runtime in-case the user overrides
-    # nltk.data.path
+    # kanltk.data.path
     if paths is None:
         paths = path
 
@@ -562,7 +562,7 @@ def find(resource_name, paths=None):
         "Please use the NLTK Downloader to obtain the resource:\n\n"
         "\33[31m"  # To display red text in terminal.
         ">>> import nltk\n"
-        ">>> nltk.download('{resource}')\n"
+        ">>> kanltk.download('{resource}')\n"
         "\033[0m"
     ).format(resource=resource_zipname)
     msg = textwrap_indent(msg)
@@ -632,7 +632,7 @@ FORMATS = {
     "logic": "A list of first order logic expressions, parsed with "
     "nltk.sem.logic.LogicParser.  Requires an additional logic_parser "
     "parameter",
-    "val": "A semantic valuation, parsed by nltk.sem.Valuation.fromstring.",
+    "val": "A semantic valuation, parsed by kanltk.sem.Valuation.fromstring.",
     "raw": "The raw (byte string) contents of a file.",
     "text": "The raw (unicode string) contents of a file. ",
 }
@@ -659,7 +659,7 @@ def restricted_pickle_load(string):
     """
     Prevents any class or function from loading.
     """
-    from nltk.app.wordnet_app import RestrictedUnpickler
+    from kanltk.app.wordnet_app import RestrictedUnpickler
 
     return RestrictedUnpickler(BytesIO(string)).load()
 
@@ -669,11 +669,11 @@ def switch_punkt(lang="english"):
     Return a pickle-free Punkt tokenizer instead of loading a pickle.
 
     >>> import nltk
-    >>> tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+    >>> tokenizer = kanltk.data.load('tokenizers/punkt/english.pickle')
     >>> print(tokenizer.tokenize("Hello! How are you?"))
     ['Hello!', 'How are you?']
     """
-    from nltk.tokenize import PunktTokenizer as tok
+    from kanltk.tokenize import PunktTokenizer as tok
 
     return tok(lang)
 
@@ -683,14 +683,14 @@ def switch_chunker(fmt="multiclass"):
     Return a pickle-free Named Entity Chunker instead of loading a pickle.
 
     >>> import nltk
-    >>> from nltk.corpus import treebank
+    >>> from kanltk.corpus import treebank
     >>> from pprint import pprint
-    >>> chunker = nltk.data.load('chunkers/maxent_ne_chunker/PY3/english_ace_multiclass.pickle')
+    >>> chunker = kanltk.data.load('chunkers/maxent_ne_chunker/PY3/english_ace_multiclass.pickle')
     >>> pprint(chunker.parse(treebank.tagged_sents()[2][8:14])) # doctest: +NORMALIZE_WHITESPACE
     Tree('S', [('chairman', 'NN'), ('of', 'IN'), Tree('ORGANIZATION', [('Consolidated', 'NNP'), ('Gold', 'NNP'), ('Fields', 'NNP')]), ('PLC', 'NNP')])
 
     """
-    from nltk.chunk import ne_chunker
+    from kanltk.chunk import ne_chunker
 
     return ne_chunker(fmt)
 
@@ -700,13 +700,13 @@ def switch_t_tagger():
     Return a pickle-free Treebank Pos Tagger instead of loading a pickle.
 
     >>> import nltk
-    >>> from nltk.tokenize import word_tokenize
-    >>> tagger = nltk.data.load('taggers/maxent_treebank_pos_tagger/PY3/english.pickle')
+    >>> from kanltk.tokenize import word_tokenize
+    >>> tagger = kanltk.data.load('taggers/maxent_treebank_pos_tagger/PY3/english.pickle')
     >>> print(tagger.tag(word_tokenize("Hello, how are you?")))
     [('Hello', 'NNP'), (',', ','), ('how', 'WRB'), ('are', 'VBP'), ('you', 'PRP'), ('?', '.')]
 
     """
-    from nltk.classify.maxent import maxent_pos_tagger
+    from kanltk.classify.maxent import maxent_pos_tagger
 
     return maxent_pos_tagger()
 
@@ -716,13 +716,13 @@ def switch_p_tagger(lang):
     Return a pickle-free Averaged Perceptron Tagger instead of loading a pickle.
 
     >>> import nltk
-    >>> from nltk.tokenize import word_tokenize
-    >>> tagger = nltk.data.load('taggers/averaged_perceptron_tagger/averaged_perceptron_tagger.pickle')
+    >>> from kanltk.tokenize import word_tokenize
+    >>> tagger = kanltk.data.load('taggers/averaged_perceptron_tagger/averaged_perceptron_tagger.pickle')
     >>> print(tagger.tag(word_tokenize("Hello, how are you?")))
     [('Hello', 'NNP'), (',', ','), ('how', 'WRB'), ('are', 'VBP'), ('you', 'PRP'), ('?', '.')]
 
     """
-    from nltk.tag import _get_tagger
+    from kanltk.tag import _get_tagger
 
     if lang == "ru":
         lang = "rus"
@@ -842,7 +842,7 @@ def load(
     elif format == "json":
         import json
 
-        from nltk.jsontags import json_tags
+        from kanltk.jsontags import json_tags
 
         resource_val = json.load(opened_resource)
         tag = None
@@ -892,7 +892,7 @@ def load(
         else:
             raise AssertionError(
                 "Internal NLTK error: Format %s isn't "
-                "handled by nltk.data.load()" % (format,)
+                "handled by kanltk.data.load()" % (format,)
             )
 
     opened_resource.close()

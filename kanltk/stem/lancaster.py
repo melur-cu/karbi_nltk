@@ -11,14 +11,14 @@ Paice, Chris D. "Another Stemmer." ACM SIGIR Forum 24.3 (1990): 56-61.
 """
 import re
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class LancasterStemmer(StemmerI):
     """
     Lancaster Stemmer
 
-        >>> from nltk.stem.lancaster import LancasterStemmer
+        >>> from kanltk.stem.lancaster import LancasterStemmer
         >>> st = LancasterStemmer()
         >>> st.stem('maximum')     # Remove "-um" when word is intact
         'maxim'

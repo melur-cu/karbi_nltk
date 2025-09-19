@@ -18,7 +18,7 @@ class WordNetLemmatizer:
     It returns the shortest lemma found in WordNet,
     or the input string unchanged if nothing is found.
 
-    >>> from nltk.stem import WordNetLemmatizer as wnl
+    >>> from kanltk.stem import WordNetLemmatizer as wnl
     >>> print(wnl().lemmatize('us', 'n'))
     u
 
@@ -32,11 +32,11 @@ class WordNetLemmatizer:
         _morphy() is WordNet's _morphy lemmatizer.
         It returns a list of all lemmas found in WordNet.
 
-        >>> from nltk.stem import WordNetLemmatizer as wnl
+        >>> from kanltk.stem import WordNetLemmatizer as wnl
         >>> print(wnl()._morphy('us', 'n'))
         ['us', 'u']
         """
-        from nltk.corpus import wordnet as wn
+        from kanltk.corpus import wordnet as wn
 
         return wn._morphy(form, pos, check_exceptions)
 
@@ -46,14 +46,14 @@ class WordNetLemmatizer:
         It returns the first lemma found in WordNet,
         or None if no lemma is found.
 
-        >>> from nltk.stem import WordNetLemmatizer as wnl
+        >>> from kanltk.stem import WordNetLemmatizer as wnl
         >>> print(wnl().morphy('us', 'n'))
         us
 
         >>> print(wnl().morphy('catss'))
         None
         """
-        from nltk.corpus import wordnet as wn
+        from kanltk.corpus import wordnet as wn
 
         return wn.morphy(form, pos, check_exceptions)
 
@@ -62,7 +62,7 @@ class WordNetLemmatizer:
         using the wordnet corpus reader's built-in _morphy function.
         Returns the input word unchanged if it cannot be found in WordNet.
 
-        >>> from nltk.stem import WordNetLemmatizer as wnl
+        >>> from kanltk.stem import WordNetLemmatizer as wnl
         >>> print(wnl().lemmatize('dogs'))
         dog
         >>> print(wnl().lemmatize('churches'))

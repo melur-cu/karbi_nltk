@@ -3,16 +3,16 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Authors: Paul Bedaride <paul.bedaride@gmail.com>
 #          Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 from functools import total_ordering
 from xml.etree import ElementTree
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.internals import raise_unorderable_types
-from nltk.tree import Tree
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.internals import raise_unorderable_types
+from kanltk.tree import Tree
 
 
 class NombankCorpusReader(CorpusReader):

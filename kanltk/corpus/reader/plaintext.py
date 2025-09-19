@@ -4,17 +4,17 @@
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
 #         Nitin Madnani <nmadnani@umiacs.umd.edu>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
 A reader for corpora that consist of plaintext documents.
 """
 
-import nltk.data
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.tokenize import *
+import kanltk.data
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.tokenize import *
 
 
 class PlaintextCorpusReader(CorpusReader):
@@ -168,7 +168,7 @@ class PortugueseCategorizedPlaintextCorpusReader(CategorizedPlaintextCorpusReade
     This class is identical with CategorizedPlaintextCorpusReader,
     except that it initializes a Portuguese PunktTokenizer:
 
-    >>> from nltk.corpus import machado
+    >>> from kanltk.corpus import machado
     >>> print(machado._sent_tokenizer._lang)
     portuguese
 

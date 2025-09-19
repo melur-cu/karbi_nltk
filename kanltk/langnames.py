@@ -22,7 +22,7 @@ and falls back to the retired code otherwise. As specified by BCP-47,
 it returns the shortest (2-letter) code by default, but 3-letter codes
 are also available:
 
-    >>> import nltk.langnames as lgn
+    >>> import kanltk.langnames as lgn
     >>> lgn.langname('fri')          #'fri' is a retired code
     'Western Frisian'
 
@@ -38,7 +38,7 @@ are also available:
 import re
 from warnings import warn
 
-from nltk.corpus import bcp47
+from kanltk.corpus import bcp47
 
 codepattern = re.compile("[a-z][a-z][a-z]?")
 
@@ -47,7 +47,7 @@ def langname(tag, typ="full"):
     """
     Convert a composite BCP-47 tag to a language name
 
-    >>> from nltk.langnames import langname
+    >>> from kanltk.langnames import langname
     >>> langname('ca-Latn-ES-valencia')
     'Catalan: Latin: Spain: Valencian'
 
@@ -77,7 +77,7 @@ def langcode(name, typ=2):
     Convert language name to iso639-3 language code. Returns the short 2-letter
     code by default, if one is available, and the 3-letter code otherwise:
 
-    >>> from nltk.langnames import langcode
+    >>> from kanltk.langnames import langcode
     >>> langcode('Modern Greek (1453-)')
     'el'
 

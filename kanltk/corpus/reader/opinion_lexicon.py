@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Pierpaolo Pantone <24alsecondo@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -31,8 +31,8 @@ Related papers:
     Wide Web conference (WWW-2005), May 10-14, 2005, Chiba, Japan.
 """
 
-from nltk.corpus.reader import WordListCorpusReader
-from nltk.corpus.reader.api import *
+from kanltk.corpus.reader import WordListCorpusReader
+from kanltk.corpus.reader.api import *
 
 
 class IgnoreReadmeCorpusView(StreamBackedCorpusView):
@@ -54,7 +54,7 @@ class OpinionLexiconCorpusReader(WordListCorpusReader):
     """
     Reader for Liu and Hu opinion lexicon.  Blank lines and readme are ignored.
 
-        >>> from nltk.corpus import opinion_lexicon
+        >>> from kanltk.corpus import opinion_lexicon
         >>> opinion_lexicon.words()
         ['2-faced', '2-faces', 'abnormal', 'abolish', ...]
 

@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Graeme Gange <ggange@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """
 CCG Combinators
@@ -10,7 +10,7 @@ CCG Combinators
 
 from abc import ABCMeta, abstractmethod
 
-from nltk.ccg.api import FunctionalCategory
+from kanltk.ccg.api import FunctionalCategory
 
 
 class UndirectedBinaryCombinator(metaclass=ABCMeta):

@@ -1,7 +1,7 @@
 # Natural Language Toolkit: Interface to scikit-learn classifiers
 #
 # Author: Lars Buitinck <L.J.Buitinck@uva.nl>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """
 scikit-learn (https://scikit-learn.org) is a machine learning library for
@@ -13,7 +13,7 @@ wrapper, construct a scikit-learn estimator object, then use that to construct
 a SklearnClassifier. E.g., to wrap a linear SVM with default settings:
 
 >>> from sklearn.svm import LinearSVC
->>> from nltk.classify.scikitlearn import SklearnClassifier
+>>> from kanltk.classify.scikitlearn import SklearnClassifier
 >>> classif = SklearnClassifier(LinearSVC())
 
 A scikit-learn classifier may include preprocessing steps when it's wrapped
@@ -31,8 +31,8 @@ best 1000 features:
 >>> classif = SklearnClassifier(pipeline)
 """
 
-from nltk.classify.api import ClassifierI
-from nltk.probability import DictionaryProbDist
+from kanltk.classify.api import ClassifierI
+from kanltk.probability import DictionaryProbDist
 
 try:
     from sklearn.feature_extraction import DictVectorizer
@@ -124,7 +124,7 @@ if __name__ == "__main__":
     from sklearn.linear_model import LogisticRegression
     from sklearn.naive_bayes import BernoulliNB
 
-    from nltk.classify.util import names_demo, names_demo_features
+    from kanltk.classify.util import names_demo, names_demo_features
 
     # Bernoulli Naive Bayes is designed for binary classification. We set the
     # binarize option to False since we know we're passing boolean features.

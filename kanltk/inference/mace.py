@@ -3,7 +3,7 @@
 # Author: Dan Garrette <dhgarrette@gmail.com>
 #         Ewan Klein <ewan@inf.ed.ac.uk>
 
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -13,10 +13,10 @@ A model builder that makes use of the external 'Mace4' package.
 import os
 import tempfile
 
-from nltk.inference.api import BaseModelBuilderCommand, ModelBuilder
-from nltk.inference.prover9 import Prover9CommandParent, Prover9Parent
-from nltk.sem import Expression, Valuation
-from nltk.sem.logic import is_indvar
+from kanltk.inference.api import BaseModelBuilderCommand, ModelBuilder
+from kanltk.inference.prover9 import Prover9CommandParent, Prover9Parent
+from kanltk.sem import Expression, Valuation
+from kanltk.sem.logic import is_indvar
 
 
 class MaceCommand(Prover9CommandParent, BaseModelBuilderCommand):
@@ -301,7 +301,7 @@ def test_model_found(arguments):
 
 def test_build_model(arguments):
     """
-    Try to build a ``nltk.sem.Valuation``.
+    Try to build a ``kanltk.sem.Valuation``.
     """
     g = Expression.fromstring("all x.man(x)")
     alist = [

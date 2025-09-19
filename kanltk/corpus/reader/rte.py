@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author:  Ewan Klein <ewan@inf.ed.ac.uk>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -32,9 +32,9 @@ In order to provide globally unique IDs for each pair, a new attribute
 file, taking values 1, 2 or 3. The GID is formatted 'm-n', where 'm' is the
 challenge number and 'n' is the pair ID.
 """
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.corpus.reader.xmldocs import *
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.corpus.reader.xmldocs import *
 
 
 def norm(value_string):

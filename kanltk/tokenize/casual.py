@@ -48,7 +48,7 @@ from typing import List
 
 import regex  # https://github.com/nltk/nltk/issues/2409
 
-from nltk.tokenize.api import TokenizerI
+from kanltk.tokenize.api import TokenizerI
 
 ######################################################################
 # The following strings are components in the regular expression
@@ -261,7 +261,7 @@ def _replace_html_entities(text, keep=(), remove_illegal=True, encoding="utf-8")
 
     See https://github.com/scrapy/w3lib/blob/master/w3lib/html.py
 
-        >>> from nltk.tokenize.casual import _replace_html_entities
+        >>> from kanltk.tokenize.casual import _replace_html_entities
         >>> _replace_html_entities(b'Price: &pound;100')
         'Price: \\xa3100'
         >>> print(_replace_html_entities(b'Price: &pound;100'))
@@ -307,7 +307,7 @@ class TweetTokenizer(TokenizerI):
     r"""
     Tokenizer for tweets.
 
-        >>> from nltk.tokenize import TweetTokenizer
+        >>> from kanltk.tokenize import TweetTokenizer
         >>> tknzr = TweetTokenizer()
         >>> s0 = "This is a cooool #dummysmiley: :-) :-P <3 and some arrows < > -> <--"
         >>> tknzr.tokenize(s0) # doctest: +NORMALIZE_WHITESPACE

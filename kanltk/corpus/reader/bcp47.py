@@ -2,14 +2,14 @@
 #
 # Copyright (C) 2022-2023 NLTK Project
 # Author: Eric Kafe <kafe.eric@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import re
 from warnings import warn
 from xml.etree import ElementTree as et
 
-from nltk.corpus.reader import CorpusReader
+from kanltk.corpus.reader import CorpusReader
 
 
 class BCP47CorpusReader(CorpusReader):
@@ -18,7 +18,7 @@ class BCP47CorpusReader(CorpusReader):
 
     Supports all the main subtags, and the 'u-sd' extension:
 
-    >>> from nltk.corpus import bcp47
+    >>> from kanltk.corpus import bcp47
     >>> bcp47.name('oc-gascon-u-sd-fr64')
     'Occitan (post 1500): Gascon: Pyrénées-Atlantiques'
 
@@ -192,7 +192,7 @@ class BCP47CorpusReader(CorpusReader):
         """
         Convert a BCP-47 tag to a colon-separated string of subtag names
 
-        >>> from nltk.corpus import bcp47
+        >>> from kanltk.corpus import bcp47
         >>> bcp47.name('ca-Latn-ES-valencia')
         'Catalan: Latin: Spain: Valencian'
 

@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Sam Huston 2007
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -14,7 +14,7 @@ Hosted by the Gutenberg Project
 https://www.gutenberg.org/
 """
 
-from nltk.chat.util import Chat, reflections
+from kanltk.chat.util import Chat, reflections
 
 pairs = (
     (r"quit", ("Good-bye.", "Plan well", "May victory be your future")),

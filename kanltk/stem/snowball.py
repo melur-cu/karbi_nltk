@@ -25,10 +25,10 @@ There is also a demo function: `snowball.demo()`.
 
 import re
 
-from nltk.corpus import stopwords
-from nltk.stem import porter
-from nltk.stem.api import StemmerI
-from nltk.stem.util import prefix_replace, suffix_replace
+from kanltk.corpus import stopwords
+from kanltk.stem import porter
+from kanltk.stem.api import StemmerI
+from kanltk.stem.util import prefix_replace, suffix_replace
 
 
 class SnowballStemmer(StemmerI):
@@ -53,7 +53,7 @@ class SnowballStemmer(StemmerI):
 
     The stemmer is invoked as shown below:
 
-    >>> from nltk.stem import SnowballStemmer # See which languages are supported
+    >>> from kanltk.stem import SnowballStemmer # See which languages are supported
     >>> print(" ".join(SnowballStemmer.languages)) # doctest: +NORMALIZE_WHITESPACE
     arabic danish dutch english finnish french german hungarian
     italian norwegian porter portuguese romanian russian
@@ -66,7 +66,7 @@ class SnowballStemmer(StemmerI):
     language to be stemmed at runtime. Alternatively, if you already know
     the language, then you can invoke the language specific stemmer directly:
 
-    >>> from nltk.stem.snowball import GermanStemmer
+    >>> from kanltk.stem.snowball import GermanStemmer
     >>> stemmer = GermanStemmer()
     >>> stemmer.stem("Autobahnen")
     'autobahn'
@@ -160,7 +160,7 @@ class PorterStemmer(_LanguageSpecificStemmer, porter.PorterStemmer):
 
     A few minor modifications have been made to Porter's basic
     algorithm.  See the source code of the module
-    nltk.stem.porter for more information.
+    kanltk.stem.porter for more information.
 
     """
 
@@ -5857,7 +5857,7 @@ def demo():
 
     """
 
-    from nltk.corpus import udhr
+    from kanltk.corpus import udhr
 
     udhr_corpus = {
         "arabic": "Arabic_Alarabia-Arabic",

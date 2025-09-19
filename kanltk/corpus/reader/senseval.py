@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
 #         Steven Bird <stevenbird1@gmail.com> (modifications)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -25,9 +25,9 @@ is tagged with a sense identifier, and supplied with context.
 import re
 from xml.etree import ElementTree
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.tokenize import *
 
 
 class SensevalInstance:

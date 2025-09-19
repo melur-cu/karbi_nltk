@@ -2,11 +2,11 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Piotr Kasprzyk <p.j.kasprzyk@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.xmldocs import XMLCorpusReader
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.xmldocs import XMLCorpusReader
 
 PARA = re.compile(r"<p(?: [^>]*){0,1}>(.*?)</p>")
 SENT = re.compile(r"<s(?: [^>]*){0,1}>(.*?)</s>")

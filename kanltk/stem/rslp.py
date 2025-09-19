@@ -29,15 +29,15 @@
 # e/ou melhor para o português. Também sugiro utilizar-se a lista de discussão
 # do NLTK para o português para qualquer debate.
 
-from nltk.data import load
-from nltk.stem.api import StemmerI
+from kanltk.data import load
+from kanltk.stem.api import StemmerI
 
 
 class RSLPStemmer(StemmerI):
     """
     A stemmer for Portuguese.
 
-        >>> from nltk.stem import RSLPStemmer
+        >>> from kanltk.stem import RSLPStemmer
         >>> st = RSLPStemmer()
         >>> # opening lines of Erico Verissimo's "Música ao Longe"
         >>> text = '''

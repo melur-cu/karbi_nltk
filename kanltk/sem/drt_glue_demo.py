@@ -11,17 +11,17 @@ try:
     from tkinter import Button, Frame, IntVar, Label, Listbox, Menu, Scrollbar, Tk
     from tkinter.font import Font
 
-    from nltk.draw.util import CanvasFrame, ShowText
+    from kanltk.draw.util import CanvasFrame, ShowText
 
 except ImportError:
     """Ignore ImportError because tkinter might not be available."""
 
-from nltk.parse import MaltParser
-from nltk.sem.drt import DrsDrawer, DrtVariableExpression
-from nltk.sem.glue import DrtGlue
-from nltk.sem.logic import Variable
-from nltk.tag import RegexpTagger
-from nltk.util import in_idle
+from kanltk.parse import MaltParser
+from kanltk.sem.drt import DrsDrawer, DrtVariableExpression
+from kanltk.sem.glue import DrtGlue
+from kanltk.sem.logic import Variable
+from kanltk.tag import RegexpTagger
+from kanltk.util import in_idle
 
 
 class DrtGlueDemo:

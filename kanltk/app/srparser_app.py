@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -65,11 +65,11 @@ Keyboard Shortcuts::
 from tkinter import Button, Frame, IntVar, Label, Listbox, Menu, Scrollbar, Tk
 from tkinter.font import Font
 
-from nltk.draw import CFGEditor, TreeSegmentWidget, tree_to_treesegment
-from nltk.draw.util import CanvasFrame, EntryDialog, ShowText, TextWidget
-from nltk.parse import SteppingShiftReduceParser
-from nltk.tree import Tree
-from nltk.util import in_idle
+from kanltk.draw import CFGEditor, TreeSegmentWidget, tree_to_treesegment
+from kanltk.draw.util import CanvasFrame, EntryDialog, ShowText, TextWidget
+from kanltk.parse import SteppingShiftReduceParser
+from kanltk.tree import Tree
+from kanltk.util import in_idle
 
 """
 Possible future improvements:
@@ -79,7 +79,7 @@ Possible future improvements:
     not in the grammar.
   - button/window to change and/or select grammar.  Select from
     several alternative grammars?  Or actually change the grammar?  If
-    the later, then I'd want to define nltk.draw.cfg, which would be
+    the later, then I'd want to define kanltk.draw.cfg, which would be
     responsible for that.
 """
 
@@ -92,7 +92,7 @@ class ShiftReduceApp:
     can shift tokens onto the stack, and can perform reductions on the
     top elements of the stack.  A "step" button simply steps through
     the parsing process, performing the operations that
-    ``nltk.parse.ShiftReduceParser`` would use.
+    ``kanltk.parse.ShiftReduceParser`` would use.
     """
 
     def __init__(self, grammar, sent, trace=0):
@@ -895,7 +895,7 @@ def app():
     text.
     """
 
-    from nltk.grammar import CFG, Nonterminal, Production
+    from kanltk.grammar import CFG, Nonterminal, Production
 
     nonterminals = "S VP NP PP P N Name V Det"
     (S, VP, NP, PP, P, N, Name, V, Det) = (Nonterminal(s) for s in nonterminals.split())

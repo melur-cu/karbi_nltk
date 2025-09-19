@@ -6,7 +6,7 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.sem.logic import (
+from kanltk.sem.logic import (
     AllExpression,
     AndExpression,
     ApplicationExpression,

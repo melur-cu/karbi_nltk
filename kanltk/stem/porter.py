@@ -22,7 +22,7 @@ __docformat__ = "plaintext"
 
 import re
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class PorterStemmer(StemmerI):
@@ -690,7 +690,7 @@ def demo():
     """
 
     from nltk import stem
-    from nltk.corpus import treebank
+    from kanltk.corpus import treebank
 
     stemmer = stem.PorterStemmer()
 

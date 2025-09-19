@@ -36,15 +36,15 @@ import re
 import warnings
 from string import punctuation
 
-from nltk.tokenize.api import TokenizerI
-from nltk.util import ngrams
+from kanltk.tokenize.api import TokenizerI
+from kanltk.util import ngrams
 
 
 class SyllableTokenizer(TokenizerI):
     """
     Syllabifies words based on the Sonority Sequencing Principle (SSP).
 
-        >>> from nltk.tokenize import SyllableTokenizer
+        >>> from kanltk.tokenize import SyllableTokenizer
         >>> from nltk import word_tokenize
         >>> SSP = SyllableTokenizer()
         >>> SSP.tokenize('justification')

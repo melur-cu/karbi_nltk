@@ -2,7 +2,7 @@
 # Much of the GUI code is imported from concordance.py; We intend to merge these tools together
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Sumukh Ghodke <sghodke@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 #
 
@@ -26,7 +26,7 @@ from tkinter import (
 )
 from tkinter.font import Font
 
-from nltk.corpus import (
+from kanltk.corpus import (
     alpino,
     brown,
     cess_cat,
@@ -39,8 +39,8 @@ from nltk.corpus import (
     sinica_treebank,
     treebank,
 )
-from nltk.probability import FreqDist
-from nltk.util import in_idle
+from kanltk.probability import FreqDist
+from kanltk.util import in_idle
 
 CORPUS_LOADED_EVENT = "<<CL_EVENT>>"
 ERROR_LOADING_CORPUS_EVENT = "<<ELC_EVENT>>"

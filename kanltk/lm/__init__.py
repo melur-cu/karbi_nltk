@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Authors: Ilia Kurenkov <ilia.kurenkov@gmail.com>
-# URL: <https://www.nltk.org/
+# URL: <https://www.kanltk.org/
 # For license information, see LICENSE.TXT
 """
 NLTK Language Modeling Module.
@@ -27,7 +27,7 @@ If we want to train a bigram model, we need to turn this text into bigrams.
 Here's what the first sentence of our text would look like if we use a function
 from NLTK for this.
 
-    >>> from nltk.util import bigrams
+    >>> from kanltk.util import bigrams
     >>> list(bigrams(text[0]))
     [('a', 'b'), ('b', 'c')]
 
@@ -39,7 +39,7 @@ sentence before splitting it into ngrams.
 Fortunately, NLTK also has a function for that, let's see what it does to the
 first sentence.
 
-    >>> from nltk.util import pad_sequence
+    >>> from kanltk.util import pad_sequence
     >>> list(pad_sequence(text[0],
     ... pad_left=True,
     ... left_pad_symbol="<s>",
@@ -54,7 +54,7 @@ can be safely assumed as defaults anyway.
 Thus our module provides a convenience function that has all these arguments
 already set while the other arguments remain the same as for `pad_sequence`.
 
-    >>> from nltk.lm.preprocessing import pad_both_ends
+    >>> from kanltk.lm.preprocessing import pad_both_ends
     >>> list(pad_both_ends(text[0], n=2))
     ['<s>', 'a', 'b', 'c', '</s>']
 
@@ -70,7 +70,7 @@ NLTK once again helpfully provides a function called `everygrams`.
 While not the most efficient, it is conceptually simple.
 
 
-    >>> from nltk.util import everygrams
+    >>> from kanltk.util import everygrams
     >>> padded_bigrams = list(pad_both_ends(text[0], n=2))
     >>> list(everygrams(padded_bigrams, max_len=2))
     [('<s>',), ('<s>', 'a'), ('a',), ('a', 'b'), ('b',), ('b', 'c'), ('c',), ('c', '</s>'), ('</s>',)]
@@ -81,7 +81,7 @@ defines which words are "known" to the model.
 To create this vocabulary we need to pad our sentences (just like for counting
 ngrams) and then combine the sentences into one flat stream of words.
 
-    >>> from nltk.lm.preprocessing import flatten
+    >>> from kanltk.lm.preprocessing import flatten
     >>> list(flatten(pad_both_ends(sent, n=2) for sent in text))
     ['<s>', 'a', 'b', 'c', '</s>', '<s>', 'a', 'c', 'd', 'c', 'e', 'f', '</s>']
 
@@ -90,7 +90,7 @@ and ngram counts.
 Now that we understand what this means for our preprocessing, we can simply import
 a function that does everything for us.
 
-    >>> from nltk.lm.preprocessing import padded_everygram_pipeline
+    >>> from kanltk.lm.preprocessing import padded_everygram_pipeline
     >>> train, vocab = padded_everygram_pipeline(2, text)
 
 So as to avoid re-creating the text in memory, both `train` and `vocab` are lazy
@@ -103,7 +103,7 @@ Having prepared our data we are ready to start training a model.
 As a simple example, let us train a Maximum Likelihood Estimator (MLE).
 We only need to specify the highest ngram order to instantiate it.
 
-    >>> from nltk.lm import MLE
+    >>> from kanltk.lm import MLE
     >>> lm = MLE(2)
 
 This automatically creates an empty vocabulary...
@@ -210,8 +210,8 @@ on 2 preceding words. If you pass in a 4-word context, the first two words
 will be ignored.
 """
 
-from nltk.lm.counter import NgramCounter
-from nltk.lm.models import (
+from kanltk.lm.counter import NgramCounter
+from kanltk.lm.models import (
     MLE,
     AbsoluteDiscountingInterpolated,
     KneserNeyInterpolated,
@@ -220,7 +220,7 @@ from nltk.lm.models import (
     StupidBackoff,
     WittenBellInterpolated,
 )
-from nltk.lm.vocabulary import Vocabulary
+from kanltk.lm.vocabulary import Vocabulary
 
 __all__ = [
     "Vocabulary",

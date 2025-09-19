@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Authors: Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 # Based on an Eliza implementation by Joe Strout <joe@strout.net>,
@@ -16,12 +16,12 @@ These chatbots may not work using the windows command line or the
 windows IDLE GUI.
 """
 
-from nltk.chat.eliza import eliza_chat
-from nltk.chat.iesha import iesha_chat
-from nltk.chat.rude import rude_chat
-from nltk.chat.suntsu import suntsu_chat
-from nltk.chat.util import Chat
-from nltk.chat.zen import zen_chat
+from kanltk.chat.eliza import eliza_chat
+from kanltk.chat.iesha import iesha_chat
+from kanltk.chat.rude import rude_chat
+from kanltk.chat.suntsu import suntsu_chat
+from kanltk.chat.util import Chat
+from kanltk.chat.zen import zen_chat
 
 bots = [
     (eliza_chat, "Eliza (psycho-babble)"),

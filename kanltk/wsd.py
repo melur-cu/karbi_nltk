@@ -7,7 +7,7 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.corpus import wordnet
+from kanltk.corpus import wordnet
 
 
 def lesk(context_sentence, ambiguous_word, pos=None, synsets=None, lang="eng"):

@@ -9,5 +9,5 @@
 NLTK Sentiment Analysis Package
 
 """
-from nltk.sentiment.sentiment_analyzer import SentimentAnalyzer
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from kanltk.sentiment.sentiment_analyzer import SentimentAnalyzer
+from kanltk.sentiment.vader import SentimentIntensityAnalyzer

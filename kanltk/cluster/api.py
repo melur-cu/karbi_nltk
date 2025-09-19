@@ -3,12 +3,12 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
 # Porting: Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 from abc import ABCMeta, abstractmethod
 
-from nltk.probability import DictionaryProbDist
+from kanltk.probability import DictionaryProbDist
 
 
 class ClusterI(metaclass=ABCMeta):

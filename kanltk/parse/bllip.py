@@ -6,8 +6,8 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.parse.api import ParserI
-from nltk.tree import Tree
+from kanltk.parse.api import ParserI
+from kanltk.tree import Tree
 
 """
 Interface for parsing with BLLIP Parser. Requires the Python
@@ -22,9 +22,9 @@ or see docs for ``bllipparser.ModelFetcher.download_and_install_model``).
 Basic usage::
 
     # download and install a basic unified parsing model (Wall Street Journal)
-    # sudo python -m nltk.downloader bllip_wsj_no_aux
+    # sudo python -m kanltk.downloader bllip_wsj_no_aux
 
-    >>> from nltk.data import find
+    >>> from kanltk.data import find
     >>> model_dir = find('models/bllip_wsj_no_aux').path
     >>> bllip = BllipParser.from_unified_model_dir(model_dir)
 
@@ -255,9 +255,9 @@ def demo():
     """This assumes the Python module bllipparser is installed."""
 
     # download and install a basic unified parsing model (Wall Street Journal)
-    # sudo python -m nltk.downloader bllip_wsj_no_aux
+    # sudo python -m kanltk.downloader bllip_wsj_no_aux
 
-    from nltk.data import find
+    from kanltk.data import find
 
     model_dir = find("models/bllip_wsj_no_aux").path
 

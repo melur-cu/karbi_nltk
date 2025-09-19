@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Tanin Na Nakorn (@tanin)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """
 Helper functions for CCG semantics computation
 """
 
-from nltk.sem.logic import *
+from kanltk.sem.logic import *
 
 
 def compute_type_raised_semantics(semantics):

@@ -10,7 +10,7 @@ import operator
 from functools import reduce
 from itertools import chain
 
-from nltk.sem.logic import (
+from kanltk.sem.logic import (
     APP,
     AbstractVariableExpression,
     AllExpression,
@@ -37,7 +37,7 @@ from nltk.sem.logic import (
     is_indvar,
     unique_variable,
 )
-from nltk.util import in_idle
+from kanltk.util import in_idle
 
 
 class DrtTokens(Tokens):

@@ -13,17 +13,17 @@ NLTK Metrics
 Classes and methods for scoring processing modules.
 """
 
-from nltk.metrics.agreement import AnnotationTask
-from nltk.metrics.aline import align
-from nltk.metrics.association import (
+from kanltk.metrics.agreement import AnnotationTask
+from kanltk.metrics.aline import align
+from kanltk.metrics.association import (
     BigramAssocMeasures,
     ContingencyMeasures,
     NgramAssocMeasures,
     QuadgramAssocMeasures,
     TrigramAssocMeasures,
 )
-from nltk.metrics.confusionmatrix import ConfusionMatrix
-from nltk.metrics.distance import (
+from kanltk.metrics.confusionmatrix import ConfusionMatrix
+from kanltk.metrics.distance import (
     binary_distance,
     custom_distance,
     edit_distance,
@@ -34,8 +34,8 @@ from nltk.metrics.distance import (
     masi_distance,
     presence,
 )
-from nltk.metrics.paice import Paice
-from nltk.metrics.scores import (
+from kanltk.metrics.paice import Paice
+from kanltk.metrics.scores import (
     accuracy,
     approxrand,
     f_measure,
@@ -43,8 +43,8 @@ from nltk.metrics.scores import (
     precision,
     recall,
 )
-from nltk.metrics.segmentation import ghd, pk, windowdiff
-from nltk.metrics.spearman import (
+from kanltk.metrics.segmentation import ghd, pk, windowdiff
+from kanltk.metrics.spearman import (
     ranks_from_scores,
     ranks_from_sequence,
     spearman_correlation,

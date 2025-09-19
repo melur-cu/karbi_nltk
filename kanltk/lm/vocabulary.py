@@ -44,7 +44,7 @@ class Vocabulary:
     - Adds a special "unknown" token which unseen words are mapped to.
 
     >>> words = ['a', 'c', '-', 'd', 'c', 'a', 'b', 'r', 'a', 'c', 'd']
-    >>> from nltk.lm import Vocabulary
+    >>> from kanltk.lm import Vocabulary
     >>> vocab = Vocabulary(words, unk_cutoff=2)
 
     Tokens with counts greater than or equal to the cutoff value will
@@ -173,7 +173,7 @@ class Vocabulary:
         :rtype: generator(str) or str
         :raises: TypeError for types other than strings or iterables
 
-        >>> from nltk.lm import Vocabulary
+        >>> from kanltk.lm import Vocabulary
         >>> vocab = Vocabulary(["a", "b", "c", "a", "b"], unk_cutoff=2)
         >>> vocab.lookup("a")
         'a'

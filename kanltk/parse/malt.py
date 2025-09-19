@@ -13,15 +13,15 @@ import subprocess
 import sys
 import tempfile
 
-from nltk.data import ZipFilePathPointer
-from nltk.internals import find_dir, find_file, find_jars_within_path
-from nltk.parse.api import ParserI
-from nltk.parse.dependencygraph import DependencyGraph
-from nltk.parse.util import taggedsents_to_conll
+from kanltk.data import ZipFilePathPointer
+from kanltk.internals import find_dir, find_file, find_jars_within_path
+from kanltk.parse.api import ParserI
+from kanltk.parse.dependencygraph import DependencyGraph
+from kanltk.parse.util import taggedsents_to_conll
 
 
 def malt_regex_tagger():
-    from nltk.tag import RegexpTagger
+    from kanltk.tag import RegexpTagger
 
     _tagger = RegexpTagger(
         [
@@ -100,7 +100,7 @@ class MaltParser(ParserI):
     - (optionally) additional Java arguments
 
     Example:
-        >>> from nltk.parse import malt
+        >>> from kanltk.parse import malt
         >>> # With MALT_PARSER and MALT_MODEL environment set.
         >>> mp = malt.MaltParser(model_filename='engmalt.linear-1.7.mco') # doctest: +SKIP
         >>> mp.parse_one('I shot an elephant in my pajamas .'.split()).tree() # doctest: +SKIP

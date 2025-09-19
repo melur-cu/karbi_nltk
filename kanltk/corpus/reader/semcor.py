@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Nathan Schneider <nschneid@cs.cmu.edu>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -11,9 +11,9 @@ Corpus reader for the SemCor Corpus.
 
 __docformat__ = "epytext en"
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.xmldocs import XMLCorpusReader, XMLCorpusView
-from nltk.tree import Tree
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.xmldocs import XMLCorpusReader, XMLCorpusView
+from kanltk.tree import Tree
 
 
 class SemcorCorpusReader(XMLCorpusReader):
@@ -194,7 +194,7 @@ class SemcorCorpusReader(XMLCorpusReader):
                         # cannot retrieve the wordnet.Lemma object. possible reasons:
                         #  (a) the wordnet corpus is not downloaded;
                         #  (b) a nonexistent sense is annotated: e.g., such.s.00 triggers:
-                        #  nltk.corpus.reader.wordnet.WordNetError: No synset found for key u'such%5:00:01:specified:00'
+                        #  kanltk.corpus.reader.wordnet.WordNetError: No synset found for key u'such%5:00:01:specified:00'
                         # solution: just use the lemma name as a string
                         try:
                             sense = "%s.%s.%02d" % (

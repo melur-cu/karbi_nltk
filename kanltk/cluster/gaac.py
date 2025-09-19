@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 try:
@@ -10,7 +10,7 @@ try:
 except ImportError:
     pass
 
-from nltk.cluster.util import Dendrogram, VectorSpaceClusterer, cosine_distance
+from kanltk.cluster.util import Dendrogram, VectorSpaceClusterer, cosine_distance
 
 
 class GAAClusterer(VectorSpaceClusterer):
@@ -142,7 +142,7 @@ def demo():
     Non-interactive demonstration of the clusterers with simple 2-D data.
     """
 
-    from nltk.cluster import GAAClusterer
+    from kanltk.cluster import GAAClusterer
 
     # use a set of tokens with 2D indices
     vectors = [numpy.array(f) for f in [[3, 3], [1, 2], [4, 2], [4, 0], [2, 3], [3, 1]]]

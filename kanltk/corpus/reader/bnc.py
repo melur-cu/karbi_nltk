@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """Corpus reader for the XML version of the British National Corpus."""
 
-from nltk.corpus.reader.util import concat
-from nltk.corpus.reader.xmldocs import ElementTree, XMLCorpusReader, XMLCorpusView
+from kanltk.corpus.reader.util import concat
+from kanltk.corpus.reader.xmldocs import ElementTree, XMLCorpusReader, XMLCorpusView
 
 
 class BNCCorpusReader(XMLCorpusReader):

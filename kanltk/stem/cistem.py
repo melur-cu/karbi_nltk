@@ -10,7 +10,7 @@
 import re
 from typing import Tuple
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class Cistem(StemmerI):
@@ -79,7 +79,7 @@ class Cistem(StemmerI):
         :return: The stemmed word.
         :rtype: str
 
-        >>> from nltk.stem.cistem import Cistem
+        >>> from kanltk.stem.cistem import Cistem
         >>> stemmer = Cistem()
         >>> s1 = "Speicherbehältern"
         >>> stemmer.stem(s1)
@@ -126,7 +126,7 @@ class Cistem(StemmerI):
         :return: A tuple of the stemmed word and the removed suffix.
         :rtype: Tuple[str, str]
 
-        >>> from nltk.stem.cistem import Cistem
+        >>> from kanltk.stem.cistem import Cistem
         >>> stemmer = Cistem()
         >>> s1 = "Speicherbehältern"
         >>> stemmer.segment(s1)

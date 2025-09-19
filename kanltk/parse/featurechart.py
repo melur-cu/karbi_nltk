@@ -12,8 +12,8 @@ feature structures as nodes.
 """
 from time import perf_counter
 
-from nltk.featstruct import TYPE, FeatStruct, find_variables, unify
-from nltk.grammar import (
+from kanltk.featstruct import TYPE, FeatStruct, find_variables, unify
+from kanltk.grammar import (
     CFG,
     FeatStructNonterminal,
     Nonterminal,
@@ -21,7 +21,7 @@ from nltk.grammar import (
     is_nonterminal,
     is_terminal,
 )
-from nltk.parse.chart import (
+from kanltk.parse.chart import (
     BottomUpPredictCombineRule,
     BottomUpPredictRule,
     CachedTopDownPredictRule,
@@ -35,8 +35,8 @@ from nltk.parse.chart import (
     TopDownInitRule,
     TreeEdge,
 )
-from nltk.sem import logic
-from nltk.tree import Tree
+from kanltk.sem import logic
+from kanltk.tree import Tree
 
 # ////////////////////////////////////////////////////////////
 # Tree Edge
@@ -589,7 +589,7 @@ class InstantiateVarsChart(FeatureChart):
 
 
 def demo_grammar():
-    from nltk.grammar import FeatureGrammar
+    from kanltk.grammar import FeatureGrammar
 
     return FeatureGrammar.fromstring(
         """
@@ -661,7 +661,7 @@ def run_profile():
 
 
 if __name__ == "__main__":
-    from nltk.data import load
+    from kanltk.data import load
 
     demo()
     print()

@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Authors: Steven Bird <stevenbird1@gmail.com>
 #          Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 # Based on an Eliza implementation by Joe Strout <joe@strout.net>,
@@ -12,7 +12,7 @@
 # a translation table used to convert things you say into things the
 # computer says back, e.g. "I am" --> "you are"
 
-from nltk.chat.util import Chat, reflections
+from kanltk.chat.util import Chat, reflections
 
 # a table of response pairs, where each pair consists of a
 # regular expression, and a list of possible responses,

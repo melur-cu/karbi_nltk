@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Gabriela Kaczka
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import functools
@@ -10,8 +10,8 @@ import os
 import re
 import tempfile
 
-from nltk.corpus.reader.util import concat
-from nltk.corpus.reader.xmldocs import XMLCorpusReader, XMLCorpusView
+from kanltk.corpus.reader.util import concat
+from kanltk.corpus.reader.xmldocs import XMLCorpusReader, XMLCorpusView
 
 
 def _parse_args(fun):

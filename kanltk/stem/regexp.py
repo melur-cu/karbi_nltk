@@ -8,7 +8,7 @@
 # For license information, see LICENSE.TXT
 import re
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class RegexpStemmer(StemmerI):
@@ -17,7 +17,7 @@ class RegexpStemmer(StemmerI):
     affixes.  Any substrings that match the regular expressions will
     be removed.
 
-        >>> from nltk.stem import RegexpStemmer
+        >>> from kanltk.stem import RegexpStemmer
         >>> st = RegexpStemmer('ing$|s$|e$|able$', min=4)
         >>> st.stem('cars')
         'car'

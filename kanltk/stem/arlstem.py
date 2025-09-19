@@ -26,7 +26,7 @@ based on any dictionary and can be used on-line effectively.
 """
 import re
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class ARLSTem(StemmerI):

@@ -6,9 +6,9 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.grammar import Nonterminal
-from nltk.parse.api import ParserI
-from nltk.tree import ImmutableTree, Tree
+from kanltk.grammar import Nonterminal
+from kanltk.parse.api import ParserI
+from kanltk.tree import ImmutableTree, Tree
 
 
 ##//////////////////////////////////////////////////////

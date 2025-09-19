@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 # TODO this docstring isn't up-to-date!
@@ -16,8 +16,8 @@ of external corpora.
 Available Corpora
 =================
 
-Please see https://www.nltk.org/nltk_data/ for a complete list.
-Install corpora using nltk.download().
+Please see https://www.kanltk.org/nltk_data/ for a complete list.
+Install corpora using kanltk.download().
 
 Corpus Reader Functions
 =======================
@@ -51,9 +51,9 @@ they return.  Some common examples, and their return types, are:
 - raw(): unprocessed corpus contents
 
 For example, to read a list of the words in the Brown Corpus, use
-``nltk.corpus.brown.words()``:
+``kanltk.corpus.brown.words()``:
 
-    >>> from nltk.corpus import brown
+    >>> from kanltk.corpus import brown
     >>> print(", ".join(brown.words())) # doctest: +ELLIPSIS
     The, Fulton, County, Grand, Jury, said, ...
 
@@ -61,9 +61,9 @@ For example, to read a list of the words in the Brown Corpus, use
 
 import re
 
-from nltk.corpus.reader import *
-from nltk.corpus.util import LazyCorpusLoader
-from nltk.tokenize import RegexpTokenizer
+from kanltk.corpus.reader import *
+from kanltk.corpus.util import LazyCorpusLoader
+from kanltk.tokenize import RegexpTokenizer
 
 abc: PlaintextCorpusReader = LazyCorpusLoader(
     "abc",
@@ -510,7 +510,7 @@ perluniprops: UnicharsCorpusReader = LazyCorpusLoader(
 # ycoe = LazyCorpusLoader(
 #     'ycoe', YCOECorpusReader)
 #
-# corpus not available with NLTK; these lines caused help(nltk.corpus) to break
+# corpus not available with NLTK; these lines caused help(kanltk.corpus) to break
 # hebrew_treebank = LazyCorpusLoader(
 #    'hebrew_treebank', BracketParseCorpusReader, r'.*\.txt')
 

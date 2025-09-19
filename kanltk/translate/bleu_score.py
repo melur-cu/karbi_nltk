@@ -13,7 +13,7 @@ import warnings
 from collections import Counter
 from fractions import Fraction as _Fraction
 
-from nltk.util import ngrams
+from kanltk.util import ngrams
 
 
 class Fraction(_Fraction):

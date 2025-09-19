@@ -1,10 +1,10 @@
 from collections import namedtuple
 from functools import partial, wraps
 
-from nltk.corpus.reader.api import CategorizedCorpusReader
-from nltk.corpus.reader.plaintext import PlaintextCorpusReader
-from nltk.corpus.reader.util import concat, read_blankline_block
-from nltk.tokenize import blankline_tokenize, sent_tokenize, word_tokenize
+from kanltk.corpus.reader.api import CategorizedCorpusReader
+from kanltk.corpus.reader.plaintext import PlaintextCorpusReader
+from kanltk.corpus.reader.util import concat, read_blankline_block
+from kanltk.tokenize import blankline_tokenize, sent_tokenize, word_tokenize
 
 
 def comma_separated_string_args(func):
@@ -135,8 +135,8 @@ class CategorizedMarkdownCorpusReader(CategorizedCorpusReader, MarkdownCorpusRea
     A reader for markdown corpora whose documents are divided into
     categories based on their file identifiers.
 
-    Based on nltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader:
-    https://www.nltk.org/_modules/nltk/corpus/reader/api.html#CategorizedCorpusReader
+    Based on kanltk.corpus.reader.plaintext.CategorizedPlaintextCorpusReader:
+    https://www.kanltk.org/_modules/nltk/corpus/reader/api.html#CategorizedCorpusReader
     """
 
     def __init__(self, *args, cat_field="tags", **kwargs):

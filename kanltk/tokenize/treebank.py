@@ -21,9 +21,9 @@ import re
 import warnings
 from typing import Iterator, List, Tuple
 
-from nltk.tokenize.api import TokenizerI
-from nltk.tokenize.destructive import MacIntyreContractions
-from nltk.tokenize.util import align_tokens
+from kanltk.tokenize.api import TokenizerI
+from kanltk.tokenize.destructive import MacIntyreContractions
+from kanltk.tokenize.util import align_tokens
 
 
 class TreebankWordTokenizer(TokenizerI):
@@ -37,7 +37,7 @@ class TreebankWordTokenizer(TokenizerI):
     - split off commas and single quotes, when followed by whitespace
     - separate periods that appear at the end of line
 
-    >>> from nltk.tokenize import TreebankWordTokenizer
+    >>> from kanltk.tokenize import TreebankWordTokenizer
     >>> s = '''Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks.'''
     >>> TreebankWordTokenizer().tokenize(s)
     ['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York.', 'Please', 'buy', 'me', 'two', 'of', 'them.', 'Thanks', '.']
@@ -103,7 +103,7 @@ class TreebankWordTokenizer(TokenizerI):
     ) -> List[str]:
         r"""Return a tokenized copy of `text`.
 
-        >>> from nltk.tokenize import TreebankWordTokenizer
+        >>> from kanltk.tokenize import TreebankWordTokenizer
         >>> s = '''Good muffins cost $3.88 (roughly 3,36 euros)\nin New York.  Please buy me\ntwo of them.\nThanks.'''
         >>> TreebankWordTokenizer().tokenize(s) # doctest: +NORMALIZE_WHITESPACE
         ['Good', 'muffins', 'cost', '$', '3.88', '(', 'roughly', '3,36',
@@ -172,9 +172,9 @@ class TreebankWordTokenizer(TokenizerI):
     def span_tokenize(self, text: str) -> Iterator[Tuple[int, int]]:
         r"""
         Returns the spans of the tokens in ``text``.
-        Uses the post-hoc nltk.tokens.align_tokens to return the offset spans.
+        Uses the post-hoc kanltk.tokens.align_tokens to return the offset spans.
 
-            >>> from nltk.tokenize import TreebankWordTokenizer
+            >>> from kanltk.tokenize import TreebankWordTokenizer
             >>> s = '''Good muffins cost $3.88\nin New (York).  Please (buy) me\ntwo of them.\n(Thanks).'''
             >>> expected = [(0, 4), (5, 12), (13, 17), (18, 19), (19, 23),
             ... (24, 26), (27, 30), (31, 32), (32, 36), (36, 37), (37, 38),
@@ -229,7 +229,7 @@ class TreebankWordDetokenizer(TokenizerI):
       there wasn't explicit records of where `'\n'`, `'\t'` or `'\s'` were removed at
       the text.split() operation.
 
-    >>> from nltk.tokenize.treebank import TreebankWordTokenizer, TreebankWordDetokenizer
+    >>> from kanltk.tokenize.treebank import TreebankWordTokenizer, TreebankWordDetokenizer
     >>> s = '''Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks.'''
     >>> d = TreebankWordDetokenizer()
     >>> t = TreebankWordTokenizer()
@@ -262,7 +262,7 @@ class TreebankWordDetokenizer(TokenizerI):
       if the string after is a non-digit.
       Thus ``(re.compile(r'\s([:,])\s([^\d])'), r'\1 \2')``.
 
-    >>> from nltk.tokenize.treebank import TreebankWordDetokenizer
+    >>> from kanltk.tokenize.treebank import TreebankWordDetokenizer
     >>> toks = ['hello', ',', 'i', 'ca', "n't", 'feel', 'my', 'feet', '!', 'Help', '!', '!']
     >>> twd = TreebankWordDetokenizer()
     >>> twd.detokenize(toks)

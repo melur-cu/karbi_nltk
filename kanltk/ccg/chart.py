@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Graeme Gange <ggange@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -32,8 +32,8 @@ python chart.py
 
 import itertools
 
-from nltk.ccg.combinator import *
-from nltk.ccg.combinator import (
+from kanltk.ccg.combinator import *
+from kanltk.ccg.combinator import (
     BackwardApplication,
     BackwardBx,
     BackwardComposition,
@@ -44,15 +44,15 @@ from nltk.ccg.combinator import (
     ForwardSubstitution,
     ForwardT,
 )
-from nltk.ccg.lexicon import Token, fromstring
-from nltk.ccg.logic import *
-from nltk.parse import ParserI
-from nltk.parse.chart import AbstractChartRule, Chart, EdgeI
-from nltk.sem.logic import *
-from nltk.tree import Tree
+from kanltk.ccg.lexicon import Token, fromstring
+from kanltk.ccg.logic import *
+from kanltk.parse import ParserI
+from kanltk.parse.chart import AbstractChartRule, Chart, EdgeI
+from kanltk.sem.logic import *
+from kanltk.tree import Tree
 
 
-# Based on the EdgeI class from NLTK.
+# Based on the EdgeI class from kanltk.
 # A number of the properties of the EdgeI interface don't
 # transfer well to CCGs, however.
 class CCGEdge(EdgeI):
@@ -261,7 +261,7 @@ DefaultRuleSet = (
 class CCGChartParser(ParserI):
     """
     Chart parser for CCGs.
-    Based largely on the ChartParser class from NLTK.
+    Based largely on the ChartParser class from kanltk.
     """
 
     def __init__(self, lexicon, rules, trace=0):

@@ -16,8 +16,8 @@ import re
 from collections import defaultdict
 from functools import reduce, total_ordering
 
-from nltk.internals import Counter
-from nltk.util import Trie
+from kanltk.internals import Counter
+from kanltk.util import Trie
 
 APP = "APP"
 
@@ -1012,7 +1012,7 @@ class Expression(SubstituteBindingsI):
         assert isinstance(other, Expression), "%s is not an Expression" % other
 
         if prover is None:
-            from nltk.inference import Prover9
+            from kanltk.inference import Prover9
 
             prover = Prover9()
         bicond = IffExpression(self.simplify(), other.simplify())

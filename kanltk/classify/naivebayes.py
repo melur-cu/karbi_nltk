@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -32,8 +32,8 @@ sum to one:
 
 from collections import defaultdict
 
-from nltk.classify.api import ClassifierI
-from nltk.probability import DictionaryProbDist, ELEProbDist, FreqDist, sum_logs
+from kanltk.classify.api import ClassifierI
+from kanltk.probability import DictionaryProbDist, ELEProbDist, FreqDist, sum_logs
 
 ##//////////////////////////////////////////////////////
 ##  Naive Bayes Classifier
@@ -250,7 +250,7 @@ class NaiveBayesClassifier(ClassifierI):
 
 
 def demo():
-    from nltk.classify.util import names_demo
+    from kanltk.classify.util import names_demo
 
     classifier = names_demo(NaiveBayesClassifier.train)
     classifier.show_most_informative_features()

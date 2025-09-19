@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -38,8 +38,8 @@ The PP Attachment Corpus is distributed with NLTK with the permission
 of the author.
 """
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
 
 
 class PPAttachment:

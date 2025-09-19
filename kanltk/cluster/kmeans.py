@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import copy
@@ -15,7 +15,7 @@ except ImportError:
     pass
 
 
-from nltk.cluster.util import VectorSpaceClusterer
+from kanltk.cluster.util import VectorSpaceClusterer
 
 
 class KMeansClusterer(VectorSpaceClusterer):
@@ -194,7 +194,7 @@ class KMeansClusterer(VectorSpaceClusterer):
 def demo():
     # example from figure 14.9, page 517, Manning and Schutze
 
-    from nltk.cluster import KMeansClusterer, euclidean_distance
+    from kanltk.cluster import KMeansClusterer, euclidean_distance
 
     vectors = [numpy.array(f) for f in [[2, 1], [1, 3], [4, 7], [6, 7]]]
     means = [[4, 3], [5, 5]]

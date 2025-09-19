@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Steven Bird <stevenbird1@gmail.com> (minor additions)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -18,7 +18,7 @@ category.
 classification", which is like single-category classification except
 that each text belongs to zero or more categories.
 """
-from nltk.internals import overridden
+from kanltk.internals import overridden
 
 ##//////////////////////////////////////////////////////
 # { Classification Interfaces

@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Rami Al-Rfou' <ralrfou@cs.stonybrook.edu>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -29,7 +29,7 @@ The input is:
 
 Note: Unit tests for this module can be found in test/unit/test_senna.py
 
->>> from nltk.classify import Senna
+>>> from kanltk.classify import Senna
 >>> pipeline = Senna('/usr/share/senna-v3.0', ['pos', 'chk', 'ner'])  # doctest: +SKIP
 >>> sent = 'Dusseldorf is an international business center'.split()
 >>> [(token['word'], token['chk'], token['ner'], token['pos']) for token in pipeline.tag(sent)]  # doctest: +SKIP
@@ -41,7 +41,7 @@ from os import environ, path, sep
 from platform import architecture, system
 from subprocess import PIPE, Popen
 
-from nltk.tag.api import TaggerI
+from kanltk.tag.api import TaggerI
 
 
 class Senna(TaggerI):

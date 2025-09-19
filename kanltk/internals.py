@@ -202,7 +202,7 @@ def read_str(s, start_position):
 
     :Example:
 
-    >>> from nltk.internals import read_str
+    >>> from kanltk.internals import read_str
     >>> read_str('"Hello", World!', 0)
     ('Hello', 7)
 
@@ -260,7 +260,7 @@ def read_int(s, start_position):
 
     :Example:
 
-    >>> from nltk.internals import read_int
+    >>> from kanltk.internals import read_int
     >>> read_int('42 is the answer', 0)
     (42, 2)
 
@@ -298,7 +298,7 @@ def read_number(s, start_position):
 
     :Example:
 
-    >>> from nltk.internals import read_number
+    >>> from kanltk.internals import read_number
     >>> read_number('Pi is 3.14159', 6)
     (3.14159, 13)
 
@@ -397,7 +397,7 @@ def deprecated(message):
     A decorator used to mark functions as deprecated.  This will cause
     a warning to be printed the when the function is used.  Usage:
 
-        >>> from nltk.internals import deprecated
+        >>> from kanltk.internals import deprecated
         >>> @deprecated('Use foo() instead')
         ... def bar(x):
         ...     print(x/10)
@@ -429,7 +429,7 @@ class Deprecated:
     A base class used to mark deprecated classes.  A typical usage is to
     alert users that the name of a class has changed:
 
-        >>> from nltk.internals import Deprecated
+        >>> from kanltk.internals import Deprecated
         >>> class NewClassName:
         ...     pass # All logic goes here.
         ...
@@ -501,7 +501,7 @@ def find_file_iter(
     finding_dir=False,
 ):
     """
-    Search for a file to be used by nltk.
+    Search for a file to be used by kanltk.
 
     :param filename: The name or path of the file.
     :param env_vars: A list of environment variable names to check.
@@ -650,7 +650,7 @@ def find_binary_iter(
     verbose=False,
 ):
     """
-    Search for a file to be used by nltk.
+    Search for a file to be used by kanltk.
 
     :param name: The name or path of the file.
     :param path_to_bin: The user-supplied binary location (deprecated)
@@ -691,7 +691,7 @@ def find_jar_iter(
     is_regex=False,
 ):
     """
-    Search for a jar that is used by nltk.
+    Search for a jar that is used by kanltk.
 
     :param name_pattern: The name of the jar file
     :param path_to_jar: The user-supplied jar location, or None.

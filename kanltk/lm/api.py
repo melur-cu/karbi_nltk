@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Authors: Ilia Kurenkov <ilia.kurenkov@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """Language Model Interface."""
 
@@ -12,9 +12,9 @@ from abc import ABCMeta, abstractmethod
 from bisect import bisect
 from itertools import accumulate
 
-from nltk.lm.counter import NgramCounter
-from nltk.lm.util import log_base2
-from nltk.lm.vocabulary import Vocabulary
+from kanltk.lm.counter import NgramCounter
+from kanltk.lm.util import log_base2
+from kanltk.lm.vocabulary import Vocabulary
 
 
 class Smoothing(metaclass=ABCMeta):
@@ -28,9 +28,9 @@ class Smoothing(metaclass=ABCMeta):
     def __init__(self, vocabulary, counter):
         """
         :param vocabulary: The Ngram vocabulary object.
-        :type vocabulary: nltk.lm.vocab.Vocabulary
+        :type vocabulary: kanltk.lm.vocab.Vocabulary
         :param counter: The counts of the vocabulary items.
-        :type counter: nltk.lm.counter.NgramCounter
+        :type counter: kanltk.lm.counter.NgramCounter
         """
         self.vocab = vocabulary
         self.counts = counter
@@ -82,9 +82,9 @@ class LanguageModel(metaclass=ABCMeta):
 
         :param vocabulary: If provided, this vocabulary will be used instead
             of creating a new one when training.
-        :type vocabulary: `nltk.lm.Vocabulary` or None
+        :type vocabulary: `kanltk.lm.Vocabulary` or None
         :param counter: If provided, use this object to count ngrams.
-        :type counter: `nltk.lm.NgramCounter` or None
+        :type counter: `kanltk.lm.NgramCounter` or None
         :param ngrams_fn: If given, defines how sentences in training text are turned to ngram
             sequences.
         :type ngrams_fn: function or None
@@ -95,7 +95,7 @@ class LanguageModel(metaclass=ABCMeta):
         if vocabulary and not isinstance(vocabulary, Vocabulary):
             warnings.warn(
                 f"The `vocabulary` argument passed to {self.__class__.__name__!r} "
-                "must be an instance of `nltk.lm.Vocabulary`.",
+                "must be an instance of `kanltk.lm.Vocabulary`.",
                 stacklevel=3,
             )
         self.vocab = Vocabulary() if vocabulary is None else vocabulary
@@ -193,7 +193,7 @@ class LanguageModel(metaclass=ABCMeta):
 
         Examples:
 
-        >>> from nltk.lm import MLE
+        >>> from kanltk.lm import MLE
         >>> lm = MLE(2)
         >>> lm.fit([[("a", "b"), ("b", "c")]], vocabulary_text=['a', 'b', 'c'])
         >>> lm.fit([[("a",), ("b",), ("c",)]])

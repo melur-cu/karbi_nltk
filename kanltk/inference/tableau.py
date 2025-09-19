@@ -3,16 +3,16 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Dan Garrette <dhgarrette@gmail.com>
 #
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
 Module for a tableau-based First Order theorem prover.
 """
 
-from nltk.inference.api import BaseProverCommand, Prover
-from nltk.internals import Counter
-from nltk.sem.logic import (
+from kanltk.inference.api import BaseProverCommand, Prover
+from kanltk.internals import Counter
+from kanltk.sem.logic import (
     AbstractVariableExpression,
     AllExpression,
     AndExpression,

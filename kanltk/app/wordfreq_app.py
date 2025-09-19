@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Sumukh Ghodke <sghodke@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 from matplotlib import pylab
 
-from nltk.corpus import gutenberg
-from nltk.text import Text
+from kanltk.corpus import gutenberg
+from kanltk.text import Text
 
 
 def plot_word_freq_dist(text):

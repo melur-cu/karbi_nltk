@@ -10,7 +10,7 @@
 import re
 from collections import Counter, defaultdict
 
-from nltk.util import ngrams
+from kanltk.util import ngrams
 
 
 def sentence_chrf(

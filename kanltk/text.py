@@ -21,14 +21,14 @@ from collections import Counter, defaultdict, namedtuple
 from functools import reduce
 from math import log
 
-from nltk.collocations import BigramCollocationFinder
-from nltk.lm import MLE
-from nltk.lm.preprocessing import padded_everygram_pipeline
-from nltk.metrics import BigramAssocMeasures, f_measure
-from nltk.probability import ConditionalFreqDist as CFD
-from nltk.probability import FreqDist
-from nltk.tokenize import sent_tokenize
-from nltk.util import LazyConcatenation, cut_string, tokenwrap
+from kanltk.collocations import BigramCollocationFinder
+from kanltk.lm import MLE
+from kanltk.lm.preprocessing import padded_everygram_pipeline
+from kanltk.metrics import BigramAssocMeasures, f_measure
+from kanltk.probability import ConditionalFreqDist as CFD
+from kanltk.probability import FreqDist
+from kanltk.tokenize import sent_tokenize
+from kanltk.util import LazyConcatenation, cut_string, tokenwrap
 
 ConcordanceLine = namedtuple(
     "ConcordanceLine",
@@ -274,8 +274,8 @@ class TokenSearcher:
         The text is a list of tokens, and a regexp pattern to match
         a single token must be surrounded by angle brackets.  E.g.
 
-        >>> from nltk.text import TokenSearcher
-        >>> from nltk.book import text1, text5, text9
+        >>> from kanltk.text import TokenSearcher
+        >>> from kanltk.book import text1, text5, text9
         >>> text5.findall("<.*><.*><bro>")
         you rule bro; telling you bro; u twizted bro
         >>> text1.findall("<a>(<.*>)<man>")
@@ -324,8 +324,8 @@ class Text:
     A ``Text`` is typically initialized from a given document or
     corpus.  E.g.:
 
-    >>> import nltk.corpus
-    >>> from nltk.text import Text
+    >>> import kanltk.corpus
+    >>> from kanltk.text import Text
     >>> moby = Text(nltk.corpus.gutenberg.words('melville-moby_dick.txt'))
 
     """
@@ -414,7 +414,7 @@ class Text:
         """
         Return collocations derived from the text, ignoring stopwords.
 
-            >>> from nltk.book import text4
+            >>> from kanltk.book import text4
             >>> text4.collocation_list()[:2]
             [('United', 'States'), ('fellow', 'citizens')]
 
@@ -433,7 +433,7 @@ class Text:
             self._window_size = window_size
 
             # print("Building collocations list")
-            from nltk.corpus import stopwords
+            from kanltk.corpus import stopwords
 
             ignored_words = stopwords.words("english")
             finder = BigramCollocationFinder.from_words(self.tokens, window_size)
@@ -449,7 +449,7 @@ class Text:
         """
         Print collocations derived from the text, ignoring stopwords.
 
-            >>> from nltk.book import text4
+            >>> from kanltk.book import text4
             >>> text4.collocations() # doctest: +NORMALIZE_WHITESPACE
             United States; fellow citizens; years ago; four years; Federal
             Government; General Government; Vice President; American people; God
@@ -554,9 +554,9 @@ class Text:
 
         :param words: The words to be plotted
         :type words: list(str)
-        :seealso: nltk.draw.dispersion_plot()
+        :seealso: kanltk.draw.dispersion_plot()
         """
-        from nltk.draw import dispersion_plot
+        from kanltk.draw import dispersion_plot
 
         dispersion_plot(self, words)
 
@@ -615,13 +615,13 @@ class Text:
     def plot(self, *args):
         """
         See documentation for FreqDist.plot()
-        :seealso: nltk.prob.FreqDist.plot()
+        :seealso: kanltk.prob.FreqDist.plot()
         """
         return self.vocab().plot(*args)
 
     def vocab(self):
         """
-        :seealso: nltk.prob.FreqDist
+        :seealso: kanltk.prob.FreqDist
         """
         if "_vocab" not in self.__dict__:
             # print("Building vocabulary index...")
@@ -634,7 +634,7 @@ class Text:
         The text is a list of tokens, and a regexp pattern to match
         a single token must be surrounded by angle brackets.  E.g.
 
-        >>> from nltk.book import text1, text5, text9
+        >>> from kanltk.book import text1, text5, text9
         >>> text5.findall("<.*><.*><bro>")
         you rule bro; telling you bro; u twizted bro
         >>> text1.findall("<a>(<.*>)<man>")
@@ -702,9 +702,9 @@ class TextCollection(Text):
     counting, concordancing, collocation discovery, etc.  Initialize a
     TextCollection as follows:
 
-    >>> import nltk.corpus
-    >>> from nltk.text import TextCollection
-    >>> from nltk.book import text1, text2, text3
+    >>> import kanltk.corpus
+    >>> from kanltk.text import TextCollection
+    >>> from kanltk.book import text1, text2, text3
     >>> gutenberg = TextCollection(nltk.corpus.gutenberg)
     >>> mytexts = TextCollection([text1, text2, text3])
 
@@ -743,7 +743,7 @@ class TextCollection(Text):
 
 
 def demo():
-    from nltk.corpus import brown
+    from kanltk.corpus import brown
 
     text = Text(brown.words(categories="news"))
     print(text)

@@ -13,7 +13,7 @@ NLTK Tokenizer Package
 Tokenizers divide strings into lists of substrings.  For example,
 tokenizers can be used to find the words and punctuation in a string:
 
-    >>> from nltk.tokenize import word_tokenize
+    >>> from kanltk.tokenize import word_tokenize
     >>> s = '''Good muffins cost $3.88\nin New York.  Please buy me
     ... two of them.\n\nThanks.'''
     >>> word_tokenize(s) # doctest: +NORMALIZE_WHITESPACE
@@ -25,7 +25,7 @@ models to be installed. NLTK also provides a simpler,
 regular-expression based tokenizer, which splits text on whitespace
 and punctuation:
 
-    >>> from nltk.tokenize import wordpunct_tokenize
+    >>> from kanltk.tokenize import wordpunct_tokenize
     >>> wordpunct_tokenize(s) # doctest: +NORMALIZE_WHITESPACE
     ['Good', 'muffins', 'cost', '$', '3', '.', '88', 'in', 'New', 'York', '.',
     'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']
@@ -33,7 +33,7 @@ and punctuation:
 We can also operate at the level of sentences, using the sentence
 tokenizer directly as follows:
 
-    >>> from nltk.tokenize import sent_tokenize, word_tokenize
+    >>> from kanltk.tokenize import sent_tokenize, word_tokenize
     >>> sent_tokenize(s)
     ['Good muffins cost $3.88\nin New York.', 'Please buy me\ntwo of them.', 'Thanks.']
     >>> [word_tokenize(t) for t in sent_tokenize(s)] # doctest: +NORMALIZE_WHITESPACE
@@ -48,7 +48,7 @@ NLTK tokenizers can produce token-spans, represented as tuples of integers
 having the same semantics as string slices, to support efficient comparison
 of tokenizers.  (These methods are implemented as generators.)
 
-    >>> from nltk.tokenize import WhitespaceTokenizer
+    >>> from kanltk.tokenize import WhitespaceTokenizer
     >>> list(WhitespaceTokenizer().span_tokenize(s)) # doctest: +NORMALIZE_WHITESPACE
     [(0, 4), (5, 12), (13, 17), (18, 23), (24, 26), (27, 30), (31, 36), (38, 44),
     (45, 48), (49, 51), (52, 55), (56, 58), (59, 64), (66, 73)]
@@ -62,13 +62,13 @@ For further information, please see Chapter 3 of the NLTK book.
 import functools
 import re
 
-from nltk.data import load
-from nltk.tokenize.casual import TweetTokenizer, casual_tokenize
-from nltk.tokenize.destructive import NLTKWordTokenizer
-from nltk.tokenize.legality_principle import LegalitySyllableTokenizer
-from nltk.tokenize.mwe import MWETokenizer
-from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktTokenizer
-from nltk.tokenize.regexp import (
+from kanltk.data import load
+from kanltk.tokenize.casual import TweetTokenizer, casual_tokenize
+from kanltk.tokenize.destructive import NLTKWordTokenizer
+from kanltk.tokenize.legality_principle import LegalitySyllableTokenizer
+from kanltk.tokenize.mwe import MWETokenizer
+from kanltk.tokenize.punkt import PunktSentenceTokenizer, PunktTokenizer
+from kanltk.tokenize.regexp import (
     BlanklineTokenizer,
     RegexpTokenizer,
     WhitespaceTokenizer,
@@ -77,20 +77,20 @@ from nltk.tokenize.regexp import (
     regexp_tokenize,
     wordpunct_tokenize,
 )
-from nltk.tokenize.repp import ReppTokenizer
-from nltk.tokenize.sexpr import SExprTokenizer, sexpr_tokenize
-from nltk.tokenize.simple import (
+from kanltk.tokenize.repp import ReppTokenizer
+from kanltk.tokenize.sexpr import SExprTokenizer, sexpr_tokenize
+from kanltk.tokenize.simple import (
     LineTokenizer,
     SpaceTokenizer,
     TabTokenizer,
     line_tokenize,
 )
-from nltk.tokenize.sonority_sequencing import SyllableTokenizer
-from nltk.tokenize.stanford_segmenter import StanfordSegmenter
-from nltk.tokenize.texttiling import TextTilingTokenizer
-from nltk.tokenize.toktok import ToktokTokenizer
-from nltk.tokenize.treebank import TreebankWordDetokenizer, TreebankWordTokenizer
-from nltk.tokenize.util import regexp_span_tokenize, string_span_tokenize
+from kanltk.tokenize.sonority_sequencing import SyllableTokenizer
+from kanltk.tokenize.stanford_segmenter import StanfordSegmenter
+from kanltk.tokenize.texttiling import TextTilingTokenizer
+from kanltk.tokenize.toktok import ToktokTokenizer
+from kanltk.tokenize.treebank import TreebankWordDetokenizer, TreebankWordTokenizer
+from kanltk.tokenize.util import regexp_span_tokenize, string_span_tokenize
 
 
 @functools.lru_cache

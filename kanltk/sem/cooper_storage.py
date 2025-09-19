@@ -5,9 +5,9 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.parse import load_parser
-from nltk.parse.featurechart import InstantiateVarsChart
-from nltk.sem.logic import ApplicationExpression, LambdaExpression, Variable
+from kanltk.parse import load_parser
+from kanltk.parse.featurechart import InstantiateVarsChart
+from kanltk.sem.logic import ApplicationExpression, LambdaExpression, Variable
 
 
 class CooperStore:
@@ -90,7 +90,7 @@ def parse_with_bindops(sentence, grammar=None, trace=0):
 
 
 def demo():
-    from nltk.sem import cooper_storage as cs
+    from kanltk.sem import cooper_storage as cs
 
     sentence = "every girl chases a dog"
     # sentence = "a man gives a bone to every dog"

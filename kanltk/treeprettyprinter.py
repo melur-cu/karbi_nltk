@@ -17,12 +17,12 @@ Graph Algorithms and Applications, 10(2) 141--157 (2006)149.
 https://jgaa.info/accepted/2006/EschbachGuentherBecker2006.10.2.pdf
 """
 
-from nltk.internals import Deprecated
-from nltk.tree.prettyprinter import TreePrettyPrinter as TPP
+from kanltk.internals import Deprecated
+from kanltk.tree.prettyprinter import TreePrettyPrinter as TPP
 
 
 class TreePrettyPrinter(Deprecated, TPP):
-    """Import `TreePrettyPrinter` using `from nltk.tree import TreePrettyPrinter` instead."""
+    """Import `TreePrettyPrinter` using `from kanltk.tree import TreePrettyPrinter` instead."""
 
 
 __all__ = ["TreePrettyPrinter"]

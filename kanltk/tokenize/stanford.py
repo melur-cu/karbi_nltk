@@ -12,9 +12,9 @@ import tempfile
 import warnings
 from subprocess import PIPE
 
-from nltk.internals import _java_options, config_java, find_jar, java
-from nltk.parse.corenlp import CoreNLPParser
-from nltk.tokenize.api import TokenizerI
+from kanltk.internals import _java_options, config_java, find_jar, java
+from kanltk.parse.corenlp import CoreNLPParser
+from kanltk.tokenize.api import TokenizerI
 
 _stanford_url = "https://nlp.stanford.edu/software/tokenizer.shtml"
 
@@ -23,7 +23,7 @@ class StanfordTokenizer(TokenizerI):
     r"""
     Interface to the Stanford Tokenizer
 
-    >>> from nltk.tokenize.stanford import StanfordTokenizer
+    >>> from kanltk.tokenize.stanford import StanfordTokenizer
     >>> s = "Good muffins cost $3.88\nin New York.  Please buy me\ntwo of them.\nThanks."
     >>> StanfordTokenizer().tokenize(s) # doctest: +SKIP
     ['Good', 'muffins', 'cost', '$', '3.88', 'in', 'New', 'York', '.', 'Please', 'buy', 'me', 'two', 'of', 'them', '.', 'Thanks', '.']

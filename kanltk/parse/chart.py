@@ -40,11 +40,11 @@ import re
 import warnings
 from functools import total_ordering
 
-from nltk.grammar import PCFG, is_nonterminal, is_terminal
-from nltk.internals import raise_unorderable_types
-from nltk.parse.api import ParserI
-from nltk.tree import Tree
-from nltk.util import OrderedDict
+from kanltk.grammar import PCFG, is_nonterminal, is_terminal
+from kanltk.internals import raise_unorderable_types
+from kanltk.parse.api import ParserI
+from kanltk.tree import Tree
+from kanltk.util import OrderedDict
 
 ########################################################################
 ##  Edges
@@ -1694,7 +1694,7 @@ class SteppingChartParser(ChartParser):
 
 
 def demo_grammar():
-    from nltk.grammar import CFG
+    from kanltk.grammar import CFG
 
     return CFG.fromstring(
         """

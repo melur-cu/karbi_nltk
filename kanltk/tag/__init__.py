@@ -38,8 +38,8 @@ Most of the taggers are built automatically based on a training corpus.
 For example, the unigram tagger tags each word *w* by checking what
 the most frequent tag for *w* was in a training corpus:
 
-    >>> from nltk.corpus import brown
-    >>> from nltk.tag import UnigramTagger
+    >>> from kanltk.corpus import brown
+    >>> from kanltk.tag import UnigramTagger
     >>> tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
     >>> sent = ['Mitchell', 'decried', 'the', 'high', 'rate', 'of', 'unemployment']
     >>> for word, tag in tagger.tag(sent):
@@ -67,9 +67,9 @@ isort:skip_file
 
 import functools
 
-from nltk.tag.api import TaggerI
-from nltk.tag.util import str2tuple, tuple2str, untag
-from nltk.tag.sequential import (
+from kanltk.tag.api import TaggerI
+from kanltk.tag.util import str2tuple, tuple2str, untag
+from kanltk.tag.sequential import (
     SequentialBackoffTagger,
     ContextTagger,
     DefaultTagger,
@@ -82,18 +82,18 @@ from nltk.tag.sequential import (
     ClassifierBasedTagger,
     ClassifierBasedPOSTagger,
 )
-from nltk.tag.brill import BrillTagger
-from nltk.tag.brill_trainer import BrillTaggerTrainer
-from nltk.tag.tnt import TnT
-from nltk.tag.hunpos import HunposTagger
-from nltk.tag.stanford import StanfordTagger, StanfordPOSTagger, StanfordNERTagger
-from nltk.tag.hmm import HiddenMarkovModelTagger, HiddenMarkovModelTrainer
-from nltk.tag.senna import SennaTagger, SennaChunkTagger, SennaNERTagger
-from nltk.tag.mapping import tagset_mapping, map_tag
-from nltk.tag.crf import CRFTagger
-from nltk.tag.perceptron import PerceptronTagger
+from kanltk.tag.brill import BrillTagger
+from kanltk.tag.brill_trainer import BrillTaggerTrainer
+from kanltk.tag.tnt import TnT
+from kanltk.tag.hunpos import HunposTagger
+from kanltk.tag.stanford import StanfordTagger, StanfordPOSTagger, StanfordNERTagger
+from kanltk.tag.hmm import HiddenMarkovModelTagger, HiddenMarkovModelTrainer
+from kanltk.tag.senna import SennaTagger, SennaChunkTagger, SennaNERTagger
+from kanltk.tag.mapping import tagset_mapping, map_tag
+from kanltk.tag.crf import CRFTagger
+from kanltk.tag.perceptron import PerceptronTagger
 
-from nltk.data import load, find
+from kanltk.data import load, find
 
 
 PRETRAINED_TAGGERS = {
@@ -145,8 +145,8 @@ def pos_tag(tokens, tagset=None, lang="eng"):
     Use NLTK's currently recommended part of speech tagger to
     tag the given list of tokens.
 
-        >>> from nltk.tag import pos_tag
-        >>> from nltk.tokenize import word_tokenize
+        >>> from kanltk.tag import pos_tag
+        >>> from kanltk.tokenize import word_tokenize
         >>> pos_tag(word_tokenize("John's big idea isn't all that bad.")) # doctest: +NORMALIZE_WHITESPACE
         [('John', 'NNP'), ("'s", 'POS'), ('big', 'JJ'), ('idea', 'NN'), ('is', 'VBZ'),
         ("n't", 'RB'), ('all', 'PDT'), ('that', 'DT'), ('bad', 'JJ'), ('.', '.')]

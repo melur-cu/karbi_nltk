@@ -8,7 +8,7 @@
 """
 The NLTK corpus and module downloader.  This module defines several
 interfaces which can be used to download corpora, models, and other
-data packages that can be used with NLTK.
+data packages that can be used with kanltk.
 
 Downloading Packages
 ====================
@@ -64,7 +64,7 @@ Usage::
 
 or::
 
-    python -m nltk.downloader [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS
+    python -m kanltk.downloader [-d DATADIR] [-q] [-f] [-k] PACKAGE_IDS
 """
 # ----------------------------------------------------------------------
 
@@ -174,9 +174,9 @@ from urllib.error import HTTPError, URLError
 from urllib.request import urlopen
 from xml.etree import ElementTree
 
-import nltk
+import kanltk
 
-# urllib2 = nltk.internals.import_from_stdlib('urllib2')
+# urllib2 = kanltk.internals.import_from_stdlib('urllib2')
 
 
 ######################################################################
@@ -933,7 +933,7 @@ class Downloader:
         self._url = url or self._url
 
         # Download the index file.
-        self._index = nltk.internals.ElementWrapper(
+        self._index = kanltk.internals.ElementWrapper(
             ElementTree.parse(urlopen(self._url)).getroot()
         )
         self._index_timestamp = time.time()
@@ -1053,8 +1053,8 @@ class Downloader:
 
         # Check if we have sufficient permissions to install in a
         # variety of system-wide locations.
-        for nltkdir in nltk.data.path:
-            if os.path.exists(nltkdir) and nltk.internals.is_writable(nltkdir):
+        for nltkdir in kanltk.data.path:
+            if os.path.exists(nltkdir) and kanltk.internals.is_writable(nltkdir):
                 return nltkdir
 
         # On Windows, use %APPDATA%
@@ -1437,7 +1437,7 @@ class DownloaderGUI:
         # want to draw a UI. See issue #2949 for more info.
         import tkinter
 
-        from nltk.draw.table import Table
+        from kanltk.draw.table import Table
 
         # Create the top-level frame structures
         f1 = tkinter.Frame(self.top, relief="raised", border=2, padx=8, pady=0)
@@ -1909,7 +1909,7 @@ class DownloaderGUI:
         self._table.select(delta=1)
 
     def _show_log(self):
-        from nltk.draw.util import ShowText
+        from kanltk.draw.util import ShowText
 
         text = "\n".join(self._log_messages)
         ShowText(self.top, "NLTK Downloader Log", text)
@@ -1966,7 +1966,7 @@ class DownloaderGUI:
     HELP = textwrap.dedent(
         """\
     This tool can be used to download a variety of corpora and models
-    that can be used with NLTK.  Each corpus or model is distributed
+    that can be used with kanltk.  Each corpus or model is distributed
     in a single zip file, known as a \"package file.\"  You can
     download packages individually, or you can download pre-defined
     collections of packages.
@@ -1993,7 +1993,7 @@ class DownloaderGUI:
     )
 
     def help(self, *e):
-        from nltk.draw.util import ShowText
+        from kanltk.draw.util import ShowText
 
         # The default font's not very legible; try using 'fixed' instead.
         try:
@@ -2008,7 +2008,7 @@ class DownloaderGUI:
             ShowText(self.top, "Help: NLTK Downloader", self.HELP.strip(), width=75)
 
     def about(self, *e):
-        from nltk.draw.util import ShowText
+        from kanltk.draw.util import ShowText
 
         ABOUT = "NLTK Downloader\n" + "Written by Edward Loper"
         TITLE = "About: NLTK Downloader"
@@ -2227,7 +2227,7 @@ class DownloaderGUI:
 ######################################################################
 # Helper Functions
 ######################################################################
-# [xx] It may make sense to move these to nltk.internals.
+# [xx] It may make sense to move these to kanltk.internals.
 
 
 def md5_hexdigest(file):
@@ -2460,7 +2460,7 @@ def _find_packages(root):
       - ``subdir`` is the subdirectory (relative to ``root``) where
         the package was found (e.g. 'corpora' or 'grammars').
     """
-    from nltk.corpus.reader.util import _path_from
+    from kanltk.corpus.reader.util import _path_from
 
     # Find all packages.
     packages = []

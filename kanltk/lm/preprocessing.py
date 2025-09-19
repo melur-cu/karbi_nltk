@@ -7,7 +7,7 @@
 from functools import partial
 from itertools import chain
 
-from nltk.util import everygrams, pad_sequence
+from kanltk.util import everygrams, pad_sequence
 
 flatten = chain.from_iterable
 pad_both_ends = partial(

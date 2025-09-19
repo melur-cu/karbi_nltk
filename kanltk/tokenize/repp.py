@@ -13,9 +13,9 @@ import subprocess
 import sys
 import tempfile
 
-from nltk.data import ZipFilePathPointer
-from nltk.internals import find_dir
-from nltk.tokenize.api import TokenizerI
+from kanltk.data import ZipFilePathPointer
+from kanltk.internals import find_dir
+from kanltk.tokenize.api import TokenizerI
 
 
 class ReppTokenizer(TokenizerI):

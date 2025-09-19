@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Joseph Frazee <jfrazee@mail.utexas.edu>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import subprocess
 import sys
 
-from nltk.internals import find_binary
+from kanltk.internals import find_binary
 
 try:
     import numpy
@@ -93,8 +93,8 @@ def call_tadm(args):
 
 
 def names_demo():
-    from nltk.classify.maxent import TadmMaxentClassifier
-    from nltk.classify.util import names_demo
+    from kanltk.classify.maxent import TadmMaxentClassifier
+    from kanltk.classify.util import names_demo
 
     classifier = names_demo(TadmMaxentClassifier.train)
 
@@ -102,7 +102,7 @@ def names_demo():
 def encoding_demo():
     import sys
 
-    from nltk.classify.maxent import TadmEventMaxentFeatureEncoding
+    from kanltk.classify.maxent import TadmEventMaxentFeatureEncoding
 
     tokens = [
         ({"f0": 1, "f1": 1, "f3": 1}, "A"),

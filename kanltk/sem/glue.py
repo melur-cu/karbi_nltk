@@ -9,17 +9,17 @@
 import os
 from itertools import chain
 
-import nltk
-from nltk.internals import Counter
-from nltk.sem import drt, linearlogic
-from nltk.sem.logic import (
+import kanltk
+from kanltk.internals import Counter
+from kanltk.sem import drt, linearlogic
+from kanltk.sem.logic import (
     AbstractVariableExpression,
     Expression,
     LambdaExpression,
     Variable,
     VariableExpression,
 )
-from nltk.tag import BigramTagger, RegexpTagger, TrigramTagger, UnigramTagger
+from kanltk.tag import BigramTagger, RegexpTagger, TrigramTagger, UnigramTagger
 
 SPEC_SEMTYPES = {
     "a": "ex_quant",
@@ -161,13 +161,13 @@ class GlueDict(dict):
             self.clear()
 
         try:
-            contents = nltk.data.load(
+            contents = kanltk.data.load(
                 self.filename, format="text", encoding=self.file_encoding
             )
-            # TODO: the above can't handle zip files, but this should anyway be fixed in nltk.data.load()
+            # TODO: the above can't handle zip files, but this should anyway be fixed in kanltk.data.load()
         except LookupError as e:
             try:
-                contents = nltk.data.load(
+                contents = kanltk.data.load(
                     "file:" + self.filename, format="text", encoding=self.file_encoding
                 )
             except LookupError:
@@ -561,7 +561,7 @@ class Glue:
             self.depparser.train(depgraphs)
         else:
             self.depparser.train_from_file(
-                nltk.data.find(
+                kanltk.data.find(
                     os.path.join("grammars", "sample_grammars", "glue_train.conll")
                 )
             )
@@ -672,7 +672,7 @@ class Glue:
 
         # Lazy-initialize the depparser
         if self.depparser is None:
-            from nltk.parse import MaltParser
+            from kanltk.parse import MaltParser
 
             self.depparser = MaltParser(tagger=self.get_pos_tagger())
         if not self.depparser._trained:
@@ -699,7 +699,7 @@ class Glue:
         return return_list
 
     def get_pos_tagger(self):
-        from nltk.corpus import brown
+        from kanltk.corpus import brown
 
         regexp_tagger = RegexpTagger(
             [
@@ -782,7 +782,7 @@ class DrtGlue(Glue):
 
 
 def demo(show_example=-1):
-    from nltk.parse import MaltParser
+    from kanltk.parse import MaltParser
 
     examples = [
         "David sees Mary",

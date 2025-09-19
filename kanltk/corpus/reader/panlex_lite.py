@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: David Kamholz <kamholz@panlex.org>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -14,7 +14,7 @@ for more information on PanLex Lite.
 import os
 import sqlite3
 
-from nltk.corpus.reader.api import CorpusReader
+from kanltk.corpus.reader.api import CorpusReader
 
 
 class PanLexLiteCorpusReader(CorpusReader):

@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -45,71 +45,71 @@ they return.  Some common examples, and their return types, are:
 - raw(): unprocessed corpus contents
 
 For example, to read a list of the words in the Brown Corpus, use
-``nltk.corpus.brown.words()``:
+``kanltk.corpus.brown.words()``:
 
-    >>> from nltk.corpus import brown
+    >>> from kanltk.corpus import brown
     >>> print(", ".join(brown.words()[:6])) # only first 6 words
     The, Fulton, County, Grand, Jury, said
 
 isort:skip_file
 """
 
-from nltk.corpus.reader.plaintext import *
-from nltk.corpus.reader.util import *
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.tagged import *
-from nltk.corpus.reader.cmudict import *
-from nltk.corpus.reader.conll import *
-from nltk.corpus.reader.chunked import *
-from nltk.corpus.reader.wordlist import *
-from nltk.corpus.reader.xmldocs import *
-from nltk.corpus.reader.ppattach import *
-from nltk.corpus.reader.senseval import *
-from nltk.corpus.reader.ieer import *
-from nltk.corpus.reader.sinica_treebank import *
-from nltk.corpus.reader.bracket_parse import *
-from nltk.corpus.reader.indian import *
-from nltk.corpus.reader.toolbox import *
-from nltk.corpus.reader.timit import *
-from nltk.corpus.reader.ycoe import *
-from nltk.corpus.reader.rte import *
-from nltk.corpus.reader.string_category import *
-from nltk.corpus.reader.propbank import *
-from nltk.corpus.reader.verbnet import *
-from nltk.corpus.reader.bnc import *
-from nltk.corpus.reader.nps_chat import *
-from nltk.corpus.reader.wordnet import *
-from nltk.corpus.reader.switchboard import *
-from nltk.corpus.reader.dependency import *
-from nltk.corpus.reader.nombank import *
-from nltk.corpus.reader.ipipan import *
-from nltk.corpus.reader.pl196x import *
-from nltk.corpus.reader.knbc import *
-from nltk.corpus.reader.chasen import *
-from nltk.corpus.reader.childes import *
-from nltk.corpus.reader.aligned import *
-from nltk.corpus.reader.lin import *
-from nltk.corpus.reader.semcor import *
-from nltk.corpus.reader.framenet import *
-from nltk.corpus.reader.udhr import *
-from nltk.corpus.reader.bnc import *
-from nltk.corpus.reader.sentiwordnet import *
-from nltk.corpus.reader.twitter import *
-from nltk.corpus.reader.nkjp import *
-from nltk.corpus.reader.crubadan import *
-from nltk.corpus.reader.mte import *
-from nltk.corpus.reader.reviews import *
-from nltk.corpus.reader.opinion_lexicon import *
-from nltk.corpus.reader.pros_cons import *
-from nltk.corpus.reader.categorized_sents import *
-from nltk.corpus.reader.comparative_sents import *
-from nltk.corpus.reader.panlex_lite import *
-from nltk.corpus.reader.panlex_swadesh import *
-from nltk.corpus.reader.bcp47 import *
+from kanltk.corpus.reader.plaintext import *
+from kanltk.corpus.reader.util import *
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.tagged import *
+from kanltk.corpus.reader.cmudict import *
+from kanltk.corpus.reader.conll import *
+from kanltk.corpus.reader.chunked import *
+from kanltk.corpus.reader.wordlist import *
+from kanltk.corpus.reader.xmldocs import *
+from kanltk.corpus.reader.ppattach import *
+from kanltk.corpus.reader.senseval import *
+from kanltk.corpus.reader.ieer import *
+from kanltk.corpus.reader.sinica_treebank import *
+from kanltk.corpus.reader.bracket_parse import *
+from kanltk.corpus.reader.indian import *
+from kanltk.corpus.reader.toolbox import *
+from kanltk.corpus.reader.timit import *
+from kanltk.corpus.reader.ycoe import *
+from kanltk.corpus.reader.rte import *
+from kanltk.corpus.reader.string_category import *
+from kanltk.corpus.reader.propbank import *
+from kanltk.corpus.reader.verbnet import *
+from kanltk.corpus.reader.bnc import *
+from kanltk.corpus.reader.nps_chat import *
+from kanltk.corpus.reader.wordnet import *
+from kanltk.corpus.reader.switchboard import *
+from kanltk.corpus.reader.dependency import *
+from kanltk.corpus.reader.nombank import *
+from kanltk.corpus.reader.ipipan import *
+from kanltk.corpus.reader.pl196x import *
+from kanltk.corpus.reader.knbc import *
+from kanltk.corpus.reader.chasen import *
+from kanltk.corpus.reader.childes import *
+from kanltk.corpus.reader.aligned import *
+from kanltk.corpus.reader.lin import *
+from kanltk.corpus.reader.semcor import *
+from kanltk.corpus.reader.framenet import *
+from kanltk.corpus.reader.udhr import *
+from kanltk.corpus.reader.bnc import *
+from kanltk.corpus.reader.sentiwordnet import *
+from kanltk.corpus.reader.twitter import *
+from kanltk.corpus.reader.nkjp import *
+from kanltk.corpus.reader.crubadan import *
+from kanltk.corpus.reader.mte import *
+from kanltk.corpus.reader.reviews import *
+from kanltk.corpus.reader.opinion_lexicon import *
+from kanltk.corpus.reader.pros_cons import *
+from kanltk.corpus.reader.categorized_sents import *
+from kanltk.corpus.reader.comparative_sents import *
+from kanltk.corpus.reader.panlex_lite import *
+from kanltk.corpus.reader.panlex_swadesh import *
+from kanltk.corpus.reader.bcp47 import *
 
-# Make sure that nltk.corpus.reader.bracket_parse gives the module, not
-# the function bracket_parse() defined in nltk.tree:
-from nltk.corpus.reader import bracket_parse
+# Make sure that kanltk.corpus.reader.bracket_parse gives the module, not
+# the function bracket_parse() defined in kanltk.tree:
+from kanltk.corpus.reader import bracket_parse
 
 __all__ = [
     "CorpusReader",

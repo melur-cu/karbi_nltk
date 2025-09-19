@@ -3,7 +3,7 @@
 # Author: Dan Garrette <dhgarrette@gmail.com>
 #
 # Copyright (C) 2001-2025 NLTK Project
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -14,9 +14,9 @@ import operator
 from collections import defaultdict
 from functools import reduce
 
-from nltk.inference.api import BaseProverCommand, Prover
-from nltk.sem import skolemize
-from nltk.sem.logic import (
+from kanltk.inference.api import BaseProverCommand, Prover
+from kanltk.sem import skolemize
+from kanltk.sem.logic import (
     AndExpression,
     ApplicationExpression,
     EqualityExpression,

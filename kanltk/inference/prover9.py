@@ -4,7 +4,7 @@
 # Author: Dan Garrette <dhgarrette@gmail.com>
 #         Ewan Klein <ewan@inf.ed.ac.uk>
 #
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """
 A theorem prover that makes use of the external 'Prover9' package.
@@ -14,8 +14,8 @@ import os
 import subprocess
 
 import nltk
-from nltk.inference.api import BaseProverCommand, Prover
-from nltk.sem.logic import (
+from kanltk.inference.api import BaseProverCommand, Prover
+from kanltk.sem.logic import (
     AllExpression,
     AndExpression,
     EqualityExpression,
@@ -124,7 +124,7 @@ class Prover9Parent:
             self._prover9_bin = None
         else:
             name = "prover9"
-            self._prover9_bin = nltk.internals.find_binary(
+            self._prover9_bin = kanltk.internals.find_binary(
                 name,
                 path_to_bin=binary_location,
                 env_vars=["PROVER9"],
@@ -174,7 +174,7 @@ class Prover9Parent:
         binary_locations = self.binary_locations()
         if self._binary_location is not None:
             binary_locations += [self._binary_location]
-        return nltk.internals.find_binary(
+        return kanltk.internals.find_binary(
             name,
             searchpath=binary_locations,
             env_vars=["PROVER9"],

@@ -128,7 +128,7 @@ import re
 import shelve
 import sys
 
-import nltk.data
+import kanltk.data
 
 ###########################################################################
 # Chat-80 relation metadata bundles needed to build the valuation
@@ -344,7 +344,7 @@ class Concept:
         :return: a new extension for the ``Concept`` in which the
                  relation is closed under a given property
         """
-        from nltk.sem import is_rel
+        from kanltk.sem import is_rel
 
         assert is_rel(self._extension)
         if "symmetric" in self.closures:
@@ -452,7 +452,7 @@ def sql_query(dbname, query):
     import sqlite3
 
     try:
-        path = nltk.data.find(dbname)
+        path = kanltk.data.find(dbname)
         connection = sqlite3.connect(str(path))
         cur = connection.cursor()
         return cur.execute(query)
@@ -470,7 +470,7 @@ def _str2records(filename, rel):
     Read a file into memory and convert each relation clause into a list.
     """
     recs = []
-    contents = nltk.data.load("corpora/chat80/%s" % filename, format="text")
+    contents = kanltk.data.load("corpora/chat80/%s" % filename, format="text")
     for line in contents.splitlines():
         if line.startswith(rel):
             line = re.sub(rel + r"\(", "", line)
@@ -588,7 +588,7 @@ def make_valuation(concepts, read=False, lexicon=False):
     if lexicon:
         read = True
     if read:
-        from nltk.sem import Valuation
+        from kanltk.sem import Valuation
 
         val = Valuation({})
         val.update(vals)
@@ -633,7 +633,7 @@ def val_load(db):
         sys.exit("Cannot read file: %s" % dbname)
     else:
         db_in = shelve.open(db)
-        from nltk.sem import Valuation
+        from kanltk.sem import Valuation
 
         val = Valuation(db_in)
         #        val.read(db_in.items())

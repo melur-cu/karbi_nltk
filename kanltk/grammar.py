@@ -72,10 +72,10 @@ import re
 from collections import deque
 from functools import total_ordering
 
-from nltk.featstruct import SLASH, TYPE, FeatDict, FeatStruct, FeatStructReader
-from nltk.internals import raise_unorderable_types
-from nltk.probability import ImmutableProbabilisticMixIn
-from nltk.util import invert_graph, transitive_closure
+from kanltk.featstruct import SLASH, TYPE, FeatDict, FeatStruct, FeatStructReader
+from kanltk.internals import raise_unorderable_types
+from kanltk.probability import ImmutableProbabilisticMixIn
+from kanltk.util import invert_graph, transitive_closure
 
 #################################################################
 # Nonterminal
@@ -1575,8 +1575,8 @@ def pcfg_demo():
     """
 
     from nltk import induce_pcfg, treetransforms
-    from nltk.corpus import treebank
-    from nltk.parse import pchart
+    from kanltk.corpus import treebank
+    from kanltk.parse import pchart
 
     toy_pcfg1 = PCFG.fromstring(
         """
@@ -1668,9 +1668,9 @@ def pcfg_demo():
 
 
 def fcfg_demo():
-    import nltk.data
+    import kanltk.data
 
-    g = nltk.data.load("grammars/book_grammars/feat0.fcfg")
+    g = kanltk.data.load("grammars/book_grammars/feat0.fcfg")
     print(g)
     print()
 
@@ -1695,7 +1695,7 @@ def sdg_demo():
     A demonstration of how to read a string representation of
     a CoNLL format dependency tree.
     """
-    from nltk.parse import DependencyGraph
+    from kanltk.parse import DependencyGraph
 
     dg = DependencyGraph(
         """

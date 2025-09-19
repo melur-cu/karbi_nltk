@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Graeme Gange <ggange@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """
 CCG Lexicons
@@ -11,9 +11,9 @@ CCG Lexicons
 import re
 from collections import defaultdict
 
-from nltk.ccg.api import CCGVar, Direction, FunctionalCategory, PrimitiveCategory
-from nltk.internals import deprecated
-from nltk.sem.logic import Expression
+from kanltk.ccg.api import CCGVar, Direction, FunctionalCategory, PrimitiveCategory
+from kanltk.internals import deprecated
+from kanltk.sem.logic import Expression
 
 # ------------
 # Regular expressions used for parsing components of the lexicon

@@ -4,7 +4,7 @@
 # Author: Greg Aumann <greg_aumann@sil.org>
 #         Stuart Robinson <Stuart.Robinson@mpi.nl>
 #         Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -12,9 +12,9 @@ Module for reading, writing and manipulating
 Toolbox databases and settings fileids.
 """
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.toolbox import ToolboxData
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.toolbox import ToolboxData
 
 
 class ToolboxCorpusReader(CorpusReader):

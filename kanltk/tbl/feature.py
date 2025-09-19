@@ -37,7 +37,7 @@ class Feature(metaclass=ABCMeta):
         Construct a Feature which may apply at C{positions}.
 
         >>> # For instance, importing some concrete subclasses (Feature is abstract)
-        >>> from nltk.tag.brill import Word, Pos
+        >>> from kanltk.tag.brill import Word, Pos
 
         >>> # Feature Word, applying at one of [-2, -1]
         >>> Word([-2,-1])
@@ -113,7 +113,7 @@ class Feature(metaclass=ABCMeta):
 
         For instance, importing a concrete subclass (Feature is abstract)
 
-        >>> from nltk.tag.brill import Word
+        >>> from kanltk.tag.brill import Word
 
         First argument gives the possible start positions, second the
         possible window lengths
@@ -170,7 +170,7 @@ class Feature(metaclass=ABCMeta):
         other positions in addition).
 
         #For instance, importing a concrete subclass (Feature is abstract)
-        >>> from nltk.tag.brill import Word, Pos
+        >>> from kanltk.tag.brill import Word, Pos
 
         >>> Word([-3,-2,-1]).issuperset(Word([-3,-2]))
         True
@@ -201,7 +201,7 @@ class Feature(metaclass=ABCMeta):
         and there is some overlap in the positions they look at.
 
         #For instance, importing a concrete subclass (Feature is abstract)
-        >>> from nltk.tag.brill import Word, Pos
+        >>> from kanltk.tag.brill import Word, Pos
 
         >>> Word([-3,-2,-1]).intersects(Word([-3,-2]))
         True

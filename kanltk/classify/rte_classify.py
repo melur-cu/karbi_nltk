@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Ewan Klein <ewan@inf.ed.ac.uk>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -17,9 +17,9 @@ TO DO: better Named Entity classification
 TO DO: add lemmatization
 """
 
-from nltk.classify.maxent import MaxentClassifier
-from nltk.classify.util import accuracy
-from nltk.tokenize import RegexpTokenizer
+from kanltk.classify.maxent import MaxentClassifier
+from kanltk.classify.util import accuracy
+from kanltk.tokenize import RegexpTokenizer
 
 
 class RTEFeatureExtractor:
@@ -127,7 +127,7 @@ class RTEFeatureExtractor:
         """
         Use morphy from WordNet to find the base form of verbs.
         """
-        from nltk.corpus import wordnet as wn
+        from kanltk.corpus import wordnet as wn
 
         lemma = wn.morphy(word, pos=wn.VERB)
         if lemma is not None:
@@ -153,7 +153,7 @@ def rte_featurize(rte_pairs):
 
 
 def rte_classifier(algorithm, sample_N=None):
-    from nltk.corpus import rte as rte_corpus
+    from kanltk.corpus import rte as rte_corpus
 
     train_set = rte_corpus.pairs(["rte1_dev.xml", "rte2_dev.xml", "rte3_dev.xml"])
     test_set = rte_corpus.pairs(["rte1_test.xml", "rte2_test.xml", "rte3_test.xml"])

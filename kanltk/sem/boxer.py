@@ -36,8 +36,8 @@ import tempfile
 from functools import reduce
 from optparse import OptionParser
 
-from nltk.internals import find_binary
-from nltk.sem.drt import (
+from kanltk.internals import find_binary
+from kanltk.sem.drt import (
     DRS,
     DrtApplicationExpression,
     DrtEqualityExpression,
@@ -48,7 +48,7 @@ from nltk.sem.drt import (
     DrtTokens,
     DrtVariableExpression,
 )
-from nltk.sem.logic import (
+from kanltk.sem.logic import (
     ExpectedMoreTokensException,
     LogicalExpressionException,
     UnexpectedTokenException,

@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Tomonori Nagano <tnagano@gc.cuny.edu>
 #         Alexis Dimitriadis <A.Dimitriadis@uu.nl>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -15,9 +15,9 @@ __docformat__ = "epytext en"
 import re
 from collections import defaultdict
 
-from nltk.corpus.reader.util import concat
-from nltk.corpus.reader.xmldocs import ElementTree, XMLCorpusReader
-from nltk.util import LazyConcatenation, LazyMap, flatten
+from kanltk.corpus.reader.util import concat
+from kanltk.corpus.reader.xmldocs import ElementTree, XMLCorpusReader
+from kanltk.util import LazyConcatenation, LazyMap, flatten
 
 # to resolve the namespace issue
 NS = "http://www.talkbank.org/ns/talkbank"
@@ -569,7 +569,7 @@ def demo(corpus_root=None):
     to ``[NLTK_Data_Dir]/corpora/childes/``
     """
     if not corpus_root:
-        from nltk.data import find
+        from kanltk.data import find
 
         corpus_root = find("corpora/childes/data-xml/Eng-USA/")
 

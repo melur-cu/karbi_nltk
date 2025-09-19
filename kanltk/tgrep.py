@@ -25,8 +25,8 @@ External links:
 Usage
 =====
 
->>> from nltk.tree import ParentedTree
->>> from nltk.tgrep import tgrep_nodes, tgrep_positions
+>>> from kanltk.tree import ParentedTree
+>>> from kanltk.tgrep import tgrep_nodes, tgrep_positions
 >>> tree = ParentedTree.fromstring('(S (NP (DT the) (JJ big) (NN dog)) (VP bit) (NP (DT a) (NN cat)))')
 >>> list(tgrep_nodes('NN', [tree]))
 [[ParentedTree('NN', ['dog']), ParentedTree('NN', ['cat'])]]
@@ -115,10 +115,10 @@ import re
 try:
     import pyparsing
 except ImportError:
-    print("Warning: nltk.tgrep will not work without the `pyparsing` package")
+    print("Warning: kanltk.tgrep will not work without the `pyparsing` package")
     print("installed.")
 
-import nltk.tree
+import kanltk.tree
 
 
 class TgrepException(Exception):
@@ -199,8 +199,8 @@ def _rightmost_descendants(node):
 
 
 def _istree(obj):
-    """Predicate to check whether `obj` is a nltk.tree.Tree."""
-    return isinstance(obj, nltk.tree.Tree)
+    """Predicate to check whether `obj` is a kanltk.tree.Tree."""
+    return isinstance(obj, kanltk.tree.Tree)
 
 
 def _unique_descendants(node):

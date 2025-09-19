@@ -13,7 +13,7 @@ retokenizes it, merging multi-word expressions into single tokens, using a lexic
 of MWEs:
 
 
-    >>> from nltk.tokenize import MWETokenizer
+    >>> from kanltk.tokenize import MWETokenizer
 
     >>> tokenizer = MWETokenizer([('a', 'little'), ('a', 'little', 'bit'), ('a', 'lot')])
     >>> tokenizer.add_mwe(('in', 'spite', 'of'))
@@ -28,8 +28,8 @@ of MWEs:
     ['In', 'a_little', 'or', 'a_little_bit', 'or', 'a_lot', 'in_spite_of']
 
 """
-from nltk.tokenize.api import TokenizerI
-from nltk.util import Trie
+from kanltk.tokenize.api import TokenizerI
+from kanltk.util import Trie
 
 
 class MWETokenizer(TokenizerI):

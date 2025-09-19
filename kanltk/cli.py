@@ -8,8 +8,8 @@
 import click
 from tqdm import tqdm
 
-from nltk import word_tokenize
-from nltk.util import parallelize_preprocess
+from kanltk import word_tokenize
+from kanltk.util import parallelize_preprocess
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -40,7 +40,7 @@ def cli():
     "--delimiter", "-d", default=" ", help="Specify delimiter to join the tokens."
 )
 def tokenize_file(language, preserve_line, processes, encoding, delimiter):
-    """This command tokenizes text stream using nltk.word_tokenize"""
+    """This command tokenizes text stream using kanltk.word_tokenize"""
     with click.get_text_stream("stdin", encoding=encoding) as fin:
         with click.get_text_stream("stdout", encoding=encoding) as fout:
             # If it's single process, joblib parallelization is slower,

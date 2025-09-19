@@ -26,8 +26,8 @@ from urllib.request import (
     install_opener,
 )
 
-from nltk.collections import *
-from nltk.internals import deprecated, raise_unorderable_types, slice_bounds
+from kanltk.collections import *
+from kanltk.internals import deprecated, raise_unorderable_types, slice_bounds
 
 ######################################################################
 # Short usage message
@@ -269,7 +269,7 @@ def edge_closure(tree, children=iter, maxdepth=-1, verbose=False):
     children should be a function taking as argument a graph node
     and returning an iterator of the node's children.
 
-    >>> from nltk.util import edge_closure
+    >>> from kanltk.util import edge_closure
     >>> print(list(edge_closure('A', lambda node:{'A':['B','C'], 'B':'C', 'C':'B'}[node])))
     [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'B')]
     """
@@ -307,10 +307,10 @@ def edges2dot(edges, shapes=None, attr=None):
 
     Returns dot_string: a representation of 'edges' as a string in the DOT
     graph language, which can be converted to an image by the 'dot' program
-    from the Graphviz package, or nltk.parse.dependencygraph.dot2img(dot_string).
+    from the Graphviz package, or kanltk.parse.dependencygraph.dot2img(dot_string).
 
     >>> import nltk
-    >>> from nltk.util import edges2dot
+    >>> from kanltk.util import edges2dot
     >>> print(edges2dot([('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'B')]))
     digraph G {
     "A" -> "B";
@@ -354,7 +354,7 @@ def unweighted_minimum_spanning_digraph(tree, children=iter, shapes=None, attr=N
 
     Return a representation of this MST as a string in the DOT graph language,
     which can be converted to an image by the 'dot' program from the Graphviz
-    package, or nltk.parse.dependencygraph.dot2img(dot_string).
+    package, or kanltk.parse.dependencygraph.dot2img(dot_string).
 
     The first argument should be the tree root;
     children should be a function taking as argument a tree node
@@ -362,7 +362,7 @@ def unweighted_minimum_spanning_digraph(tree, children=iter, shapes=None, attr=N
 
     >>> import nltk
     >>> wn=nltk.corpus.wordnet
-    >>> from nltk.util import unweighted_minimum_spanning_digraph as umsd
+    >>> from kanltk.util import unweighted_minimum_spanning_digraph as umsd
     >>> print(umsd(wn.synset('bound.a.01'), lambda s:sorted(s.also_sees())))
     digraph G {
     "Synset('bound.a.01')" -> "Synset('unfree.a.02')";
@@ -449,7 +449,7 @@ def acyclic_depth_first(
     Catches all cycles:
 
     >>> import nltk
-    >>> from nltk.util import acyclic_depth_first as acyclic_tree
+    >>> from kanltk.util import acyclic_depth_first as acyclic_tree
     >>> wn=nltk.corpus.wordnet
     >>> from pprint import pprint
     >>> pprint(acyclic_tree(wn.synset('dog.n.01'), lambda s:sorted(s.hypernyms()),cut_mark='...'))
@@ -526,7 +526,7 @@ def acyclic_branches_depth_first(
     but keeping cycles from different branches:
 
     >>> import nltk
-    >>> from nltk.util import acyclic_branches_depth_first as tree
+    >>> from kanltk.util import acyclic_branches_depth_first as tree
     >>> wn=nltk.corpus.wordnet
     >>> from pprint import pprint
     >>> pprint(tree(wn.synset('certified.a.01'), lambda s:sorted(s.also_sees()), cut_mark='...', depth=4))
@@ -609,8 +609,8 @@ def unweighted_minimum_spanning_dict(tree, children=iter):
     and returning an iterator of the node's children.
 
     >>> import nltk
-    >>> from nltk.corpus import wordnet as wn
-    >>> from nltk.util import unweighted_minimum_spanning_dict as umsd
+    >>> from kanltk.corpus import wordnet as wn
+    >>> from kanltk.util import unweighted_minimum_spanning_dict as umsd
     >>> from pprint import pprint
     >>> pprint(umsd(wn.synset('bound.a.01'), lambda s:sorted(s.also_sees())))
     {Synset('bound.a.01'): [Synset('unfree.a.02')],
@@ -654,7 +654,7 @@ def unweighted_minimum_spanning_tree(tree, children=iter):
     and returning an iterator of the node's children.
 
     >>> import nltk
-    >>> from nltk.util import unweighted_minimum_spanning_tree as mst
+    >>> from kanltk.util import unweighted_minimum_spanning_tree as mst
     >>> wn=nltk.corpus.wordnet
     >>> from pprint import pprint
     >>> pprint(mst(wn.synset('bound.a.01'), lambda s:sorted(s.also_sees())))
@@ -840,7 +840,7 @@ def flatten(*args):
     """
     Flatten a list.
 
-        >>> from nltk.util import flatten
+        >>> from kanltk.util import flatten
         >>> flatten(1, 2, ['b', 'a' , ['c', 'd']], 3)
         [1, 2, 'b', 'a', 'c', 'd', 3]
 
@@ -913,7 +913,7 @@ def ngrams(sequence, n, **kwargs):
     Return the ngrams generated from a sequence of items, as an iterator.
     For example:
 
-        >>> from nltk.util import ngrams
+        >>> from kanltk.util import ngrams
         >>> list(ngrams([1,2,3,4,5], 3))
         [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
 
@@ -962,7 +962,7 @@ def bigrams(sequence, **kwargs):
     Return the bigrams generated from a sequence of items, as an iterator.
     For example:
 
-        >>> from nltk.util import bigrams
+        >>> from kanltk.util import bigrams
         >>> list(bigrams([1,2,3,4,5]))
         [(1, 2), (2, 3), (3, 4), (4, 5)]
 
@@ -981,7 +981,7 @@ def trigrams(sequence, **kwargs):
     Return the trigrams generated from a sequence of items, as an iterator.
     For example:
 
-        >>> from nltk.util import trigrams
+        >>> from kanltk.util import trigrams
         >>> list(trigrams([1,2,3,4,5]))
         [(1, 2, 3), (2, 3, 4), (3, 4, 5)]
 

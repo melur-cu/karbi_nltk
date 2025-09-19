@@ -14,8 +14,8 @@ A module for interfacing with the HunPos open-source POS-tagger.
 import os
 from subprocess import PIPE, Popen
 
-from nltk.internals import find_binary, find_file
-from nltk.tag.api import TaggerI
+from kanltk.internals import find_binary, find_file
+from kanltk.tag.api import TaggerI
 
 _hunpos_url = "https://code.google.com/p/hunpos/"
 
@@ -32,11 +32,11 @@ class HunposTagger(TaggerI):
 
     Check whether the required "hunpos-tag" binary is available:
 
-        >>> from nltk.test.setup_fixt import check_binary
+        >>> from kanltk.test.setup_fixt import check_binary
         >>> check_binary('hunpos-tag')
 
     Example:
-        >>> from nltk.tag import HunposTagger
+        >>> from kanltk.tag import HunposTagger
         >>> ht = HunposTagger('en_wsj.model')
         >>> ht.tag('What is the airspeed of an unladen swallow ?'.split())
         [('What', 'WP'), ('is', 'VBZ'), ('the', 'DT'), ('airspeed', 'NN'), ('of', 'IN'), ('an', 'DT'), ('unladen', 'NN'), ('swallow', 'VB'), ('?', '.')]

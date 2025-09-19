@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 #
 
@@ -152,10 +152,10 @@ zero-length assertions).
      pattern is valid.
 """
 
-from nltk.chunk.api import ChunkParserI
-from nltk.chunk.named_entity import Maxent_NE_Chunker
-from nltk.chunk.regexp import RegexpChunkParser, RegexpParser
-from nltk.chunk.util import (
+from kanltk.chunk.api import ChunkParserI
+from kanltk.chunk.named_entity import Maxent_NE_Chunker
+from kanltk.chunk.regexp import RegexpChunkParser, RegexpParser
+from kanltk.chunk.util import (
     ChunkScore,
     accuracy,
     conllstr2tree,
@@ -179,8 +179,8 @@ def ne_chunk(tagged_tokens, binary=False):
     Use NLTK's currently recommended named entity chunker to
     chunk the given list of tagged tokens.
 
-    >>> from nltk.chunk import ne_chunk
-    >>> from nltk.corpus import treebank
+    >>> from kanltk.chunk import ne_chunk
+    >>> from kanltk.corpus import treebank
     >>> from pprint import pprint
     >>> pprint(ne_chunk(treebank.tagged_sents()[2][8:14])) # doctest: +NORMALIZE_WHITESPACE
     Tree('S', [('chairman', 'NN'), ('of', 'IN'), Tree('ORGANIZATION', [('Consolidated', 'NNP'), ('Gold', 'NNP'), ('Fields', 'NNP')]), ('PLC', 'NNP')])

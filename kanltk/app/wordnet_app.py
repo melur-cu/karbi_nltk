@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Jussi Salmela <jtsalmela@users.sourceforge.net>
 #         Paul Bone <pbone@students.csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -62,8 +62,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from sys import argv
 from urllib.parse import unquote_plus
 
-from nltk.corpus import wordnet as wn
-from nltk.corpus.reader.wordnet import Lemma, Synset
+from kanltk.corpus import wordnet as wn
+from kanltk.corpus.reader.wordnet import Lemma, Synset
 
 firstClient = True
 
@@ -839,7 +839,7 @@ def get_static_web_help_page():
      <!-- Natural Language Toolkit: Wordnet Interface: Graphical Wordnet Browser
             Copyright (C) 2001-2025 NLTK Project
             Author: Jussi Salmela <jtsalmela@users.sourceforge.net>
-            URL: <https://www.nltk.org/>
+            URL: <https://www.kanltk.org/>
             For license information, see LICENSE.TXT -->
      <head>
           <meta http-equiv='Content-Type' content='text/html; charset=us-ascii'>
@@ -850,7 +850,7 @@ def get_static_web_help_page():
 <p>The NLTK Wordnet Browser is a tool to use in browsing the Wordnet database. It tries to behave like the Wordnet project's web browser but the difference is that the NLTK Wordnet Browser uses a local Wordnet database.
 <p><b>You are using the Javascript client part of the NLTK Wordnet BrowseServer.</b> We assume your browser is in tab sheets enabled mode.</p>
 <p>For background information on Wordnet, see the Wordnet project home page: <a href="https://wordnet.princeton.edu/"><b> https://wordnet.princeton.edu/</b></a>. For more information on the NLTK project, see the project home:
-<a href="https://www.nltk.org/"><b>https://www.nltk.org/</b></a>. To get an idea of what the Wordnet version used by this browser includes choose <b>Show Database Info</b> from the <b>View</b> submenu.</p>
+<a href="https://www.kanltk.org/"><b>https://www.kanltk.org/</b></a>. To get an idea of what the Wordnet version used by this browser includes choose <b>Show Database Info</b> from the <b>View</b> submenu.</p>
 <h3>Word search</h3>
 <p>The word to be searched is typed into the <b>New Word</b> field and the search started with Enter or by clicking the <b>Search</b> button. There is no uppercase/lowercase distinction: the search word is transformed to lowercase before the search.</p>
 <p>In addition, the word does not have to be in base form. The browser tries to find the possible base form(s) by making certain morphological substitutions. Typing <b>fLIeS</b> as an obscure example gives one <a href="MfLIeS">this</a>. Click the previous link to see what this kind of search looks like and then come back to this page by using the <b>Alt+LeftArrow</b> key combination.</p>
@@ -909,7 +909,7 @@ def get_static_index_page(with_shutdown):
      <!-- Natural Language Toolkit: Wordnet Interface: Graphical Wordnet Browser
             Copyright (C) 2001-2025 NLTK Project
             Author: Jussi Salmela <jtsalmela@users.sourceforge.net>
-            URL: <https://www.nltk.org/>
+            URL: <https://www.kanltk.org/>
             For license information, see LICENSE.TXT -->
      <HEAD>
          <TITLE>NLTK Wordnet Browser</TITLE>
@@ -942,7 +942,7 @@ def get_static_upper_page(with_shutdown):
     <!-- Natural Language Toolkit: Wordnet Interface: Graphical Wordnet Browser
         Copyright (C) 2001-2025 NLTK Project
         Author: Jussi Salmela <jtsalmela@users.sourceforge.net>
-        URL: <https://www.nltk.org/>
+        URL: <https://www.kanltk.org/>
         For license information, see LICENSE.TXT -->
     <head>
                 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />

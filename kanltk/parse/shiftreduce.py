@@ -6,9 +6,9 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.grammar import Nonterminal
-from nltk.parse.api import ParserI
-from nltk.tree import Tree
+from kanltk.grammar import Nonterminal
+from kanltk.parse.api import ParserI
+from kanltk.tree import Tree
 
 
 ##//////////////////////////////////////////////////////
@@ -429,7 +429,7 @@ class SteppingShiftReduceParser(ShiftReduceParser):
         ):
             yield self._stack[0]
 
-    # copied from nltk.parser
+    # copied from kanltk.parser
 
     def set_grammar(self, grammar):
         """

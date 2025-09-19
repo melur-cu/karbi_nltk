@@ -30,7 +30,7 @@ increases the word ambiguities and changes the original root.
 """
 import re
 
-from nltk.stem.api import StemmerI
+from kanltk.stem.api import StemmerI
 
 
 class ISRIStemmer(StemmerI):

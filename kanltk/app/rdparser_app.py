@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -67,11 +67,11 @@ Keyboard Shortcuts::
 from tkinter import Button, Frame, IntVar, Label, Listbox, Menu, Scrollbar, Tk
 from tkinter.font import Font
 
-from nltk.draw import CFGEditor, TreeSegmentWidget, tree_to_treesegment
-from nltk.draw.util import CanvasFrame, EntryDialog, ShowText, TextWidget
-from nltk.parse import SteppingRecursiveDescentParser
-from nltk.tree import Tree
-from nltk.util import in_idle
+from kanltk.draw import CFGEditor, TreeSegmentWidget, tree_to_treesegment
+from kanltk.draw.util import CanvasFrame, EntryDialog, ShowText, TextWidget
+from kanltk.parse import SteppingRecursiveDescentParser
+from kanltk.tree import Tree
+from kanltk.util import in_idle
 
 
 class RecursiveDescentApp:
@@ -1023,7 +1023,7 @@ def app():
     Create a recursive descent parser demo, using a simple grammar and
     text.
     """
-    from nltk.grammar import CFG
+    from kanltk.grammar import CFG
 
     grammar = CFG.fromstring(
         """

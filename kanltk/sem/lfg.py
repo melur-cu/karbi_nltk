@@ -8,7 +8,7 @@
 
 from itertools import chain
 
-from nltk.internals import Counter
+from kanltk.internals import Counter
 
 
 class FStructure(dict):
@@ -35,7 +35,7 @@ class FStructure(dict):
         return glue_dict.to_glueformula_list(depgraph)
 
     def to_depgraph(self, rel=None):
-        from nltk.parse.dependencygraph import DependencyGraph
+        from kanltk.parse.dependencygraph import DependencyGraph
 
         depgraph = DependencyGraph()
         nodes = depgraph.nodes
@@ -214,7 +214,7 @@ class FStructure(dict):
 
 
 def demo_read_depgraph():
-    from nltk.parse.dependencygraph import DependencyGraph
+    from kanltk.parse.dependencygraph import DependencyGraph
 
     dg1 = DependencyGraph(
         """\

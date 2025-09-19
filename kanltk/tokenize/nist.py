@@ -18,18 +18,18 @@ https://github.com/lium-lst/nmtpy/blob/master/nmtpy/metrics/mtevalbleu.py#L162
 import io
 import re
 
-from nltk.corpus import perluniprops
-from nltk.tokenize.api import TokenizerI
-from nltk.tokenize.util import xml_unescape
+from kanltk.corpus import perluniprops
+from kanltk.tokenize.api import TokenizerI
+from kanltk.tokenize.util import xml_unescape
 
 
 class NISTTokenizer(TokenizerI):
     """
     This NIST tokenizer is sentence-based instead of the original
     paragraph-based tokenization from mteval-14.pl; The sentence-based
-    tokenization is consistent with the other tokenizers available in NLTK.
+    tokenization is consistent with the other tokenizers available in kanltk.
 
-    >>> from nltk.tokenize.nist import NISTTokenizer
+    >>> from kanltk.tokenize.nist import NISTTokenizer
     >>> nist = NISTTokenizer()
     >>> s = "Good muffins cost $3.88 in New York."
     >>> expected_lower = [u'good', u'muffins', u'cost', u'$', u'3.88', u'in', u'new', u'york', u'.']
@@ -42,7 +42,7 @@ class NISTTokenizer(TokenizerI):
     The international_tokenize() is the preferred function when tokenizing
     non-european text, e.g.
 
-    >>> from nltk.tokenize.nist import NISTTokenizer
+    >>> from kanltk.tokenize.nist import NISTTokenizer
     >>> nist = NISTTokenizer()
 
     # Input strings.

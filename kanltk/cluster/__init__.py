@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -64,7 +64,7 @@ hypersphere.
 Usage example (see also demo())::
 
     from nltk import cluster
-    from nltk.cluster import euclidean_distance
+    from kanltk.cluster import euclidean_distance
     from numpy import array
 
     vectors = [array(f) for f in [[3, 3], [1, 2], [4, 2], [4, 0]]]
@@ -81,10 +81,10 @@ objects. nltk_contrib.unimelb.tacohn.SparseArrays may be used for
 efficiency when required.
 """
 
-from nltk.cluster.em import EMClusterer
-from nltk.cluster.gaac import GAAClusterer
-from nltk.cluster.kmeans import KMeansClusterer
-from nltk.cluster.util import (
+from kanltk.cluster.em import EMClusterer
+from kanltk.cluster.gaac import GAAClusterer
+from kanltk.cluster.kmeans import KMeansClusterer
+from kanltk.cluster.util import (
     Dendrogram,
     VectorSpaceClusterer,
     cosine_distance,

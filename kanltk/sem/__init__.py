@@ -12,7 +12,7 @@ This package contains classes for representing semantic structure in
 formulas of first-order logic and for evaluating such formulas in
 set-theoretic models.
 
-    >>> from nltk.sem import logic
+    >>> from kanltk.sem import logic
     >>> logic._counter._value = 0
 
 The package has two main components:
@@ -31,7 +31,7 @@ of entities.
 The domain of discourse can be inferred from the valuation, and model
 is then created with domain and valuation as parameters.
 
-    >>> from nltk.sem import Valuation, Model
+    >>> from kanltk.sem import Valuation, Model
     >>> v = [('adam', 'b1'), ('betty', 'g1'), ('fido', 'd1'),
     ... ('girl', set(['g1', 'g2'])), ('boy', set(['b1', 'b2'])),
     ... ('dog', set(['d1'])),
@@ -41,9 +41,9 @@ is then created with domain and valuation as parameters.
     >>> m = Model(dom, val)
 """
 
-from nltk.sem.boxer import Boxer
-from nltk.sem.drt import DRS, DrtExpression
-from nltk.sem.evaluate import (
+from kanltk.sem.boxer import Boxer
+from kanltk.sem.drt import DRS, DrtExpression
+from kanltk.sem.evaluate import (
     Assignment,
     Model,
     Undefined,
@@ -53,8 +53,8 @@ from nltk.sem.evaluate import (
     read_valuation,
     set2rel,
 )
-from nltk.sem.lfg import FStructure
-from nltk.sem.logic import (
+from kanltk.sem.lfg import FStructure
+from kanltk.sem.logic import (
     ApplicationExpression,
     Expression,
     LogicalExpressionException,
@@ -64,12 +64,12 @@ from nltk.sem.logic import (
     equality_preds,
     read_logic,
 )
-from nltk.sem.relextract import clause, extract_rels, rtuple
-from nltk.sem.skolemize import skolemize
-from nltk.sem.util import evaluate_sents, interpret_sents, parse_sents, root_semrep
+from kanltk.sem.relextract import clause, extract_rels, rtuple
+from kanltk.sem.skolemize import skolemize
+from kanltk.sem.util import evaluate_sents, interpret_sents, parse_sents, root_semrep
 
-# from nltk.sem.glue import Glue
-# from nltk.sem.hole import HoleSemantics
-# from nltk.sem.cooper_storage import CooperStore
+# from kanltk.sem.glue import Glue
+# from kanltk.sem.hole import HoleSemantics
+# from kanltk.sem.cooper_storage import CooperStore
 
 # don't import chat80 as its names are too generic

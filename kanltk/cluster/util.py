@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Trevor Cohn <tacohn@cs.mu.oz.au>
 # Contributor: J Richard Snape
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 import copy
 from abc import abstractmethod
@@ -15,7 +15,7 @@ try:
 except ImportError:
     pass
 
-from nltk.cluster.api import ClusterI
+from kanltk.cluster.api import ClusterI
 
 
 class VectorSpaceClusterer(ClusterI):

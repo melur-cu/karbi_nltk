@@ -15,7 +15,7 @@ import re
 from io import StringIO
 from xml.etree.ElementTree import Element, ElementTree, SubElement, TreeBuilder
 
-from nltk.data import PathPointer, find
+from kanltk.data import PathPointer, find
 
 
 class StandardFormat:
@@ -222,7 +222,7 @@ class ToolboxData(StandardFormat):
         return builder.close()
 
     def _tree2etree(self, parent):
-        from nltk.tree import Tree
+        from kanltk.tree import Tree
 
         root = Element(parent.label())
         for child in parent:
@@ -255,7 +255,7 @@ class ToolboxData(StandardFormat):
         :rtype: ElementTree._ElementInterface
         """
         from nltk import chunk
-        from nltk.tree import Tree
+        from kanltk.tree import Tree
 
         cp = chunk.RegexpParser(grammar, root_label=root_label, trace=trace)
         db = self.parse(**kwargs)

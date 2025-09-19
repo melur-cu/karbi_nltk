@@ -6,7 +6,7 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.corpus import (
+from kanltk.corpus import (
     genesis,
     gutenberg,
     inaugural,
@@ -15,9 +15,9 @@ from nltk.corpus import (
     webtext,
     wordnet,
 )
-from nltk.probability import FreqDist
-from nltk.text import Text
-from nltk.util import bigrams
+from kanltk.probability import FreqDist
+from kanltk.text import Text
+from kanltk.util import bigrams
 
 print("*** Introductory Examples for the NLTK Book ***")
 print("Loading text1, ..., text9 and sent1, ..., sent9")

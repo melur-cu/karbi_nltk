@@ -32,7 +32,7 @@ X - other: foreign words, typos, abbreviations
 from collections import defaultdict
 from os.path import join
 
-from nltk.data import load
+from kanltk.data import load
 
 _UNIVERSAL_DATA = "taggers/universal_tagset"
 _UNIVERSAL_TAGS = (
@@ -90,7 +90,7 @@ def tagset_mapping(source, target):
         if target == "universal":
             _load_universal_map(source)
             # Added the new Russian National Corpus mappings because the
-            # Russian model for nltk.pos_tag() uses it.
+            # Russian model for kanltk.pos_tag() uses it.
             _MAPPINGS["ru-rnc-new"]["universal"] = {
                 "A": "ADJ",
                 "A-PRO": "PRON",

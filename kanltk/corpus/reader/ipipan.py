@@ -2,13 +2,13 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Konrad Goluchowski <kodie@mimuw.edu.pl>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import functools
 
-from nltk.corpus.reader.api import CorpusReader
-from nltk.corpus.reader.util import StreamBackedCorpusView, concat
+from kanltk.corpus.reader.api import CorpusReader
+from kanltk.corpus.reader.util import StreamBackedCorpusView, concat
 
 
 def _parse_args(fun):

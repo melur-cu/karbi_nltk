@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -22,7 +22,7 @@ APW_19980429, NYT_19980315, NYT_19980403, and NYT_19980407.
 """
 
 import nltk
-from nltk.corpus.reader.api import *
+from kanltk.corpus.reader.api import *
 
 #: A dictionary whose keys are the names of documents in this corpus;
 #: and whose values are descriptions of those documents' contents.
@@ -88,7 +88,7 @@ class IEERCorpusReader(CorpusReader):
         ]
 
     def _parse(self, doc):
-        val = nltk.chunk.ieerstr2tree(doc, root_label="DOCUMENT")
+        val = kanltk.chunk.ieerstr2tree(doc, root_label="DOCUMENT")
         if isinstance(val, dict):
             return IEERDocument(**val)
         else:

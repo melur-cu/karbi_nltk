@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Pierpaolo Pantone <24alsecondo@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -63,8 +63,8 @@ Note: Some of the files (e.g. "ipod.txt", "Canon PowerShot SD500.txt") do not
 
 import re
 
-from nltk.corpus.reader.api import *
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.tokenize import *
 
 TITLE = re.compile(r"^\[t\](.*)$")  # [t] Title
 FEATURES = re.compile(
@@ -157,7 +157,7 @@ class ReviewsCorpusReader(CorpusReader):
     Note: we are not applying any sentence tokenization at the moment, just word
     tokenization.
 
-        >>> from nltk.corpus import product_reviews_1
+        >>> from kanltk.corpus import product_reviews_1
         >>> camera_reviews = product_reviews_1.reviews('Canon_G3.txt')
         >>> review = camera_reviews[0]
         >>> review.sents()[0] # doctest: +NORMALIZE_WHITESPACE

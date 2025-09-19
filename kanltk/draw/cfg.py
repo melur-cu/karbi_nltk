@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -60,16 +60,16 @@ from tkinter import (
     Toplevel,
 )
 
-from nltk.draw.tree import TreeSegmentWidget, tree_to_treesegment
-from nltk.draw.util import (
+from kanltk.draw.tree import TreeSegmentWidget, tree_to_treesegment
+from kanltk.draw.util import (
     CanvasFrame,
     ColorizedList,
     ShowText,
     SymbolWidget,
     TextWidget,
 )
-from nltk.grammar import CFG, Nonterminal, _read_cfg_production, nonterminals
-from nltk.tree import Tree
+from kanltk.grammar import CFG, Nonterminal, _read_cfg_production, nonterminals
+from kanltk.tree import Tree
 
 ######################################################################
 # Production List

@@ -23,7 +23,7 @@ Model (Doctoral dissertation). Columbus, OH, USA: The Ohio State University.
 
 import re
 
-from nltk.tokenize.api import TokenizerI
+from kanltk.tokenize.api import TokenizerI
 
 
 class ToktokTokenizer(TokenizerI):

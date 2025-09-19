@@ -20,7 +20,7 @@ class AlignedSent:
     Typically used in machine translation to represent a sentence and
     its translation.
 
-        >>> from nltk.translate import AlignedSent, Alignment
+        >>> from kanltk.translate import AlignedSent, Alignment
         >>> algnsent = AlignedSent(['klein', 'ist', 'das', 'Haus'],
         ...     ['the', 'house', 'is', 'small'], Alignment.fromstring('0-3 1-2 2-0 3-1'))
         >>> algnsent.words
@@ -29,7 +29,7 @@ class AlignedSent:
         ['the', 'house', 'is', 'small']
         >>> algnsent.alignment
         Alignment([(0, 3), (1, 2), (2, 0), (3, 1)])
-        >>> from nltk.corpus import comtrans
+        >>> from kanltk.corpus import comtrans
         >>> print(comtrans.aligned_sents()[54])
         <AlignedSent: 'Weshalb also sollten...' -> 'So why should EU arm...'>
         >>> print(comtrans.aligned_sents()[54].alignment)
@@ -168,7 +168,7 @@ class Alignment(frozenset):
     j-th element of s2.  Tuples are extensible (they might contain
     additional data, such as a boolean to indicate sure vs possible alignments).
 
-        >>> from nltk.translate import Alignment
+        >>> from kanltk.translate import Alignment
         >>> a = Alignment([(0, 0), (0, 1), (1, 2), (2, 2)])
         >>> a.invert()
         Alignment([(0, 0), (1, 0), (2, 1), (2, 2)])

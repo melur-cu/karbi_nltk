@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Eric Kafe <kafe.eric@gmail.com> (tab-format models)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -14,18 +14,18 @@ import os
 import re
 from xml.etree import ElementTree as ET
 
-from nltk.tag import ClassifierBasedTagger, pos_tag
+from kanltk.tag import ClassifierBasedTagger, pos_tag
 
 try:
-    from nltk.classify import MaxentClassifier
+    from kanltk.classify import MaxentClassifier
 except ImportError:
     pass
 
-from nltk.chunk.api import ChunkParserI
-from nltk.chunk.util import ChunkScore
-from nltk.data import find
-from nltk.tokenize import word_tokenize
-from nltk.tree import Tree
+from kanltk.chunk.api import ChunkParserI
+from kanltk.chunk.util import ChunkScore
+from kanltk.data import find
+from kanltk.tokenize import word_tokenize
+from kanltk.tree import Tree
 
 
 class NEChunkParserTagger(ClassifierBasedTagger):
@@ -54,7 +54,7 @@ class NEChunkParserTagger(ClassifierBasedTagger):
         try:
             wl = self._en_wordlist
         except AttributeError:
-            from nltk.corpus import words
+            from kanltk.corpus import words
 
             self._en_wordlist = set(words.words("en-basic"))
             wl = self._en_wordlist
@@ -323,14 +323,14 @@ class Maxent_NE_Chunker(NEChunkParser):
     """
 
     def __init__(self, fmt="multiclass"):
-        from nltk.data import find
+        from kanltk.data import find
 
         self._fmt = fmt
         self._tab_dir = find(f"chunkers/maxent_ne_chunker_tab/english_ace_{fmt}/")
         self.load_params()
 
     def load_params(self):
-        from nltk.classify.maxent import BinaryMaxentFeatureEncoding, load_maxent_params
+        from kanltk.classify.maxent import BinaryMaxentFeatureEncoding, load_maxent_params
 
         wgt, mpg, lab, aon = load_maxent_params(self._tab_dir)
         mc = MaxentClassifier(
@@ -339,7 +339,7 @@ class Maxent_NE_Chunker(NEChunkParser):
         self._tagger = NEChunkParserTagger(classifier=mc)
 
     def save_params(self):
-        from nltk.classify.maxent import save_maxent_params
+        from kanltk.classify.maxent import save_maxent_params
 
         classif = self._tagger._classifier
         ecg = classif._encoding

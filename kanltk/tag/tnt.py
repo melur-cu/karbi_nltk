@@ -16,8 +16,8 @@ https://aclanthology.org/A00-1031.pdf
 from math import log
 from operator import itemgetter
 
-from nltk.probability import ConditionalFreqDist, FreqDist
-from nltk.tag.api import TaggerI
+from kanltk.probability import ConditionalFreqDist, FreqDist
+from kanltk.tag.api import TaggerI
 
 
 class TnT(TaggerI):
@@ -461,7 +461,7 @@ def basic_sent_chop(data, raw=True):
 
 
 def demo():
-    from nltk.corpus import brown
+    from kanltk.corpus import brown
 
     sents = list(brown.tagged_sents())
     test = list(brown.sents())
@@ -480,7 +480,7 @@ def demo():
 
 
 def demo2():
-    from nltk.corpus import treebank
+    from kanltk.corpus import treebank
 
     d = list(treebank.tagged_sents())
 
@@ -516,7 +516,7 @@ def demo2():
 
 
 def demo3():
-    from nltk.corpus import brown, treebank
+    from kanltk.corpus import brown, treebank
 
     d = list(treebank.tagged_sents())
     e = list(brown.tagged_sents())

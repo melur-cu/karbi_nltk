@@ -10,7 +10,7 @@
 # For license information, see LICENSE.TXT
 #
 # Modifications to the original VADER code have been made in order to
-# integrate it into NLTK. These have involved changes to
+# integrate it into kanltk. These have involved changes to
 # ensure Python 3 compatibility, and refactoring to achieve greater modularity.
 
 """
@@ -26,8 +26,8 @@ import re
 import string
 from itertools import product
 
-import nltk.data
-from nltk.util import pairwise
+import kanltk.data
+from kanltk.util import pairwise
 
 
 class VaderConstants:
@@ -337,7 +337,7 @@ class SentimentIntensityAnalyzer:
         self,
         lexicon_file="sentiment/vader_lexicon.zip/vader_lexicon/vader_lexicon.txt",
     ):
-        self.lexicon_file = nltk.data.load(lexicon_file)
+        self.lexicon_file = kanltk.data.load(lexicon_file)
         self.lexicon = self.make_lex_dict()
         self.constants = VaderConstants()
 

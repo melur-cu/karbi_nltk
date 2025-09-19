@@ -20,10 +20,10 @@ import time
 from copy import deepcopy
 
 import nltk
-from nltk.corpus import CategorizedPlaintextCorpusReader
-from nltk.data import load
-from nltk.tokenize import PunktTokenizer
-from nltk.tokenize.casual import EMOTICON_RE
+from kanltk.corpus import CategorizedPlaintextCorpusReader
+from kanltk.data import load
+from kanltk.tokenize import PunktTokenizer
+from kanltk.tokenize.casual import EMOTICON_RE
 
 # ////////////////////////////////////////////////////////////
 # { Regular expressions
@@ -203,7 +203,7 @@ def extract_bigram_feats(document, bigrams):
     """
     features = {}
     for bigr in bigrams:
-        features[f"contains({bigr[0]} - {bigr[1]})"] = bigr in nltk.bigrams(document)
+        features[f"contains({bigr[0]} - {bigr[1]})"] = bigr in kanltk.bigrams(document)
     return features
 
 
@@ -474,9 +474,9 @@ def demo_tweets(trainer, n_instances=None, output=None):
         negative.
     :param output: the output file where results have to be reported.
     """
-    from nltk.corpus import stopwords, twitter_samples
-    from nltk.sentiment import SentimentAnalyzer
-    from nltk.tokenize import TweetTokenizer
+    from kanltk.corpus import stopwords, twitter_samples
+    from kanltk.sentiment import SentimentAnalyzer
+    from kanltk.tokenize import TweetTokenizer
 
     # Different customizations for the TweetTokenizer
     tokenizer = TweetTokenizer(preserve_case=False)
@@ -564,8 +564,8 @@ def demo_movie_reviews(trainer, n_instances=None, output=None):
         negative.
     :param output: the output file where results have to be reported.
     """
-    from nltk.corpus import movie_reviews
-    from nltk.sentiment import SentimentAnalyzer
+    from kanltk.corpus import movie_reviews
+    from kanltk.sentiment import SentimentAnalyzer
 
     if n_instances is not None:
         n_instances = int(n_instances / 2)
@@ -632,8 +632,8 @@ def demo_subjectivity(trainer, save_analyzer=False, n_instances=None, output=Non
         and negative.
     :param output: the output file where results have to be reported.
     """
-    from nltk.corpus import subjectivity
-    from nltk.sentiment import SentimentAnalyzer
+    from kanltk.corpus import subjectivity
+    from kanltk.sentiment import SentimentAnalyzer
 
     if n_instances is not None:
         n_instances = int(n_instances / 2)
@@ -700,8 +700,8 @@ def demo_sent_subjectivity(text):
 
     :param text: a sentence whose subjectivity has to be classified.
     """
-    from nltk.classify import NaiveBayesClassifier
-    from nltk.tokenize import regexp
+    from kanltk.classify import NaiveBayesClassifier
+    from kanltk.tokenize import regexp
 
     word_tokenizer = regexp.WhitespaceTokenizer()
     try:
@@ -726,8 +726,8 @@ def demo_liu_hu_lexicon(sentence, plot=False):
     :param sentence: a sentence whose polarity has to be classified.
     :param plot: if True, plot a visual representation of the sentence polarity.
     """
-    from nltk.corpus import opinion_lexicon
-    from nltk.tokenize import treebank
+    from kanltk.corpus import opinion_lexicon
+    from kanltk.tokenize import treebank
 
     tokenizer = treebank.TreebankWordTokenizer()
     pos_words = 0
@@ -766,7 +766,7 @@ def demo_vader_instance(text):
 
     :param text: a text whose polarity has to be evaluated.
     """
-    from nltk.sentiment import SentimentIntensityAnalyzer
+    from kanltk.sentiment import SentimentIntensityAnalyzer
 
     vader_analyzer = SentimentIntensityAnalyzer()
     print(vader_analyzer.polarity_scores(text))
@@ -781,12 +781,12 @@ def demo_vader_tweets(n_instances=None, output=None):
     """
     from collections import defaultdict
 
-    from nltk.corpus import twitter_samples
-    from nltk.metrics import accuracy as eval_accuracy
-    from nltk.metrics import f_measure as eval_f_measure
-    from nltk.metrics import precision as eval_precision
-    from nltk.metrics import recall as eval_recall
-    from nltk.sentiment import SentimentIntensityAnalyzer
+    from kanltk.corpus import twitter_samples
+    from kanltk.metrics import accuracy as eval_accuracy
+    from kanltk.metrics import f_measure as eval_f_measure
+    from kanltk.metrics import precision as eval_precision
+    from kanltk.metrics import recall as eval_recall
+    from kanltk.sentiment import SentimentIntensityAnalyzer
 
     if n_instances is not None:
         n_instances = int(n_instances / 2)
@@ -870,9 +870,9 @@ def demo_vader_tweets(n_instances=None, output=None):
 if __name__ == "__main__":
     from sklearn.svm import LinearSVC
 
-    from nltk.classify import MaxentClassifier, NaiveBayesClassifier
-    from nltk.classify.scikitlearn import SklearnClassifier
-    from nltk.twitter.common import _outf_writer, extract_fields
+    from kanltk.classify import MaxentClassifier, NaiveBayesClassifier
+    from kanltk.classify.scikitlearn import SklearnClassifier
+    from kanltk.twitter.common import _outf_writer, extract_fields
 
     naive_bayes = NaiveBayesClassifier.train
     svm = SklearnClassifier(LinearSVC()).train

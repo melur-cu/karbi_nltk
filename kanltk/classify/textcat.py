@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Avital Pekker <avital.pekker@utoronto.ca>
 #
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -29,7 +29,7 @@ https://borel.slu.edu/crubadan/index.html
 
 from sys import maxsize
 
-from nltk.util import trigrams
+from kanltk.util import trigrams
 
 # Note: this is NOT "re" you're likely used to. The regex module
 # is an alternative to the standard re module that supports
@@ -61,7 +61,7 @@ class TextCat:
                 "further details."
             )
 
-        from nltk.corpus import crubadan
+        from kanltk.corpus import crubadan
 
         self._corpus = crubadan
         # Load all language ngrams into cache
@@ -141,7 +141,7 @@ class TextCat:
 
 
 def demo():
-    from nltk.corpus import udhr
+    from kanltk.corpus import udhr
 
     langs = [
         "Kurdish-UTF8",

@@ -2,20 +2,20 @@
 # KNB Corpus reader
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Masato Hagiwara <hagisan@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 # For more information, see http://lilyx.net/pages/nltkjapanesecorpus.html
 
 import re
 
-from nltk.corpus.reader.api import CorpusReader, SyntaxCorpusReader
-from nltk.corpus.reader.util import (
+from kanltk.corpus.reader.api import CorpusReader, SyntaxCorpusReader
+from kanltk.corpus.reader.util import (
     FileSystemPathPointer,
     find_corpus_fileids,
     read_blankline_block,
 )
-from nltk.parse import DependencyGraph
+from kanltk.parse import DependencyGraph
 
 # default function to convert morphlist to str for tree representation
 _morphs2str_default = lambda morphs: "/".join(m[0] for m in morphs if m[0] != "EOS")
@@ -39,7 +39,7 @@ class KNBCorpusReader(SyntaxCorpusReader):
 
     Usage example
 
-    >>> from nltk.corpus.util import LazyCorpusLoader
+    >>> from kanltk.corpus.util import LazyCorpusLoader
     >>> knbc = LazyCorpusLoader(
     ...     'knbc/corpus1',
     ...     KNBCorpusReader,
@@ -131,9 +131,9 @@ class KNBCorpusReader(SyntaxCorpusReader):
 
 def demo():
     import nltk
-    from nltk.corpus.util import LazyCorpusLoader
+    from kanltk.corpus.util import LazyCorpusLoader
 
-    root = nltk.data.find("corpora/knbc/corpus1")
+    root = kanltk.data.find("corpora/knbc/corpus1")
     fileids = [
         f
         for f in find_corpus_fileids(FileSystemPathPointer(root), ".*")
@@ -171,7 +171,7 @@ def demo():
 
 
 def test():
-    from nltk.corpus.util import LazyCorpusLoader
+    from kanltk.corpus.util import LazyCorpusLoader
 
     knbc = LazyCorpusLoader(
         "knbc/corpus1", KNBCorpusReader, r".*/KN.*", encoding="euc-jp"

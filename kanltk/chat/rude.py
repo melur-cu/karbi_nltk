@@ -2,10 +2,10 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Peter Spiller <pspiller@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.chat.util import Chat, reflections
+from kanltk.chat.util import Chat, reflections
 
 pairs = (
     (

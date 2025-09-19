@@ -9,7 +9,7 @@ import bisect
 from functools import total_ordering
 from itertools import chain, islice
 
-from nltk.internals import raise_unorderable_types, slice_bounds
+from kanltk.internals import raise_unorderable_types, slice_bounds
 
 ##########################################################################
 # Ordered Dictionary
@@ -345,7 +345,7 @@ class LazyMap(AbstractLazySequence):
     ``map``.  In particular, the following two expressions are
     equivalent:
 
-        >>> from nltk.collections import LazyMap
+        >>> from kanltk.collections import LazyMap
         >>> function = str
         >>> sequence = [1,2,3]
         >>> map(function, sequence) # doctest: +SKIP
@@ -483,7 +483,7 @@ class LazyZip(LazyMap):
     ``LazyZip`` is essentially a lazy version of the Python primitive function
     ``zip``.  In particular, an evaluated LazyZip is equivalent to a zip:
 
-        >>> from nltk.collections import LazyZip
+        >>> from kanltk.collections import LazyZip
         >>> sequence1, sequence2 = [1, 2, 3], ['a', 'b', 'c']
         >>> zip(sequence1, sequence2) # doctest: +SKIP
         [(1, 'a'), (2, 'b'), (3, 'c')]
@@ -534,7 +534,7 @@ class LazyEnumerate(LazyZip):
     function ``enumerate``.  In particular, the following two expressions are
     equivalent:
 
-        >>> from nltk.collections import LazyEnumerate
+        >>> from kanltk.collections import LazyEnumerate
         >>> sequence = ['first', 'second', 'third']
         >>> list(enumerate(sequence))
         [(0, 'first'), (1, 'second'), (2, 'third')]
@@ -637,7 +637,7 @@ class Trie(dict):
 
         :Example:
 
-        >>> from nltk.collections import Trie
+        >>> from kanltk.collections import Trie
         >>> trie = Trie(["abc", "def"])
         >>> expected = {'a': {'b': {'c': {True: None}}}, \
                         'd': {'e': {'f': {True: None}}}}

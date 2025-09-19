@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Authors: Chuck Wooters <wooters@icsi.berkeley.edu>,
 #          Nathan Schneider <nathan.schneider@georgetown.edu>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 
@@ -22,8 +22,8 @@ from itertools import zip_longest
 from operator import itemgetter
 from pprint import pprint
 
-from nltk.corpus.reader import XMLCorpusReader, XMLCorpusView
-from nltk.util import LazyConcatenation, LazyIteratorList, LazyMap
+from kanltk.corpus.reader import XMLCorpusReader, XMLCorpusView
+from kanltk.util import LazyConcatenation, LazyIteratorList, LazyMap
 
 __docformat__ = "epytext en"
 
@@ -392,7 +392,7 @@ def _pretty_annotation(sent, aset_level=False):
     Cop (copula), Supp (support), Ctrlr (controller),
     Gov (governor), X. Gov and X always cooccur.
 
-    >>> from nltk.corpus import framenet as fn
+    >>> from kanltk.corpus import framenet as fn
     >>> def f(luRE, lyr, ignore=set()):
     ...   for i,ex in enumerate(fn.exemplars(luRE)):
     ...     if lyr in ex and ex[lyr] and set(zip(*ex[lyr])[2]) - ignore:
@@ -957,7 +957,7 @@ class PrettyList(list):
     Displays an abbreviated repr of only the first several elements, not the whole list.
     """
 
-    # from nltk.util
+    # from kanltk.util
     def __init__(self, *args, **kwargs):
         self._MAX_REPR_SIZE = kwargs.pop("maxReprSize", 60)
         self._BREAK_LINES = kwargs.pop("breakLines", False)
@@ -989,7 +989,7 @@ class PrettyLazyMap(LazyMap):
     Displays an abbreviated repr of only the first several elements, not the whole list.
     """
 
-    # from nltk.util
+    # from kanltk.util
     _MAX_REPR_SIZE = 60
 
     def __repr__(self):
@@ -1015,7 +1015,7 @@ class PrettyLazyIteratorList(LazyIteratorList):
     Displays an abbreviated repr of only the first several elements, not the whole list.
     """
 
-    # from nltk.util
+    # from kanltk.util
     _MAX_REPR_SIZE = 60
 
     def __repr__(self):
@@ -1041,7 +1041,7 @@ class PrettyLazyConcatenation(LazyConcatenation):
     Displays an abbreviated repr of only the first several elements, not the whole list.
     """
 
-    # from nltk.util
+    # from kanltk.util
     _MAX_REPR_SIZE = 60
 
     def __repr__(self):
@@ -1073,7 +1073,7 @@ class PrettyLazyConcatenation(LazyConcatenation):
 class FramenetCorpusReader(XMLCorpusReader):
     """A corpus reader for the Framenet Corpus.
 
-    >>> from nltk.corpus import framenet as fn
+    >>> from kanltk.corpus import framenet as fn
     >>> fn.lu(3238).frame.lexUnit['glint.v'] is fn.lu(3238)
     True
     >>> fn.frame_by_name('Replacing') is fn.lus('replace.v')[0].frame
@@ -1381,7 +1381,7 @@ warnings(True) to display corpus consistency warnings when loading data
 
         Usage examples:
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> f = fn.frame_by_id(256)
         >>> f.ID
         256
@@ -1424,7 +1424,7 @@ warnings(True) to display corpus consistency warnings when loading data
 
         Usage examples:
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> f = fn.frame_by_name('Medical_specialties')
         >>> f.ID
         256
@@ -1493,7 +1493,7 @@ warnings(True) to display corpus consistency warnings when loading data
 
         Usage examples:
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> f = fn.frame(256)
         >>> f.name
         'Medical_specialties'
@@ -1577,8 +1577,8 @@ warnings(True) to display corpus consistency warnings when loading data
         frames because each time frames_by_lemma() is called, it has to
         search through ALL of the frame XML files in the db.
 
-        >>> from nltk.corpus import framenet as fn
-        >>> from nltk.corpus.reader.framenet import PrettyList
+        >>> from kanltk.corpus import framenet as fn
+        >>> from kanltk.corpus.reader.framenet import PrettyList
         >>> PrettyList(sorted(fn.frames_by_lemma(r'(?i)a little'), key=itemgetter('ID'))) # doctest: +ELLIPSIS
         [<frame ID=189 name=Quanti...>, <frame ID=2001 name=Degree>]
 
@@ -1597,7 +1597,7 @@ warnings(True) to display corpus consistency warnings when loading data
         ``fn_luid``. This is basically just a wrapper around the
         ``lu()`` function with "subCorpus" info excluded.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> lu = PrettyDict(fn.lu_basic(256), breakLines=True)
         >>> # ellipses account for differences between FN 1.5 and 1.7
         >>> lu # doctest: +ELLIPSIS
@@ -1634,7 +1634,7 @@ warnings(True) to display corpus consistency warnings when loading data
 
         Usage examples:
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> fn.lu(256).name
         'foresee.v'
         >>> fn.lu(256).definition
@@ -1871,7 +1871,7 @@ warnings(True) to display corpus consistency warnings when loading data
         which takes several seconds. If this needed to be fast, it could be rewritten
         to traverse the neighboring relations on demand for each FE semtype.)
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> x = sum(1 for f in fn.frames() for fe in f.FE.values() if fe.semType)
         >>> fn.propagate_semtypes()
         >>> y = sum(1 for f in fn.frames() for fe in f.FE.values() if fe.semType)
@@ -1922,7 +1922,7 @@ warnings(True) to display corpus consistency warnings when loading data
 
     def semtype(self, key):
         """
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> fn.semtype(233).name
         'Temperature'
         >>> fn.semtype(233).abbrev
@@ -1968,7 +1968,7 @@ warnings(True) to display corpus consistency warnings when loading data
         """
         Obtain details for a specific frame.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> len(fn.frames()) in (1019, 1221)    # FN 1.5 and 1.7, resp.
         True
         >>> x = PrettyList(fn.frames(r'(?i)crim'), maxReprSize=0, breakLines=True)
@@ -2059,7 +2059,7 @@ warnings(True) to display corpus consistency warnings when loading data
         consistent across frames.) Specify 'frame' to filter by a frame name pattern,
         ID, or object.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> fn.fes('Noise_maker')
         [<fe ID=6043 name=Noise_maker>]
         >>> sorted([(fe.frame.name,fe.name) for fe in fn.fes('sound')]) # doctest: +NORMALIZE_WHITESPACE
@@ -2109,7 +2109,7 @@ warnings(True) to display corpus consistency warnings when loading data
         Optionally restrict by lexical unit name pattern, and/or to a certain frame
         or frames whose name matches a pattern.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> len(fn.lus()) in (11829, 13572) # FN 1.5 and 1.7, resp.
         True
         >>> PrettyList(sorted(fn.lus(r'(?i)a little'), key=itemgetter('ID')), maxReprSize=0, breakLines=True)
@@ -2263,7 +2263,7 @@ warnings(True) to display corpus consistency warnings when loading data
         Details for a specific annotated document can be obtained using this
         class's doc() function and pass it the value of the 'ID' field.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> len(fn.docs()) in (78, 107) # FN 1.5 and 1.7, resp.
         True
         >>> set([x.corpname for x in fn.docs_metadata()])>=set(['ANC', 'KBEval', \
@@ -2491,7 +2491,7 @@ warnings(True) to display corpus consistency warnings when loading data
         """
         Obtain a list of frame relation types.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> frts = sorted(fn.frame_relation_types(), key=itemgetter('ID'))
         >>> isinstance(frts, list)
         True
@@ -2524,7 +2524,7 @@ warnings(True) to display corpus consistency warnings when loading data
         :return: A list of all of the frame relations in framenet
         :rtype: list(dict)
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> frels = fn.frame_relations()
         >>> isinstance(frels, list)
         True
@@ -2611,7 +2611,7 @@ warnings(True) to display corpus consistency warnings when loading data
         """
         Obtain a list of frame element relations.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> ferels = fn.fe_relations()
         >>> isinstance(ferels, list)
         True
@@ -2653,7 +2653,7 @@ warnings(True) to display corpus consistency warnings when loading data
         """
         Obtain a list of semantic types.
 
-        >>> from nltk.corpus import framenet as fn
+        >>> from kanltk.corpus import framenet as fn
         >>> stypes = fn.semtypes()
         >>> len(stypes) in (73, 109) # FN 1.5 and 1.7, resp.
         True
@@ -3303,7 +3303,7 @@ warnings(True) to display corpus consistency warnings when loading data
 # Demo
 #
 def demo():
-    from nltk.corpus import framenet as fn
+    from kanltk.corpus import framenet as fn
 
     #
     # It is not necessary to explicitly build the indexes by calling

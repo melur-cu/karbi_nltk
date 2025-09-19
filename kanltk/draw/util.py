@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -18,11 +18,11 @@ well as a number of simpler widgets.  These canvas widgets make it
 easier to build new graphical tools and demos.  See the class
 documentation for ``CanvasWidget`` for more information.
 
-The ``nltk.draw`` module defines the abstract ``CanvasWidget`` base
+The ``kanltk.draw`` module defines the abstract ``CanvasWidget`` base
 class, and a number of simple canvas widgets.  The remaining canvas
-widgets are defined by submodules, such as ``nltk.draw.tree``.
+widgets are defined by submodules, such as ``kanltk.draw.tree``.
 
-The ``nltk.draw`` module also defines ``CanvasFrame``, which
+The ``kanltk.draw`` module also defines ``CanvasFrame``, which
 encapsulates a ``Canvas`` and its scrollbars.  It uses a
 ``ScrollWatcherWidget`` to ensure that all canvas widgets contained on
 its canvas are within the scroll region.
@@ -52,7 +52,7 @@ from tkinter import (
 )
 from tkinter.filedialog import asksaveasfilename
 
-from nltk.util import in_idle
+from kanltk.util import in_idle
 
 ##//////////////////////////////////////////////////////
 ##  CanvasWidget
@@ -79,7 +79,7 @@ class CanvasWidget(metaclass=ABCMeta):
     value can be overridden in the constructor, using keyword
     arguments of the form ``attribute=value``:
 
-        >>> from nltk.draw.util import TextWidget
+        >>> from kanltk.draw.util import TextWidget
         >>> cn = TextWidget(Canvas(), 'test', color='red')  # doctest: +SKIP
 
     Attribute values can also be changed after a canvas widget has

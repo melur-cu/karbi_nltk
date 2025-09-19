@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Pierpaolo Pantone <24alsecondo@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -35,8 +35,8 @@ Related papers:
 """
 import re
 
-from nltk.corpus.reader.api import *
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.tokenize import *
 
 # Regular expressions for dataset components
 STARS = re.compile(r"^\*+$")
@@ -97,7 +97,7 @@ class ComparativeSentencesCorpusReader(CorpusReader):
     """
     Reader for the Comparative Sentence Dataset by Jindal and Liu (2006).
 
-        >>> from nltk.corpus import comparative_sentences
+        >>> from kanltk.corpus import comparative_sentences
         >>> comparison = comparative_sentences.comparisons()[0]
         >>> comparison.text # doctest: +NORMALIZE_WHITESPACE
         ['its', 'fast-forward', 'and', 'rewind', 'work', 'much', 'more', 'smoothly',

@@ -23,9 +23,9 @@ from abc import abstractmethod
 from typing import List, Optional, Tuple
 
 from nltk import jsontags
-from nltk.classify import NaiveBayesClassifier
-from nltk.probability import ConditionalFreqDist
-from nltk.tag.api import FeaturesetTaggerI, TaggerI
+from kanltk.classify import NaiveBayesClassifier
+from kanltk.probability import ConditionalFreqDist
+from kanltk.tag.api import FeaturesetTaggerI, TaggerI
 
 
 ######################################################################
@@ -223,7 +223,7 @@ class DefaultTagger(SequentialBackoffTagger):
     """
     A tagger that assigns the same tag to every token.
 
-        >>> from nltk.tag import DefaultTagger
+        >>> from kanltk.tag import DefaultTagger
         >>> default_tagger = DefaultTagger('NN')
         >>> list(default_tagger.tag('This is a test'.split()))
         [('This', 'NN'), ('is', 'NN'), ('a', 'NN'), ('test', 'NN')]
@@ -332,8 +332,8 @@ class UnigramTagger(NgramTagger):
     The UnigramTagger finds the most likely tag for each word in a training
     corpus, and then uses that information to assign tags to new tokens.
 
-        >>> from nltk.corpus import brown
-        >>> from nltk.tag import UnigramTagger
+        >>> from kanltk.corpus import brown
+        >>> from kanltk.tag import UnigramTagger
         >>> test_sent = brown.sents(categories='news')[0]
         >>> unigram_tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
         >>> for tok, tag in unigram_tagger.tag(test_sent):
@@ -498,8 +498,8 @@ class RegexpTagger(SequentialBackoffTagger):
     uses word suffixes to make guesses about the correct Brown Corpus part
     of speech tag:
 
-        >>> from nltk.corpus import brown
-        >>> from nltk.tag import RegexpTagger
+        >>> from kanltk.corpus import brown
+        >>> from kanltk.tag import RegexpTagger
         >>> test_sent = brown.sents(categories='news')[0]
         >>> regexp_tagger = RegexpTagger(
         ...     [(r'^-?[0-9]+(\.[0-9]+)?$', 'CD'),  # cardinal numbers

@@ -3,11 +3,11 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
-from nltk.tokenize import line_tokenize
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
+from kanltk.tokenize import line_tokenize
 
 
 class WordListCorpusReader(CorpusReader):
@@ -73,7 +73,7 @@ class NonbreakingPrefixesCorpusReader(WordListCorpusReader):
         This module returns a list of nonbreaking prefixes for the specified
         language(s).
 
-        >>> from nltk.corpus import nonbreaking_prefixes as nbp
+        >>> from kanltk.corpus import nonbreaking_prefixes as nbp
         >>> nbp.words('en')[:10] == [u'A', u'B', u'C', u'D', u'E', u'F', u'G', u'H', u'I', u'J']
         True
         >>> nbp.words('ta')[:5] == [u'\u0b85', u'\u0b86', u'\u0b87', u'\u0b88', u'\u0b89']
@@ -126,7 +126,7 @@ class UnicharsCorpusReader(WordListCorpusReader):
         This module returns a list of characters from  the Perl Unicode Properties.
         They are very useful when porting Perl tokenizers to Python.
 
-        >>> from nltk.corpus import perluniprops as pup
+        >>> from kanltk.corpus import perluniprops as pup
         >>> pup.chars('Open_Punctuation')[:5] == [u'(', u'[', u'{', u'\u0f3a', u'\u0f3c']
         True
         >>> pup.chars('Currency_Symbol')[:5] == [u'$', u'\xa2', u'\xa3', u'\xa4', u'\xa5']

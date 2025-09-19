@@ -11,21 +11,21 @@
 Transformation Based Learning
 
 A general purpose package for Transformation Based Learning,
-currently used by nltk.tag.BrillTagger.
+currently used by kanltk.tag.BrillTagger.
 
 isort:skip_file
 """
 
-from nltk.tbl.template import Template
+from kanltk.tbl.template import Template
 
 # API: Template(...), Template.expand(...)
 
-from nltk.tbl.feature import Feature
+from kanltk.tbl.feature import Feature
 
 # API: Feature(...), Feature.expand(...)
 
-from nltk.tbl.rule import Rule
+from kanltk.tbl.rule import Rule
 
 # API: Rule.format(...), Rule.templatetid
 
-from nltk.tbl.erroranalysis import error_list
+from kanltk.tbl.erroranalysis import error_list

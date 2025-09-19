@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Selina Dennis <sjmd@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -11,7 +11,7 @@ anime junky that frequents YahooMessenger or MSNM.
 All spelling mistakes and flawed grammar are intentional.
 """
 
-from nltk.chat.util import Chat
+from kanltk.chat.util import Chat
 
 reflections = {
     "am": "r",

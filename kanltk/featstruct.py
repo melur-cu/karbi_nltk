@@ -61,7 +61,7 @@ full-fledged ``FeatDict`` and ``FeatList`` objects.  In other words,
 Python ``dicts`` and ``lists`` can be used as "light-weight" feature
 structures.
 
-    >>> from nltk.featstruct import unify
+    >>> from kanltk.featstruct import unify
     >>> unify(dict(x=1, y=dict()), dict(a='a', y=dict(b='b')))  # doctest: +SKIP
     {'y': {'b': 'b'}, 'x': 1, 'a': 'a'}
 
@@ -93,8 +93,8 @@ import copy
 import re
 from functools import total_ordering
 
-from nltk.internals import raise_unorderable_types, read_str
-from nltk.sem.logic import (
+from kanltk.internals import raise_unorderable_types, read_str
+from kanltk.sem.logic import (
     Expression,
     LogicalExpressionException,
     LogicParser,
@@ -1220,7 +1220,7 @@ def rename_variables(
     structures, simply apply rename_variables to each one, using
     the same dictionary:
 
-        >>> from nltk.featstruct import FeatStruct
+        >>> from kanltk.featstruct import FeatStruct
         >>> fstruct1 = FeatStruct('[subj=[agr=[gender=?y]], obj=[agr=[gender=?y]]]')
         >>> fstruct2 = FeatStruct('[subj=[agr=[number=?z,gender=?y]], obj=[agr=[number=?z,gender=?y]]]')
         >>> new_vars = {}  # Maps old vars to alpha-renamed vars
@@ -1382,7 +1382,7 @@ def unify(
     assumed to be unbound.  I.e., ``bindings`` defaults to an
     empty dict.
 
-        >>> from nltk.featstruct import FeatStruct
+        >>> from kanltk.featstruct import FeatStruct
         >>> FeatStruct('[a=?x]').unify(FeatStruct('[b=?x]'))
         [a=?x, b=?x2]
 

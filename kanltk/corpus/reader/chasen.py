@@ -1,14 +1,14 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Masato Hagiwara <hagisan@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import sys
 
-from nltk.corpus.reader import util
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.util import *
+from kanltk.corpus.reader import util
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.util import *
 
 
 class ChasenCorpusReader(CorpusReader):
@@ -128,7 +128,7 @@ class ChasenCorpusView(StreamBackedCorpusView):
 
 def demo():
     import nltk
-    from nltk.corpus.util import LazyCorpusLoader
+    from kanltk.corpus.util import LazyCorpusLoader
 
     jeita = LazyCorpusLoader("jeita", ChasenCorpusReader, r".*chasen", encoding="utf-8")
     print("/".join(jeita.words()[22100:22140]))
@@ -142,7 +142,7 @@ def demo():
 
 
 def test():
-    from nltk.corpus.util import LazyCorpusLoader
+    from kanltk.corpus.util import LazyCorpusLoader
 
     jeita = LazyCorpusLoader("jeita", ChasenCorpusReader, r".*chasen", encoding="utf-8")
 

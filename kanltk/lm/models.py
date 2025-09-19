@@ -3,12 +3,12 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Ilia Kurenkov <ilia.kurenkov@gmail.com>
 #         Manu Joseph <manujosephv@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """Language Models"""
 
-from nltk.lm.api import LanguageModel, Smoothing
-from nltk.lm.smoothing import AbsoluteDiscounting, KneserNey, WittenBell
+from kanltk.lm.api import LanguageModel, Smoothing
+from kanltk.lm.smoothing import AbsoluteDiscounting, KneserNey, WittenBell
 
 
 class MLE(LanguageModel):

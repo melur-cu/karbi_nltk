@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Pierpaolo Pantone <24alsecondo@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -27,15 +27,15 @@ Related papers:
 """
 import re
 
-from nltk.corpus.reader.api import *
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.tokenize import *
 
 
 class ProsConsCorpusReader(CategorizedCorpusReader, CorpusReader):
     """
     Reader for the Pros and Cons sentence dataset.
 
-        >>> from nltk.corpus import pros_cons
+        >>> from kanltk.corpus import pros_cons
         >>> pros_cons.sents(categories='Cons') # doctest: +NORMALIZE_WHITESPACE
         [['East', 'batteries', '!', 'On', '-', 'off', 'switch', 'too', 'easy',
         'to', 'maneuver', '.'], ['Eats', '...', 'no', ',', 'GULPS', 'batteries'],

@@ -3,15 +3,15 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Steven Bird <stevenbird1@gmail.com> (minor additions)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import re
 
-from nltk.metrics import accuracy as _accuracy
-from nltk.tag.mapping import map_tag
-from nltk.tag.util import str2tuple
-from nltk.tree import Tree
+from kanltk.metrics import accuracy as _accuracy
+from kanltk.tag.mapping import map_tag
+from kanltk.tag.util import str2tuple
+from kanltk.tree import Tree
 
 ##//////////////////////////////////////////////////////
 ## EVALUATION
@@ -46,7 +46,7 @@ def accuracy(chunker, gold):
 # Patched for increased performance by Yoav Goldberg <yoavg@cs.bgu.ac.il>, 2006-01-13
 #  -- statistics are evaluated only on demand, instead of at every sentence evaluation
 #
-# SB: use nltk.metrics for precision/recall scoring?
+# SB: use kanltk.metrics for precision/recall scoring?
 #
 class ChunkScore:
     """
@@ -595,7 +595,7 @@ def demo():
     s = "[ Pierre/NNP Vinken/NNP ] ,/, [ 61/CD years/NNS ] old/JJ ,/, will/MD join/VB [ the/DT board/NN ] ./."
     import nltk
 
-    t = nltk.chunk.tagstr2tree(s, chunk_label="NP")
+    t = kanltk.chunk.tagstr2tree(s, chunk_label="NP")
     t.pprint()
     print()
 
@@ -634,7 +634,7 @@ better JJR I-ADJP
 
     # Demonstrate CoNLL output
     print("CoNLL output:")
-    print(nltk.chunk.tree2conllstr(conll_tree))
+    print(kanltk.chunk.tree2conllstr(conll_tree))
     print()
 
 

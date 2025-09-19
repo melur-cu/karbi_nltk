@@ -13,12 +13,12 @@ import socket
 import time
 from typing import List, Tuple
 
-from nltk.internals import _java_options, config_java, find_jar_iter, java
-from nltk.parse.api import ParserI
-from nltk.parse.dependencygraph import DependencyGraph
-from nltk.tag.api import TaggerI
-from nltk.tokenize.api import TokenizerI
-from nltk.tree import Tree
+from kanltk.internals import _java_options, config_java, find_jar_iter, java
+from kanltk.parse.api import ParserI
+from kanltk.parse.dependencygraph import DependencyGraph
+from kanltk.tag.api import TaggerI
+from kanltk.tokenize.api import TokenizerI
+from kanltk.tree import Tree
 
 _stanford_url = "https://stanfordnlp.github.io/CoreNLP/"
 
@@ -309,7 +309,7 @@ class GenericCoreNLPParser(ParserI, TokenizerI, TaggerI):
         """Tokenize a string of text.
 
         Skip these tests if CoreNLP is likely not ready.
-        >>> from nltk.test.setup_fixt import check_jar
+        >>> from kanltk.test.setup_fixt import check_jar
         >>> check_jar(CoreNLPServer._JAR, env_vars=("CORENLP",), is_regex=True)
 
         The CoreNLP server can be started using the following notation, although
@@ -371,7 +371,7 @@ class GenericCoreNLPParser(ParserI, TokenizerI, TaggerI):
         :rtype: list(tuple(str, str))
 
         Skip these tests if CoreNLP is likely not ready.
-        >>> from nltk.test.setup_fixt import check_jar
+        >>> from kanltk.test.setup_fixt import check_jar
         >>> check_jar(CoreNLPServer._JAR, env_vars=("CORENLP",), is_regex=True)
 
         The CoreNLP server can be started using the following notation, although
@@ -431,7 +431,7 @@ class GenericCoreNLPParser(ParserI, TokenizerI, TaggerI):
 class CoreNLPParser(GenericCoreNLPParser):
     """
     Skip these tests if CoreNLP is likely not ready.
-    >>> from nltk.test.setup_fixt import check_jar
+    >>> from kanltk.test.setup_fixt import check_jar
     >>> check_jar(CoreNLPServer._JAR, env_vars=("CORENLP",), is_regex=True)
 
     The recommended usage of `CoreNLPParser` is using the context manager notation:
@@ -596,7 +596,7 @@ class CoreNLPDependencyParser(GenericCoreNLPParser):
     """Dependency parser.
 
     Skip these tests if CoreNLP is likely not ready.
-    >>> from nltk.test.setup_fixt import check_jar
+    >>> from kanltk.test.setup_fixt import check_jar
     >>> check_jar(CoreNLPServer._JAR, env_vars=("CORENLP",), is_regex=True)
 
     The recommended usage of `CoreNLPParser` is using the context manager notation:

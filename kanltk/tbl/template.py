@@ -10,8 +10,8 @@
 import itertools as it
 from abc import ABCMeta, abstractmethod
 
-from nltk.tbl.feature import Feature
-from nltk.tbl.rule import Rule
+from kanltk.tbl.feature import Feature
+from kanltk.tbl.rule import Rule
 
 
 class BrillTemplateI(metaclass=ABCMeta):
@@ -91,8 +91,8 @@ class Template(BrillTemplateI):
 
         For instance, importing some features
 
-        >>> from nltk.tbl.template import Template
-        >>> from nltk.tag.brill import Word, Pos
+        >>> from kanltk.tbl.template import Template
+        >>> from kanltk.tag.brill import Word, Pos
 
         Create some features
 
@@ -212,8 +212,8 @@ class Template(BrillTemplateI):
         The feature lists may have been specified
         manually, or generated from Feature.expand(). For instance,
 
-        >>> from nltk.tbl.template import Template
-        >>> from nltk.tag.brill import Word, Pos
+        >>> from kanltk.tbl.template import Template
+        >>> from kanltk.tag.brill import Word, Pos
 
         #creating some features
         >>> (wd_0, wd_01) = (Word([0]), Word([0,1]))

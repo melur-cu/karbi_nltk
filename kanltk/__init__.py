@@ -101,7 +101,7 @@ __classifiers__ = [
     "Topic :: Text Processing :: Linguistic",
 ]
 
-from nltk.internals import config_java
+from kanltk.internals import config_java
 
 # support numpy from pypy
 try:
@@ -131,30 +131,30 @@ if not hasattr(subprocess, "Popen"):
 
 # Import top-level functionality into top-level namespace
 
-from nltk.collocations import *
-from nltk.decorators import decorator, memoize
-from nltk.featstruct import *
-from nltk.grammar import *
-from nltk.probability import *
-from nltk.text import *
-from nltk.util import *
-from nltk.jsontags import *
+from kanltk.collocations import *
+from kanltk.decorators import decorator, memoize
+from kanltk.featstruct import *
+from kanltk.grammar import *
+from kanltk.probability import *
+from kanltk.text import *
+from kanltk.util import *
+from kanltk.jsontags import *
 
 ###########################################################
 # PACKAGES
 ###########################################################
 
-from nltk.chunk import *
-from nltk.classify import *
-from nltk.inference import *
-from nltk.metrics import *
-from nltk.parse import *
-from nltk.tag import *
-from nltk.tokenize import *
-from nltk.translate import *
-from nltk.tree import *
-from nltk.sem import *
-from nltk.stem import *
+from kanltk.chunk import *
+from kanltk.classify import *
+from kanltk.inference import *
+from kanltk.metrics import *
+from kanltk.parse import *
+from kanltk.tag import *
+from kanltk.tokenize import *
+from kanltk.translate import *
+from kanltk.tree import *
+from kanltk.sem import *
+from kanltk.stem import *
 
 # Packages which can be lazily imported
 # (a) we don't import *
@@ -175,16 +175,16 @@ try:
 except ImportError:
     pass
 else:
-    from nltk import cluster
+    from kanltk import cluster
 
-from nltk.downloader import download, download_shell
+from kanltk.downloader import download, download_shell
 
 # Check if tkinter exists without importing it to avoid crashes after
-# forks on macOS. Only nltk.app, nltk.draw, and demo modules should
+# forks on macOS. Only kanltk.app, kanltk.draw, and demo modules should
 # have top-level tkinter imports. See #2949 for more details.
 if importlib.util.find_spec("tkinter"):
     try:
-        from nltk.downloader import download_gui
+        from kanltk.downloader import download_gui
     except RuntimeError as e:
         import warnings
 
@@ -205,4 +205,4 @@ from nltk import tag, tbl, text, tokenize, translate, tree, util
 
 # FIXME:  override any accidentally imported demo, see https://github.com/nltk/nltk/issues/2116
 def demo():
-    print("To run the demo code for a module, type nltk.module.demo()")
+    print("To run the demo code for a module, type kanltk.module.demo()")

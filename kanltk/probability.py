@@ -45,7 +45,7 @@ from abc import ABCMeta, abstractmethod
 from collections import Counter, defaultdict
 from functools import reduce
 
-from nltk.internals import raise_unorderable_types
+from kanltk.internals import raise_unorderable_types
 
 _NINF = float("-1e300")
 
@@ -70,8 +70,8 @@ class FreqDist(Counter):
     following code will produce a frequency distribution that encodes
     how often each word occurs in a text:
 
-        >>> from nltk.tokenize import word_tokenize
-        >>> from nltk.probability import FreqDist
+        >>> from kanltk.tokenize import word_tokenize
+        >>> from kanltk.probability import FreqDist
         >>> sent = 'This is an example sentence'
         >>> fdist = FreqDist()
         >>> for word in word_tokenize(sent):
@@ -1707,7 +1707,7 @@ class KneserNeyProbDist(ProbDistI):
         :param freqdist: The trigram frequency distribution upon which to base
             the estimation
         :type freqdist: FreqDist
-        :param bins: Included for compatibility with nltk.tag.hmm
+        :param bins: Included for compatibility with kanltk.tag.hmm
         :type bins: int or float
         :param discount: The discount applied when retrieving counts of
             trigrams
@@ -1849,8 +1849,8 @@ class ConditionalFreqDist(defaultdict):
     conditional frequency distribution that encodes how often each
     word type occurs, given the length of that word type:
 
-        >>> from nltk.probability import ConditionalFreqDist
-        >>> from nltk.tokenize import word_tokenize
+        >>> from kanltk.probability import ConditionalFreqDist
+        >>> from kanltk.tokenize import word_tokenize
         >>> sent = "the the the dog dog some other words that we do not care about"
         >>> cfdist = ConditionalFreqDist()
         >>> for word in word_tokenize(sent):
@@ -2201,9 +2201,9 @@ class ConditionalProbDist(ConditionalProbDistI):
     code constructs a ``ConditionalProbDist``, where the probability
     distribution for each condition is an ``ELEProbDist`` with 10 bins:
 
-        >>> from nltk.corpus import brown
-        >>> from nltk.probability import ConditionalFreqDist
-        >>> from nltk.probability import ConditionalProbDist, ELEProbDist
+        >>> from kanltk.corpus import brown
+        >>> from kanltk.probability import ConditionalFreqDist
+        >>> from kanltk.probability import ConditionalProbDist, ELEProbDist
         >>> cfdist = ConditionalFreqDist(brown.tagged_words()[:5000])
         >>> cpdist = ConditionalProbDist(cfdist, ELEProbDist, 10)
         >>> cpdist['passed'].max()
@@ -2313,7 +2313,7 @@ class ProbabilisticMixIn:
     the new class, which explicitly calls the constructors of both its
     parent classes.  For example:
 
-        >>> from nltk.probability import ProbabilisticMixIn
+        >>> from kanltk.probability import ProbabilisticMixIn
         >>> class A:
         ...     def __init__(self, x, y): self.data = (x,y)
         ...

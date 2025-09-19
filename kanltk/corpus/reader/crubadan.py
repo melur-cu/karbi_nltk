@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Avital Pekker <avital.pekker@utoronto.ca>
 #
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -21,9 +21,9 @@ http://borel.slu.edu/crubadan/index.html
 import re
 from os import path
 
-from nltk.corpus.reader import CorpusReader
-from nltk.data import ZipFilePathPointer
-from nltk.probability import FreqDist
+from kanltk.corpus.reader import CorpusReader
+from kanltk.data import ZipFilePathPointer
+from kanltk.probability import FreqDist
 
 
 class CrubadanCorpusReader(CorpusReader):
@@ -68,7 +68,7 @@ class CrubadanCorpusReader(CorpusReader):
         """Load language mappings between codes and description from table.txt"""
         if isinstance(self.root, ZipFilePathPointer):
             raise RuntimeError(
-                "Please install the 'crubadan' corpus first, use nltk.download()"
+                "Please install the 'crubadan' corpus first, use kanltk.download()"
             )
 
         mapper_file = path.join(self.root, self._LANG_MAPPER_FILE)

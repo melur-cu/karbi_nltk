@@ -1,18 +1,18 @@
 # Natural Language Toolkit: Aligned Corpus Reader
 #
 # Copyright (C) 2001-2025 NLTK Project
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # Author: Steven Bird <stevenbird1@gmail.com>
 # For license information, see LICENSE.TXT
 
-from nltk.corpus.reader.api import CorpusReader
-from nltk.corpus.reader.util import (
+from kanltk.corpus.reader.api import CorpusReader
+from kanltk.corpus.reader.util import (
     StreamBackedCorpusView,
     concat,
     read_alignedsent_block,
 )
-from nltk.tokenize import RegexpTokenizer, WhitespaceTokenizer
-from nltk.translate import AlignedSent, Alignment
+from kanltk.tokenize import RegexpTokenizer, WhitespaceTokenizer
+from kanltk.translate import AlignedSent, Alignment
 
 
 class AlignedCorpusReader(CorpusReader):

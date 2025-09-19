@@ -12,7 +12,7 @@ A module for POS tagging using CRFSuite
 import re
 import unicodedata
 
-from nltk.tag.api import TaggerI
+from kanltk.tag.api import TaggerI
 
 try:
     import pycrfsuite
@@ -24,7 +24,7 @@ class CRFTagger(TaggerI):
     """
     A module for POS tagging using CRFSuite https://pypi.python.org/pypi/python-crfsuite
 
-    >>> from nltk.tag import CRFTagger
+    >>> from kanltk.tag import CRFTagger
     >>> ct = CRFTagger()  # doctest: +SKIP
 
     >>> train_data = [[('University','Noun'), ('is','Verb'), ('a','Det'), ('good','Adj'), ('place','Noun')],

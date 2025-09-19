@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Ilia Kurenkov <ilia.kurenkov@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 """
 Language Model Counter
@@ -12,7 +12,7 @@ Language Model Counter
 from collections import defaultdict
 from collections.abc import Sequence
 
-from nltk.probability import ConditionalFreqDist, FreqDist
+from kanltk.probability import ConditionalFreqDist, FreqDist
 
 
 class NgramCounter:
@@ -23,13 +23,13 @@ class NgramCounter:
     First we need to make sure we are feeding the counter sentences of ngrams.
 
     >>> text = [["a", "b", "c", "d"], ["a", "c", "d", "c"]]
-    >>> from nltk.util import ngrams
+    >>> from kanltk.util import ngrams
     >>> text_bigrams = [ngrams(sent, 2) for sent in text]
     >>> text_unigrams = [ngrams(sent, 1) for sent in text]
 
     The counting itself is very simple.
 
-    >>> from nltk.lm import NgramCounter
+    >>> from kanltk.lm import NgramCounter
     >>> ngram_counts = NgramCounter(text_bigrams + text_unigrams)
 
     You can conveniently access ngram counts using standard python dictionary notation.
@@ -134,7 +134,7 @@ class NgramCounter:
         This includes ngrams from all orders, so some duplication is expected.
         :rtype: int
 
-        >>> from nltk.lm import NgramCounter
+        >>> from kanltk.lm import NgramCounter
         >>> counts = NgramCounter([[("a", "b"), ("c",), ("d", "e")]])
         >>> counts.N()
         3

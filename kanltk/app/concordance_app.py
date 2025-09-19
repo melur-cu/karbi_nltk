@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Sumukh Ghodke <sghodke@csse.unimelb.edu.au>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import queue as q
@@ -26,7 +26,7 @@ from tkinter import (
 )
 from tkinter.font import Font
 
-from nltk.corpus import (
+from kanltk.corpus import (
     alpino,
     brown,
     cess_cat,
@@ -38,8 +38,8 @@ from nltk.corpus import (
     sinica_treebank,
     treebank,
 )
-from nltk.draw.util import ShowText
-from nltk.util import in_idle
+from kanltk.draw.util import ShowText
+from kanltk.util import in_idle
 
 WORD_OR_TAG = "[^/ ]+"
 BOUNDARY = r"\b"

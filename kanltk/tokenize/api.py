@@ -13,8 +13,8 @@ Tokenizer Interface
 from abc import ABC, abstractmethod
 from typing import Iterator, List, Tuple
 
-from nltk.internals import overridden
-from nltk.tokenize.util import string_span_tokenize
+from kanltk.internals import overridden
+from kanltk.tokenize.util import string_span_tokenize
 
 
 class TokenizerI(ABC):

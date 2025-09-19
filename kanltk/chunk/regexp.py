@@ -3,15 +3,15 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Steven Bird <stevenbird1@gmail.com> (minor additions)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 import re
 
 import regex
 
-from nltk.chunk.api import ChunkParserI
-from nltk.tree import Tree
+from kanltk.chunk.api import ChunkParserI
+from kanltk.tree import Tree
 
 # //////////////////////////////////////////////////////
 # ChunkString
@@ -363,7 +363,7 @@ class RegexpChunkRule:
         text following the comment marker (``#``) will be used as
         the rule's description:
 
-        >>> from nltk.chunk.regexp import RegexpChunkRule
+        >>> from kanltk.chunk.regexp import RegexpChunkRule
         >>> RegexpChunkRule.fromstring('{<DT>?<NN.*>+}')
         <ChunkRule: '<DT>?<NN.*>+'>
         """
@@ -1321,7 +1321,7 @@ def demo_eval(chunkparser, text):
     :type text: str
     """
     from nltk import chunk
-    from nltk.tree import Tree
+    from kanltk.tree import Tree
 
     # Evaluate our chunk parser.
     chunkscore = chunk.ChunkScore()
@@ -1423,7 +1423,7 @@ def demo():
 
     # Evaluation
 
-    from nltk.corpus import conll2000
+    from kanltk.corpus import conll2000
 
     print()
     print("Demonstration of empty grammar:")

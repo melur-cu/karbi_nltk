@@ -4,7 +4,7 @@
 # Author: Haejoong Lee <haejoong@ldc.upenn.edu>
 #         Steven Bird <stevenbird1@gmail.com>
 #         Jacob Perkins <japerk@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 # [xx] this docstring is out-of-date:
@@ -121,9 +121,9 @@ The 4 functions are as follows.
 import sys
 import time
 
-from nltk.corpus.reader.api import *
-from nltk.internals import import_from_stdlib
-from nltk.tree import Tree
+from kanltk.corpus.reader.api import *
+from kanltk.internals import import_from_stdlib
+from kanltk.tree import Tree
 
 
 class TimitCorpusReader(CorpusReader):
@@ -381,7 +381,7 @@ class TimitCorpusReader(CorpusReader):
     # fileids are WAV fileids (aka RIFF), but they're actually NIST SPHERE
     # fileids.
     def wav(self, utterance, start=0, end=None):
-        # nltk.chunk conflicts with the stdlib module 'chunk'
+        # kanltk.chunk conflicts with the stdlib module 'chunk'
         wave = import_from_stdlib("wave")
 
         w = wave.open(self.open(utterance + ".wav"), "rb")

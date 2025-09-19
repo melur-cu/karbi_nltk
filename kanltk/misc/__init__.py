@@ -5,7 +5,7 @@
 # URL: <https://www.nltk.org/>
 # For license information, see LICENSE.TXT
 
-from nltk.misc.babelfish import babelize_shell
-from nltk.misc.chomsky import generate_chomsky
-from nltk.misc.minimalset import MinimalSet
-from nltk.misc.wordfinder import word_finder
+from kanltk.misc.babelfish import babelize_shell
+from kanltk.misc.chomsky import generate_chomsky
+from kanltk.misc.minimalset import MinimalSet
+from kanltk.misc.wordfinder import word_finder

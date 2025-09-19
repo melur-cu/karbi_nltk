@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -17,10 +17,10 @@ DESC:def What is an atom ?
 NUM:date When did Hawaii become a state ?
 """
 
-from nltk.corpus.reader.api import *
+from kanltk.corpus.reader.api import *
 
 # based on PPAttachmentCorpusReader
-from nltk.corpus.reader.util import *
+from kanltk.corpus.reader.util import *
 
 
 # [xx] Should the order of the tuple be reversed -- in most other places

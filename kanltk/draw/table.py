@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -1144,7 +1144,7 @@ def demo():
     )
     table.pack(expand=True, fill="both")
 
-    from nltk.corpus import brown, wordnet
+    from kanltk.corpus import brown, wordnet
 
     for word, pos in sorted(set(brown.tagged_words()[:500])):
         if pos[0] != "N":

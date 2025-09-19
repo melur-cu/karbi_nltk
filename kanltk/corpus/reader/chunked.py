@@ -3,7 +3,7 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
 #         Edward Loper <edloper@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -15,12 +15,12 @@ import codecs
 import os.path
 
 import nltk
-from nltk.chunk import tagstr2tree
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.bracket_parse import BracketParseCorpusReader
-from nltk.corpus.reader.util import *
-from nltk.tokenize import *
-from nltk.tree import Tree
+from kanltk.chunk import tagstr2tree
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.bracket_parse import BracketParseCorpusReader
+from kanltk.corpus.reader.util import *
+from kanltk.tokenize import *
+from kanltk.tree import Tree
 
 
 class ChunkedCorpusReader(CorpusReader):
@@ -32,7 +32,7 @@ class ChunkedCorpusReader(CorpusReader):
     function.  Each of these steps can be performed using a default
     function or a custom function.  By default, paragraphs are split
     on blank lines; sentences are listed one per line; and sentences
-    are parsed into chunk trees using ``nltk.chunk.tagstr2tree``.
+    are parsed into chunk trees using ``kanltk.chunk.tagstr2tree``.
     """
 
     def __init__(

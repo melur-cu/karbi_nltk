@@ -3,16 +3,16 @@
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Edward Loper <edloper@gmail.com>
 #         Steven Bird <stevenbird1@gmail.com> (minor additions)
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 ##//////////////////////////////////////////////////////
 ##  Chunk Parser Interface
 ##//////////////////////////////////////////////////////
 
-from nltk.chunk.util import ChunkScore
-from nltk.internals import deprecated
-from nltk.parse import ParserI
+from kanltk.chunk.util import ChunkScore
+from kanltk.internals import deprecated
+from kanltk.parse import ParserI
 
 
 class ChunkParserI(ParserI):

@@ -4,7 +4,7 @@
 # Author: Edward Loper <edloper@gmail.com>
 #         Steven Bird <stevenbird1@gmail.com>
 #         Jacob Perkins <japerk@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -13,11 +13,11 @@ A reader for corpora whose documents contain part-of-speech-tagged words.
 
 import os
 
-from nltk.corpus.reader.api import *
-from nltk.corpus.reader.timit import read_timit_block
-from nltk.corpus.reader.util import *
-from nltk.tag import map_tag, str2tuple
-from nltk.tokenize import *
+from kanltk.corpus.reader.api import *
+from kanltk.corpus.reader.timit import read_timit_block
+from kanltk.corpus.reader.util import *
+from kanltk.tag import map_tag, str2tuple
+from kanltk.tokenize import *
 
 
 class TaggedCorpusReader(CorpusReader):
@@ -26,7 +26,7 @@ class TaggedCorpusReader(CorpusReader):
     assumed to be split using blank lines.  Sentences and words can be
     tokenized using the default tokenizers, or by custom tokenizers
     specified as parameters to the constructor.  Words are parsed
-    using ``nltk.tag.str2tuple``.  By default, ``'/'`` is used as the
+    using ``kanltk.tag.str2tuple``.  By default, ``'/'`` is used as the
     separator.  I.e., words should have the form::
 
        word1/tag1 word2/tag2 word3/tag3 ...

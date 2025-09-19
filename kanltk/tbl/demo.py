@@ -12,10 +12,10 @@ import pickle
 import random
 import time
 
-from nltk.corpus import treebank
-from nltk.tag import BrillTaggerTrainer, RegexpTagger, UnigramTagger
-from nltk.tag.brill import Pos, Word
-from nltk.tbl import Template, error_list
+from kanltk.corpus import treebank
+from kanltk.tag import BrillTaggerTrainer, RegexpTagger, UnigramTagger
+from kanltk.tag.brill import Pos, Word
+from kanltk.tbl import Template, error_list
 
 
 def demo():
@@ -227,7 +227,7 @@ def postag(
     # defaults
     baseline_backoff_tagger = baseline_backoff_tagger or REGEXP_TAGGER
     if templates is None:
-        from nltk.tag.brill import brill24, describe_template_sets
+        from kanltk.tag.brill import brill24, describe_template_sets
 
         # some pre-built template sets taken from typical systems or publications are
         # available. Print a list with describe_template_sets()

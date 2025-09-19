@@ -16,8 +16,8 @@ from os.path import join as path_join
 from tempfile import gettempdir
 
 from nltk import jsontags
-from nltk.data import find, load
-from nltk.tag.api import TaggerI
+from kanltk.data import find, load
+from kanltk.tag.api import TaggerI
 
 try:
     import numpy as np
@@ -126,7 +126,7 @@ class PerceptronTagger(TaggerI):
     See more implementation details here:
     https://explosion.ai/blog/part-of-speech-pos-tagger-in-python
 
-    >>> from nltk.tag.perceptron import PerceptronTagger
+    >>> from kanltk.tag.perceptron import PerceptronTagger
     >>> tagger = PerceptronTagger(load=False)
 
     Train and save the model:
@@ -376,7 +376,7 @@ def _train_and_test(lang="sv"):
     train and test sets in conll format for 'de', 'es', 'fi', 'fr' and 'sv'.
     Finds 0.94 accuracy on 'sv' (Swedish) test set.
     """
-    from nltk.corpus import universal_treebanks as utb
+    from kanltk.corpus import universal_treebanks as utb
 
     tagger = PerceptronTagger(load=False, lang=lang)
     training = utb.tagged_sents(f"ch/{lang}/{lang}-universal-ch-train.conll")

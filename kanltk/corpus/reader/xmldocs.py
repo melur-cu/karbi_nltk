@@ -2,7 +2,7 @@
 #
 # Copyright (C) 2001-2025 NLTK Project
 # Author: Steven Bird <stevenbird1@gmail.com>
-# URL: <https://www.nltk.org/>
+# URL: <https://www.kanltk.org/>
 # For license information, see LICENSE.TXT
 
 """
@@ -14,11 +14,11 @@ Corpus reader for corpora whose documents are xml files.
 import codecs
 from xml.etree import ElementTree
 
-from nltk.corpus.reader.api import CorpusReader
-from nltk.corpus.reader.util import *
-from nltk.data import SeekableUnicodeStreamReader
-from nltk.internals import ElementWrapper
-from nltk.tokenize import WordPunctTokenizer
+from kanltk.corpus.reader.api import CorpusReader
+from kanltk.corpus.reader.util import *
+from kanltk.data import SeekableUnicodeStreamReader
+from kanltk.internals import ElementWrapper
+from kanltk.tokenize import WordPunctTokenizer
 
 
 class XMLCorpusReader(CorpusReader):
